@@ -1,7 +1,0 @@
-main{
-  display: grid;
-  grid-template-areas: 
-  'ID_ id'
-  'PW_ pw'
-  'MODE mode';
-}

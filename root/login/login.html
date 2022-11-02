@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../grid_3_sections.css">
   <link rel="stylesheet" href="login.css">
   <title>login</title>
 </head>
 <body>
 <header>header</header>
 <main>
-  <form action="manager.html">
+  <form action="">
     <div class="ID_">아이디 : </div>
     <input class="id" type="text" name="ID" placeholder="아이디를 입력해주세요.">
     <hr>
@@ -21,13 +21,13 @@
     관리자
     <input type="radio" name="" id=""> 
     <hr>
-    <input type="submit" value="로그인">
+    <input type="button" value="로그인" onclick="location.href='../manager/manager.html'">
     <hr>
-    <input type="button" value="뒤로가기" onclick="location.href='index.html'">
-    <input type="button" value="회원가입" onclick="location.href='registration.html'">
+    <input type="button" value="뒤로가기" onclick="location.href='../index.html'">
+    <input type="button" value="회원가입" onclick="location.href='./registration.html'">
   </form>
   <form action="user.html">
-    <input type="submit" value="로그인">
+    <input type="button" value="로그인" onclick="location.href='../user/user.html'">
   </form>
 </main>
 <footer>footer</footer>
