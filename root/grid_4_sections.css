@@ -19,13 +19,14 @@ header{
 
 nav{
   grid-area: nav;
-  background-color: orange;
+  background-color: #fff;
   margin: 0;
+  border-left: soild 1px black;
 }
 
 main{
   grid-area: main;
-  background: blue;
+  background: #fff;
 }
 
 footer{

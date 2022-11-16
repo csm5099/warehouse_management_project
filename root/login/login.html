@@ -9,26 +9,34 @@
 <body>
 <header>header</header>
 <main>
-  <form action="">
-    <div class="ID_">아이디 : </div>
-    <input class="id" type="text" name="ID" placeholder="아이디를 입력해주세요.">
-    <hr>
-    <div class="PW_">비밀번호 : </div>
-    <input class="pw" type="password" name="PW">
-    <hr>
-    외주업체
-    <input type="radio" name="" id=""> 
-    관리자
-    <input type="radio" name="" id=""> 
-    <hr>
-    <input type="button" value="로그인" onclick="location.href='../manager/manager.html'">
-    <hr>
-    <input type="button" value="뒤로가기" onclick="location.href='../index.html'">
-    <input type="button" value="회원가입" onclick="location.href='./registration.html'">
-  </form>
-  <form action="user.html">
-    <input type="button" value="로그인" onclick="location.href='../user/user.html'">
-  </form>
+  <div class="empty1">
+  </div>
+
+  <div class="login">
+    <form action="">
+      <div class="etc">
+        <label class="radio_button"><input type="radio"  name="mode" id="user" checked="checked"><span>외주업체</span></label>
+        <label class="radio_button"><input type="radio"  name="mode" id="manager"><span>관리자</span></label>
+      </div>
+      <hr>
+      <input class="id" type="text" name="ID" placeholder="아이디">
+      <br>
+      <input class="pw" type="password" name="PW" placeholder="비밀번호">
+      <hr>
+      <input type="button" class="login_box" value="로그인" onclick="location.href='../manager/manager.html'">
+      <hr>
+      <div class="etc">
+        <input type="button" value="뒤로가기" onclick="location.href='../index.html'">
+        <input type="button" value="회원가입" onclick="location.href='./registration.html'">
+      </div>
+    </form>
+  </div>
+  
+  <div class="empty2">
+    <form action="user.html">
+      <input type="button" value="로그인" onclick="location.href='../user/user.html'">
+    </form>
+  </div>
 </main>
 <footer>footer</footer>
 </body>

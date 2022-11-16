@@ -13,19 +13,13 @@ body{
 
 header{
   grid-area: header;
-  background-color: #333;
+  background-color: #212121;
   color: aliceblue;
-}
-
-nav{
-  grid-area: nav;
-  background-color: orange;
-  margin: 0;
 }
 
 main{
   grid-area: main;
-  background: blue;
+  background: #fff;
 }
 
 footer{
