@@ -69,3 +69,14 @@ span{
 	background: black;
 	color:#fff;
 }
+
+.prepage, .register{
+  border: 0;
+  color: gray;
+  background: white;
+}
+
+.prepage:hover, .register:hover{
+  color: black;
+}
+
