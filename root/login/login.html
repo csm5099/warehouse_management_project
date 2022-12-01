@@ -13,17 +13,17 @@
   </div>
 
   <div class="login">
-    <form action="">
+    <form action="ck_login.php" method=post>
       <div class="etc">
-        <label class="radio_button"><input type="radio"  name="mode" id="user" checked="checked"><span>외주업체</span></label>
-        <label class="radio_button"><input type="radio"  name="mode" id="manager"><span>관리자</span></label>
+        <label class="radio_button"><input type="radio" value="1" name="idtype" id="admin" checked="checked"><span>관리자</span></label>
+        <label class="radio_button"><input type="radio" value="2" name="idtype" id="outsrc"><span>외주업체</span></label>
       </div>
       <hr>
-      <input class="id" type="text" name="ID" placeholder="아이디">
+      <input class="id" type="text" name="ID" placeholder="아이디" required>
       <br>
-      <input class="pw" type="password" name="PW" placeholder="비밀번호">
+      <input class="pw" type="password" name="PW" placeholder="비밀번호" required>
       <hr>
-      <input type="button" class="login_box" value="로그인" onclick="location.href='../manager/manager.html'">
+      <input type="submit" class="login_box" value="로그인" >
       <hr>
       <div class="etc">
         <input class="prepage" type="button" value="뒤로가기" onclick="location.href='../index.html'">
