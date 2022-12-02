@@ -8,7 +8,7 @@
                 
     mysql_select_db($database,$connect); 
 
-    $query = "insert into outsrc values('$outsrc_no','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
+    $query = "insert into outsrc_tb values('$outsrc_no','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
     echo "$query";  
     $result = mysql_query($query,$connect);
     

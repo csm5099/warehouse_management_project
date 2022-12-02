@@ -1,19 +1,27 @@
 <?php
-
-
+//chaewon3
 function login($ID, $PW){
     global $con;
     global $table;
     global $errormsg;
+    //abcd
 
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
 
+    echo "$ID";
+    echo"<br>";
+    echo "$PW";  
+    // 데이터 넘어옴 
+
     if(!isset($_COOKIE["isOK"])){
-        $query="select outsrc_no, outsrc_pw from warehouse.outsrc where outsrc_no='$ID'";
+        $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
+
         $result=mysql_query($query, $con);
         $row = mysql_fetch_array($result);
         // return $row;
+
+        echo "$row";
 
         if($row[0] == ""){
             $errormsg="계정이 없습니다";
@@ -78,6 +86,3 @@ else
 
 
 </center>
-
-
-
