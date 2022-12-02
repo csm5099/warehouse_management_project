@@ -1,5 +1,5 @@
 <?php
-//chaewon3
+//chaewon4
 function login($ID, $PW){
     global $con;
     global $table;
