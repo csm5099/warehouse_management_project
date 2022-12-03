@@ -34,7 +34,8 @@
     mysql_select_db($database, $connect);
 
     #insert 쿼리
-    $query1 = "insert into product_tb values('$product_no','$product_nm','$product_price','$product_amt');
+    $query1 = "insert into product_tb values('$product_no','$product_nm','$product_price','$product_amt')";   
+    $result1 = mysql_query($query1,$connect);   
     
     
 
