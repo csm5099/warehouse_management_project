@@ -11,11 +11,11 @@
     $result = mysql_query($query, $connect);
     //$num= mysql_num_rows($result);
     $num=mysql_num_rows($result);
-
+    print $num;
 
     if(!$num){  
         echo "<span style='color:red;'></span> 사용가능합니다.";
-?>
+       ?>
 
 <p><input type=button value="이 사업자번호를 사용" onclick="opener.parent.decide(); window.close();"></p>
 
@@ -28,8 +28,7 @@
 <?php
     }
 
-   // $outsrc_no = $_POST['decide_id'];   
-   //decide_id를 outsrc_no(사업자번호)로 넘겨줌 
+   // $outsrc_no = $_POST['decide_id'];   //decide_id를 outsrc_no(사업자번호)로 넘겨줌 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +40,10 @@
   <title>Document</title>
 </head>
 
-<body>
-</body>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+</head>
 
 </html>

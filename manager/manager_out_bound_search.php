@@ -1,42 +1,42 @@
 <HTML>
 <?php
     
-//product_sales = ¼ö·® 
-//¼ö·®- Ãâ°í·®= ³²Àº ¼ö·® 
-// »óÇ° Á¶È¸ÇØ¼­ Ãâ°í·® ÀÔ·Â ÈÄ Ãâ°í 
+//product_sales = ï¿½ï¿½ï¿½ï¿½ 
+//ï¿½ï¿½ï¿½ï¿½- ï¿½ï¿½ï¿½ï¿½ï¿½= ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+// ï¿½ï¿½Ç° ï¿½ï¿½È¸ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 
     $product_no_pk=$_POST['product_no_pk'];
-    
+    echo $product_no_pk; //ï¿½ï¿½ ï¿½ï¿½Âµï¿½ 
 
     $database = "warehouse";
     $connect = mysql_connect('localhost','lcw','chaewon')
-                        or die("mySQL ¼­¹ö ¿¬°á Error!");
+                        or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
     mysql_select_db($database, $connect);
-    $query= "select * from product_tb";
 
     if($product_no_pk != "")
     $query = "select * from product_tb where product_no_pk like '$product_no_pk'"; 
     
-    
-    print "<center><font color= black size=5><b>Á¶È¸ °á°ú </b></font></center>";
-    print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£</td><td>ÆòÁ¡</td><td> »óÇ°¸í</td><td>¼ö·®
-    </td><td>°¡°Ý</td><td>Àç°í·®</td><td>»óÅÂ</td><td>ÀÔ°íÀÏ</td><td><center>Ãâ°í</center></td></tr>";
-
     $result= mysql_query($query, $connect);
+    
+    print "<center><font color= black size=5><b>ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ </b></font></center>";
+    print "<table border=1 align=center>";
+    print "<tr><td> ï¿½Ï·Ã¹ï¿½È£</td><td>ï¿½ï¿½ï¿½ï¿½</td><td>ï¿½ï¿½ï¿½ï¿½</td><td>x
+    </td><td>ï¿½ï¿½ï¿½ï¿½</td><td>ï¿½ï¿½ï¿½ï¿½ï¿½</td><td>ï¿½ï¿½ï¿½ï¿½</td><td>ï¿½Ô°ï¿½ï¿½ï¿½</td><td><center>ï¿½ï¿½ï¿½</center></td></tr>";
     
     $num= mysql_num_rows($result);
 
     for($i=0; $i<$num; $i++) {
         $ans= mysql_fetch_row($result);
+        
         $outbound_button = '
         <form action="./manager_out_bound_result.php" method="POST">
-        <input type="text" name="outbound_amount" size=20  placeholder="Ãâ°í·®À» ÀÔ·ÂÇÏ¼¼¿ä" required>
-        <input type="hidden" name=product_no_pk >
-        <input type="submit" value="Ãâ°í">
+        <input type="text" name="outbound_amount" size=20  placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" required>
+        <input type="hidden" name="product_no_pk" value="'.$product_no_pk.'">
+        <input type="submit" value="ï¿½ï¿½ï¿½">
         </form>
   ';
+  
 
         print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
         print "<td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5];
@@ -48,7 +48,7 @@
 
 
     mysql_close($connect); 
-    //  <input type=hidden name=product_no_pk >
+    //  ï¿½ï¿½ï¿½ï¿½ forï¿½ï¿½ï¿½ï¿½ <input type=hidden name=product_no_pk >  ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 ?>
 
 

@@ -22,13 +22,10 @@
   <h2>재고</h2>
     <?php
         #변수 선언
-        $Name = $_POST["name"];
-        $Sales = (int)$_POST["sales"];
-        $Price = (int)$_POST["price"];
-        $Amt = (int)$_POST["amt"];
-        $State = $_POST["state"];
-        $Dt = $_POST["dt"];
-        $Grade = (int)$_POST["grade"];
+        $Name = $_POST["name"]; //상품 명
+        $Price = (int)$_POST["price"];  //가격
+        $Price = (int)$_POST["price"];  //일련번호
+        $Amt = 0  //재고량
         
         #db 연결
         $database = "warehouse";

@@ -1,18 +1,18 @@
 <?php
 
-// ÀÔ·Â¹ÞÀº Ãâ°í·®À» ¼ö·®¿¡¼­ - ¿¬»ê
+// ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½
 
-$outbound_amount = $_POST['outbound_amount']; //¼ö·®
+$outbound_amount = $_POST['outbound_amount']; //ï¿½ï¿½ï¿½ï¿½
 echo $outbound_amount;
 $product_no_pk=$_POST['product_no_pk']; 
-echo $product_no_pk;//manger_out_bound_search.php ¿¡¼­ ÀÏ·Ã¹øÈ£¸¦ hiddenÀ¸·Î ¹ÞÀ½ 
+echo $product_no_pk;//manger_out_bound_search.php ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·Ã¹ï¿½È£ï¿½ï¿½ hiddenï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 
-//¼ö·®= product_sales
+//ï¿½ï¿½ï¿½ï¿½= product_sales
 
     $result=$product_sales-$outbound_amount;
     
     $database="warehouse";
-    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ¼­¹ö ¿¬°á Error!");
+    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
     mysql_select_db($database, $connect);
 
@@ -23,10 +23,10 @@ echo $product_no_pk;//manger_out_bound_search.php ¿¡¼­ ÀÏ·Ã¹øÈ£¸¦ hiddenÀ¸·Î ¹ÞÀ
 
 
 
-    print "<center><font color=red size=5><b> Ãâ°í °á°ú </b></font></center>";
+    print "<center><font color=red size=5><b> ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ </b></font></center>";
     print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£ </td><td> ÆòÁ¡ </td><td> »óÇ°¸í </td><td>¼ö·® </td><td> °¡°Ý </td>";
-    print "<td> Àç°í·® </td><td> »óÅÂ </td><td> ÀÔ°íÀÏ </td></tr><br>";
+    print "<tr><td> ï¿½Ï·Ã¹ï¿½È£ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½Ç°ï¿½ï¿½ </td><td>ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td>";
+    print "<td> ï¿½ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½Ô°ï¿½ï¿½ï¿½ </td></tr><br>";
     
     
     $query = "select * from product_tb where product_no_pk= '$product_no_pk' ";
@@ -36,7 +36,7 @@ echo $product_no_pk;//manger_out_bound_search.php ¿¡¼­ ÀÏ·Ã¹øÈ£¸¦ hiddenÀ¸·Î ¹ÞÀ
     print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
     print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
     
-    print "</table><br>"; //ÅÂ±× Ãß°¡
+    print "</table><br>"; //ï¿½Â±ï¿½ ï¿½ß°ï¿½
 
 
     mysql_close($connect);
@@ -44,5 +44,3 @@ echo $product_no_pk;//manger_out_bound_search.php ¿¡¼­ ÀÏ·Ã¹øÈ£¸¦ hiddenÀ¸·Î ¹ÞÀ
 
 
 ?>
-
-

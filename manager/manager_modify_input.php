@@ -1,12 +1,10 @@
 <?php
-//¿ÜÁÖ¾÷Ã¼ »èÁ¦ 
- 
-
+//ï¿½ï¿½ï¿½Ö¾ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ 
     $outsrc_no = $_POST['outsrc_no'];
 
     $database = "warehouse";
     $connect = mysql_connect('localhost','lcw','chaewon')
-                        or die("mySQL ¼­¹ö ¿¬°á Error!");
+                        or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
     mysql_select_db($database, $connect);
 
@@ -23,5 +21,5 @@
 ?>
 
 <hr>
-<input type="button" value="È¸¿ø¸ñ·Ï º¸±â" onclick="location.href='./manager_membership.php'"> 
-<input type="button" value="È¨À¸·Î °¡±â" onclick="location.href='../index.html'">
+<input type="button" value="È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./manager_membership.php'">
+<input type="button" value="È¨ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" onclick="location.href='../index.html'">
