@@ -3,7 +3,6 @@
 
 function login($ID, $PW){
     global $con;
-    global $table;
     global $errormsg;
 
     $ID=$_POST['ID']; 
@@ -13,36 +12,34 @@ function login($ID, $PW){
         $query="select outsrc_no, outsrc_pw from warehouse.outsrc where outsrc_no='$ID'";
         $result=mysql_query($query, $con);
         $row = mysql_fetch_array($result);
+        
         // return $row;
-
         if($row[0] == ""){
             $errormsg="������ �����ϴ�";
             return 0;
         }
         else 
         {
-            $dbid=$row[0];
+            $dbid = $row[0];
             $dbPW = $row[1];
 
             if($dbid==$ID AND $dbPW == $PW){
-                SetCookie($ID,"isOK" , time()+10, "/");
+                SetCookie($ID,"isOK", time()+10, "/");
                 return 1;
             }
 
             else {
-                $errormsg=$ID."�� �н����尡 Ʋ�Ƚ��ϴ�";
+                $errormsg = $ID."�� �н����尡 Ʋ�Ƚ��ϴ�";
                 return 0;
             }
         }
     }
     else // if(!isset($isOK)�� else �κ�
     {
-        SetCookie("isOK", $ID, time()+10, "/");
+        SetCookie($ID, "isOK", time()+10, "/");
         return 2;
     }
 }
-
-$table="t_cookie";
 
 $con=mysql_connect('localhost', 'root','root');
 mysql_select_db('warehouse',$con);  
