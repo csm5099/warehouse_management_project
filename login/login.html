@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_3_sections.css">
   <link rel="stylesheet" href="login.css">
   <title>login</title>
@@ -9,32 +9,32 @@
 <body>
 <header>header</header>
 <main>
-  <form action="./ck_login.php" method=post>   
+  <form action="ck_login.php" method=post>   
 
-    <div class="ID">¾ÆÀÌµð : </div>
-    <input class="id" type="text" name="ID" placeholder="¾ÆÀÌµð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." required>
+    <div class="ID_">ì•„ì´ë”” : </div>
+    <input class="id" type="text" name="ID" placeholder="ì•„ì´ë””ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." required>
 
     <hr>
-    <div class="PW_">ºñ¹Ð¹øÈ£ : </div>
-    <input class="pw" type="password" name="PW" placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä."required>
+    <div class="PW_">ë¹„ë°€ë²ˆí˜¸ : </div>
+    <input class="pw" type="password" name="PW" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”."required>
     
     <hr>
-    <!--°ü¸®ÀÚ, ¿ÜÁÖ¾÷Ã¼¸¦ °¢°¢ value 1,2·Î ÇÏ¿© °¢°¢ÀÇ ÆäÀÌÁö·Î ¿¬°á -->
-    °ü¸®ÀÚ
+    <!--ê´€ë¦¬ìž, ì™¸ì£¼ì—…ì²´ë¥¼ ê°ê° value 1,2ë¡œ í•˜ì—¬ ê°ê°ì˜ íŽ˜ì´ì§€ë¡œ ì—°ê²° -->
+    ê´€ë¦¬ìž
     <input type="radio" name="idtype" value="1" id="admin"> 
 
-    ¿ÜÁÖ¾÷Ã¼
+    ì™¸ì£¼ì—…ì²´
     <input type="radio" name="idtype" value="2" id="outsrc">
 
     <hr> 
-    <input type="submit" value=" °ü¸®ÀÚ ·Î±×ÀÎ" onclick="location.href='../manager/manager.html'">
+    <input type="submit" value=" ê´€ë¦¬ìž ë¡œê·¸ì¸" onclick="location.href='../manager/manager.html'">
     
-    <input type="submit" value="¿ÜÁÖ¾÷Ã¼ ·Î±×ÀÎ" >
+    <input type="submit" value="ì™¸ì£¼ì—…ì²´ ë¡œê·¸ì¸">
 
 
     <hr>
-    <input type="button" value="µÚ·Î°¡±â" onclick="location.href='../index.html'"> &nbsp;  &nbsp;
-    <input type="button" value="È¸¿ø°¡ÀÔ" onclick="location.href='./registration.html'">  <br> <br>
+    <input type="button" value="ë’¤ë¡œê°€ê¸°" onclick="location.href='../index.html'"> &nbsp;  &nbsp;
+    <input type="button" value="íšŒì›ê°€ìž…" onclick="location.href='./registration.html'">  <br> <br>
 
     
   </form>

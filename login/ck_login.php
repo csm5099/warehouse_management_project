@@ -1,30 +1,26 @@
 <?php
-//chaewon5
+
 function login($ID, $PW){
     global $con;
     global $table;
     global $errormsg;
-    //abcd
 
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
 
-    echo "$ID";
-    echo"<br>";
-    echo "$PW";  
-    // µ¥ÀÌÅÍ ³Ñ¾î¿È 
+    $database="warehouse";
+    $connect= mysql_connect('localhost','root','root') or die("mySQL ì„œë²„ ì—°ê²° Error!");
+
+    mysql_select_db($database, $connect);
 
     if(!isset($_COOKIE["isOK"])){
-        $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
-
-        $result=mysql_query($query, $con);
+        $query="select outsrc_no, outsrc_pw from warehouse.outsrc where outsrc_no='$ID'";
+        $result=mysql_query($query, $connect);
         $row = mysql_fetch_array($result);
         // return $row;
 
-        echo "$row";
-
         if($row[0] == ""){
-            $errormsg="°èÁ¤ÀÌ ¾ø½À´Ï´Ù";
+            $errormsg="ê³„ì •ì´ ì—†ìŠµë‹ˆë‹¤";
             return 0;
         }
         else 
@@ -38,48 +34,49 @@ function login($ID, $PW){
             }
 
             else {
-                $errormsg=$ID."´Ô ÆÐ½º¿öµå°¡ Æ²·È½À´Ï´Ù";
+                $errormsg=$ID."ë‹˜ íŒ¨ìŠ¤ì›Œë“œê°€ í‹€ë ¸ìŠµë‹ˆë‹¤";
                 return 0;
             }
         }
     }
-    else // if(!isset($isOK)ÀÇ else ºÎºÐ
+    else // if(!isset($isOK)ì˜ else ë¶€ë¶„
     {
         SetCookie("isOK", $ID, time()+10, "/");
         return 2;
     }
 }
 
+
 $table="t_cookie";
 
-$con=mysql_connect('localhost', 'lcw','chaewon');
-mysql_select_db('warehouse',$con);  
-$login_result = login($ID, $PW); 
+$con=mysql_connect('localhost', 'root','root');
+mysql_select_db('pass',$con);  //db ì˜¤í”ˆ
+$login_result = login($ID, $PW);  //ì•žì—ì„œ ì •ì˜í•œ login í•¨ìˆ˜ í˜¸ì¶œ 
 //print_r($login_result);
 ?>
 
 <HTML>
-<HEAD><TITLE>·Î±×ÀÎ</TITLE></HEAD>
+<HEAD><TITLE>ë¡œê·¸ì¸</TITLE><meta charset="UTF-8"></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
-<?  // 8ÀÚ¸® ÀÌ»ó, ´ë¼Ò¹®ÀÚ Çã¿ë 
-if($login_result == 0) {  //ÆÐ½º¿öµå°¡ Æ²¸®¸é 0¹ÝÈ¯
+<?
+if($login_result == 0) {  //íŒ¨ìŠ¤ì›Œë“œê°€ í‹€ë¦¬ë©´ 0ë°˜í™˜
     print $errormsg."<br>";
-   // print "<font color=blue size=4>°èÁ¤ÀÌ ¾ø°Å³ª ºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù.</font></center><br>";
+   // print "<font color=blue size=4>ê³„ì •ì´ ì—†ê±°ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.</font></center><br>";
     print "<table align='center'><tr>
     <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ¸ÞÀÎÈ­¸éÀ¸·Î °¡±â</a></font></td></tr></table></BODY></HTML>";
+    ë©”ì¸í™”ë©´ìœ¼ë¡œ ê°€ê¸°</a></font></td></tr></table></BODY></HTML>";
 } 
 
 else 
 {
-    if($login_result == 1) {  //¾ÆÀÌµð¿Í ºñ¹ø ¸ðµÎ db¿Í µ¿ÀÏÇÏ¸é 
+    if($login_result == 1) {  //ì•„ì´ë””ì™€ ë¹„ë²ˆ ëª¨ë‘ dbì™€ ë™ì¼í•˜ë©´ 
         echo "<script>location.href='../user/user.html'</script>";
     }
 
-    if($login_result == 2) {  //ÄíÅ° ÀÌ¹Ì °¡Áö°í ÀÖÀ» °æ¿ì 
-        print $_POST['ID']."´Ô ÀÌ¹Ì ÀÎÁõµÇ½Å ºÐÀÔ´Ï´Ù. 
-            <br>À¯È¿½Ã°£ÀÌ 10ÃÊ ¿¬ÀåµÇ¾ú½À´Ï´Ù"; 
+    if($login_result == 2) {  //ì¿ í‚¤ ì´ë¯¸ ê°€ì§€ê³  ìžˆì„ ê²½ìš° 
+        print $_POST['ID']."ë‹˜ ì´ë¯¸ ì¸ì¦ë˜ì‹  ë¶„ìž…ë‹ˆë‹¤. 
+            <br>ìœ íš¨ì‹œê°„ì´ 10ì´ˆ ì—°ìž¥ë˜ì—ˆìŠµë‹ˆë‹¤"; 
     }
 }
 ?>
