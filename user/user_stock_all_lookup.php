@@ -25,12 +25,11 @@
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
-        $query_outsrc = "select outsrc_no from outsrc_tb where ";
+        #$query_outsrc = "select outsrc_no from outsrc_tb where ";
 
-        $query = "select * from product_tb where outsrc_no = 내 outsrc";
+        $query = "select * from product_tb";
         $result = mysql_query($query,$connect);
 
-        print "$product_dt";
         
         print "<center><font color=red size=5><b>$dt 재고 조회 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
