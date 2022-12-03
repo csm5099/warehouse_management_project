@@ -8,13 +8,13 @@ function login($ID, $PW){
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
 
-    $database="warehouse";
+    $database="warehose";
     $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
     mysql_select_db($database, $connect);
 
     if(!isset($_COOKIE["isOK"])){
-        $query="select outsrc_no, outsrc_pw from warehouse.outsrc where outsrc_no='$ID'";
+        $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
         $result=mysql_query($query, $connect);
         $row = mysql_fetch_array($result);
         // return $row;
@@ -50,7 +50,7 @@ function login($ID, $PW){
 $table="t_cookie";
 
 $con=mysql_connect('localhost', 'root','root');
-mysql_select_db('pass',$con);  //db 오픈
+mysql_select_db('warehouse',$con);  //db 오픈
 $login_result = login($ID, $PW);  //앞에서 정의한 login 함수 호출 
 //print_r($login_result);
 ?>

@@ -28,9 +28,10 @@
         #$query_outsrc = "select outsrc_no from outsrc_tb where ";
 
         $query = "select * from product_tb";
-        $result = mysql_query($query,$connect);
-
         
+        $result = mysql_query ($query, $connect) or die(mysql_error());
+        print "$result";
+        echo "<br><br><br><br><br>";
         print "<center><font color=red size=5><b>$dt 재고 조회 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
         print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
