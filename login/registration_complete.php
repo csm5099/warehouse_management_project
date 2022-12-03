@@ -1,11 +1,11 @@
 <?php
 
-// х╦©Ь╟║ют(registration.html) ©║╪╜ а╕цБго╦И --╢т х╦©Ь╟║ютюл ©о╥А╣г╬З╫ю╢о╢ы.  ц╒ ╤Г©Жаж╢б фДюлаЖ
+// х╦О©╫О©╫О©╫О©╫О©╫О©╫(registration.html) О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╦О©╫ --О©╫О©╫ х╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫о╥О©╫г╬О©╫О©╫О©╫О©╫о╢О©╫.  ц╒ О©╫О©╫О©╫О©╫ж╢О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
 
     $database = "warehouse";
 
-    $connect=mysql_connect('localhost', 'lcw', 'chaewon')  
-    or die("mySQL ╪╜╧Ж ©╛╟А Error!");
+    $connect= mysql_connect('localhost','root','root') or die("mySQL Л└°К╡└ Л≈╟Й╡╟ Error!");
+
 
     mysql_select_db($database, $connect);
 
@@ -13,14 +13,29 @@
 
     $result= mysql_query($query, $connect);
 
-    print "<center><font color=blue size=5><b>х╦©Ь╟║ютюл ©о╥А╣г╬З╫ю╢о╢ы. </b></font></center>";
-
+    print "<center><font color=blue size=5><b>М ▄Л⌡░Й╟─Л·┘Л²╢ Л≥└Кё▄К░≤Л≈┬Л┼╣К▀┬К▀╓. </b></font></center>";
     print "<table align='center'><tr>
     <td align=center><font color=black><a href='../index.html'>
-    ╦чюнх╜╦Ию╦╥н ╟║╠Б</a></font></td></tr></table></BODY></HTML>";
-   
+    К╘■Л²╦М≥■К╘╢Л°╪К║° Й╟─Й╦╟</a></font></td></tr></table></BODY></HTML>";
 
     mysql_close($connect);
 
+    echo "$outsrc_no";
+
     ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

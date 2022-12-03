@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_3_sections.css">
   <link rel="stylesheet" href="login.css">
   <title>login</title>
@@ -9,35 +9,35 @@
 <body>
 <header>header</header>
 <main>
-  <form action="ck_login.php" method=post>   
+  <div class="empty1">
+  </div>
 
-    <div class="ID_">æ∆¿Ãµ : </div>
-    <input class="id" type="text" name="ID" placeholder="æ∆¿Ãµ∏¶ ¿‘∑¬«ÿ¡÷ººø‰." required>
-
-    <hr>
-    <div class="PW_">∫Òπ–π¯»£ : </div>
-    <input class="pw" type="password" name="PW" placeholder="∫Òπ–π¯»£∏¶ ¿‘∑¬«ÿ¡÷ººø‰."required>
-    
-    <hr>
-    <!--∞¸∏Æ¿⁄, ø‹¡÷æ˜√º∏¶ ∞¢∞¢ value 1,2∑Œ «œø© ∞¢∞¢¿« ∆‰¿Ã¡ˆ∑Œ ø¨∞· -->
-    ∞¸∏Æ¿⁄
-    <input type="radio" name="idtype" value="1" id="admin"> 
-
-    ø‹¡÷æ˜√º
-    <input type="radio" name="idtype" value="2" id="outsrc">
-
-    <hr> 
-    <input type="submit" value=" ∞¸∏Æ¿⁄ ∑Œ±◊¿Œ" onclick="location.href='../manager/manager.html'">
-    
-    <input type="submit" value="ø‹¡÷æ˜√º ∑Œ±◊¿Œ">
-
-
-    <hr>
-    <input type="button" value="µ⁄∑Œ∞°±‚" onclick="location.href='../index.html'"> &nbsp;  &nbsp;
-    <input type="button" value="»∏ø¯∞°¿‘" onclick="location.href='./registration.html'">  <br> <br>
-
-    
-  </form>
+  <div class="login">
+    <form action="ck_login.php" method=post>
+      <div class="etc">
+        <label class="radio_button"><input type="radio" value="1" name="idtype" id="admin" checked="checked"><span>Í¥ÄÎ¶¨Ïûê</span></label>
+        <label class="radio_button"><input type="radio" value="2" name="idtype" id="outsrc"><span>Ïô∏Ï£ºÏóÖÏ≤¥</span></label>
+      </div>
+      <hr>
+      <input class="id" type="text" name="ID" placeholder="ÏïÑÏù¥Îîî" required>
+      <br>
+      <input class="pw" type="password" name="PW" placeholder="ÎπÑÎ∞ÄÎ≤àÌò∏" required>
+      <hr>
+      <input type="submit" class="login_box" value="Î°úÍ∑∏Ïù∏" >
+      <hr>
+      <div class="etc">
+        
+        <input class="prepage" type="button" value="Îí§Î°úÍ∞ÄÍ∏∞" onclick="location.href='../index.html'">
+        <input class="register" type="button" value="ÌöåÏõêÍ∞ÄÏûÖ" onclick="location.href='./registration.html'">
+      </div>
+    </form>
+  </div>
+  
+  <div class="empty2">
+    <form action="user.html">
+      <input type="button" value="Î°úÍ∑∏Ïù∏" onclick="location.href='../user/user.html'">
+    </form>
+  </div>
 </main>
 <footer>footer</footer>
 </body>

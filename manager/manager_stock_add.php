@@ -12,9 +12,9 @@
 </header>
 <nav>
   <a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.html">출고</a>
-  <a href="manager_in_bound.html">입고</a>
-  <a href="manager_membership.html">회원관리</a>
+  <a href="manager_out_bound.php">출고</a>
+  <a href="manager_in_bound.php">입고</a>
+  <a href="manager_membership.php">회원관리</a>
   <a href=""></a>
 </nav>
 <main>
@@ -31,8 +31,8 @@
         $Grade = (int)$_POST["grade"];
         
         #db 연결
-        $database = "wearhouse_stack";
-        $connect = mysql_connect('localhost','root','root')
+        $database = "warehouse";
+        $connect = mysql_connect('localhost','lcw','chaewon')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
 
@@ -43,7 +43,7 @@
         $no_pk = (int)$ans[0]+1;
         print "$no_pk";
         #insert 쿼리
-        $query1 = "insert into product_tb values($no_pk,$Grade,$Name,$Sales,$Price,$Amt,$State,$Dt)";
+        $query1 = "insert into product_tb values($no_pk,$Grade,$Name,$Sales,$Price,$Amt,,$Dt)";
         $result1 = mysql_query($query,$connect);
 
         print "<center><font color=red size=5><b>$dt 재고 추가 결과 입니다.</b></font></center>";

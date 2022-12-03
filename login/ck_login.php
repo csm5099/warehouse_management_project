@@ -1,6 +1,6 @@
 <?php
 
-//12-03
+
 function login($ID, $PW){
     global $con;
     global $table;
@@ -25,7 +25,7 @@ function login($ID, $PW){
             $dbPW = $row[1];
 
             if($dbid==$ID AND $dbPW == $PW){
-                SetCookie("isOK", $ID, time()+10, "/");
+                SetCookie($ID,"isOK" , time()+10, "/");
                 return 1;
             }
 
@@ -44,7 +44,7 @@ function login($ID, $PW){
 
 $table="t_cookie";
 
-$con=mysql_connect('localhost', 'lcw','chaewon');
+$con=mysql_connect('localhost', 'root','root');
 mysql_select_db('warehouse',$con);  
 $login_result = login($ID, $PW); 
 //print_r($login_result);
@@ -79,6 +79,19 @@ else
     }
 }
 ?>
-
-
   </center>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+  </body>
+
+  </html>

@@ -1,0 +1,81 @@
+main{
+    grid-area: main;
+    background: #fff;
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "."
+    "login_box"
+    "."
+    ;
+  }
+  
+  .login{
+    height: 1fr;
+    width: 400px;
+    padding: 50px;
+    border: 1px solid gray;
+    margin: auto;
+  }
+  .login_box:hover{
+    background-color: gray;
+  }
+  
+  .login_box:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+  }
+  .login_box{
+    width:100%;
+    padding: 15px 0px 15px 0px;
+    color: white;
+    background: black;
+    font-size: 20px;
+  }
+  
+  .id, .pw{
+    width: 400px;
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  span{
+    width: 150px;
+  }
+  
+  .etc{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .radio_button input[type="radio"]{
+    display: none;
+  }
+  
+  .radio_button input[type="radio"] + span{
+    display:inline-block;
+      background:none;
+      border:1px solid gray;	 
+      padding:0px 10px;
+      text-align:center;
+      height:35px;
+      line-height:33px;
+      font-weight:500;
+      cursor:pointer;
+  }
+  
+  .radio_button input[type="radio"]:checked + span{
+      border:1px solid black;
+      background: black;
+      color:#fff;
+  }
+  
+  .prepage, .register{
+    border: 0;
+    color: gray;
+    background: white;
+  }
+  
+  .prepage:hover, .register:hover{
+    color: black;
+  }

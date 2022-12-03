@@ -28,8 +28,8 @@
     print "입력값 : $outsrc_no $new_passwd";
 
     #db 연결
-    $database = "wearhouse";
-    $connect = mysql_connect('localhost','root','root')
+    $database = "warehouse";
+    $connect = mysql_connect('localhost','lcw','chaewon')
                         or die("mySQL 서버 연결 Error!");
     mysql_select_db($database, $connect);
 

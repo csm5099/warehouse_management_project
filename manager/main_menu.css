@@ -25,7 +25,7 @@ nav{
 
 main{
   grid-area: main;
-  background: blue;
+  background: rgb(224, 224, 232);
 }
 
 footer{
