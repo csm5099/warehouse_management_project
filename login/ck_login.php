@@ -1,10 +1,9 @@
 <?php
-//chaewon5
+
 function login($ID, $PW){
     global $con;
     global $table;
     global $errormsg;
-    //1234
 
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
@@ -16,12 +15,9 @@ function login($ID, $PW){
 
     if(!isset($_COOKIE["isOK"])){
         $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
-
-        $result=mysql_query($query, $con);
+        $result=mysql_query($query, $connect);
         $row = mysql_fetch_array($result);
         // return $row;
-
-        echo "$row";
 
         if($row[0] == ""){
             $errormsg="������ �����ϴ�";
@@ -50,16 +46,17 @@ function login($ID, $PW){
     }
 }
 
+
 $table="t_cookie";
 
-$con=mysql_connect('localhost', 'lcw','chaewon');
-mysql_select_db('warehouse',$con);  
-$login_result = login($ID, $PW); 
+$con=mysql_connect('localhost', 'root','root');
+mysql_select_db('warehouse',$con);  //db 오픈
+$login_result = login($ID, $PW);  //앞에서 정의한 login 함수 호출 
 //print_r($login_result);
 ?>
 
 <HTML>
-<HEAD><TITLE>�α���</TITLE></HEAD>
+<HEAD><TITLE>로그인</TITLE><meta charset="UTF-8"></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
 <?  // 8�ڸ� �̻�, ��ҹ��� ��� 

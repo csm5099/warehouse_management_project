@@ -1,26 +1,32 @@
 <?php
 
-// È¸¿ø°¡ÀÔ(registration.html) ¿¡¼­ Á¦ÃâÇÏ¸é --´Ô È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.  Ã¢ ¶ç¿öÁÖ´Â ÆäÀÌÁö
+// íšŒì›ê°€ìž…(registration.html) ì—ì„œ ì œì¶œí•˜ë©´ --ë‹˜ íšŒì›ê°€ìž…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.  ì°½ ë„ì›Œì£¼ëŠ” íŽ˜ì´ì§€
 
     $database = "warehouse";
 
-    $connect=mysql_connect('localhost', 'lcw', 'chaewon')  
-    or die("mySQL ¼­¹ö ¿¬°á Error!");
+    $connect=mysql_connect('localhost', 'root', 'root')  
+    or die("mySQL ì„œë²„ ì—°ê²° Error!");
 
     mysql_select_db($database, $connect);
 
-    $query = "select * from outsrc_tb";
+    $query = "select * from outsrc";
 
     $result= mysql_query($query, $connect);
 
-    print "<center><font color=blue size=5><b>È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. </b></font></center>";
+    print "<center><font color=blue size=5><b>íšŒì›ê°€ìž…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. </b></font></center>";
 
     print "<table align='center'><tr>
     <td align=center><font color=black><a href='../index.html'>
-    ¸ÞÀÎÈ­¸éÀ¸·Î °¡±â</a></font></td></tr></table></BODY></HTML>";
+    ë©”ì¸í™”ë©´ìœ¼ë¡œ ê°€ê¸°</a></font></td></tr></table></BODY></HTML>";
    
 
     mysql_close($connect);
 
     ?>
+
+<html>
+    <head>
+    <meta charset="UTF-8">
+</head>
+</html>
 
