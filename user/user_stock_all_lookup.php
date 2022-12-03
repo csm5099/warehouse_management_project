@@ -30,7 +30,7 @@
         $query = "select * from product_tb";
         
         $result = mysql_query ($query, $connect) or die(mysql_error());
-        print "$result";
+
         echo "<br><br><br><br><br>";
         print "<center><font color=red size=5><b>$dt 재고 조회 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
