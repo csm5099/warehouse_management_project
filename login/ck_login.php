@@ -4,7 +4,7 @@ function login($ID, $PW){
     global $con;
     global $table;
     global $errormsg;
-    //123
+    //1234
 
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
