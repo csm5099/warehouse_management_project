@@ -2,25 +2,25 @@
 
 function login($ID, $PW){
     global $con;
-    global $table;
+    //global $table;
     global $errormsg;
 
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
 
     echo "$ID";
-    echo"<br>";
+    echo "<br>";
     echo "$PW";  
-    // ������ �Ѿ�� 
 
     if(!isset($_COOKIE["isOK"])){
-        $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
-        $result=mysql_query($query, $connect);
+
+        $query="SELECT outsrc_no, outsrc_pw FROM warehouse.outsrc_tb WHERE outsrc_no='$ID'";
+        $result=mysql_query($query, $con);
+        // $connect-> $con
         $row = mysql_fetch_array($result);
-        // return $row;
 
         if($row[0] == ""){
-            $errormsg="������ �����ϴ�";
+            $errormsg="계정이 없습니다";
             return 0;
         }
         else 
@@ -29,29 +29,29 @@ function login($ID, $PW){
             $dbPW = $row[1];
 
             if($dbid==$ID AND $dbPW == $PW){
-                SetCookie("isOK", $ID, time()+10, "/");
+                SetCookie($ID,"isOK",time()+10, "/");  //순서 변경 
                 return 1;
             }
 
             else {
-                $errormsg=$ID."�� �н����尡 Ʋ�Ƚ��ϴ�";
+                $errormsg=$ID."님 패스워드가 틀렸습니다";
                 return 0;
             }
         }
     }
-    else // if(!isset($isOK)�� else �κ�
+    else // if(!isset($isOK)의 else
     {
-        SetCookie("isOK", $ID, time()+10, "/");
+        SetCookie($ID,"isOK",time()+10, "/");
         return 2;
     }
 }
 
 
-$table="t_cookie";
+//$table="t_cookie";
 
-$con=mysql_connect('localhost', 'root','root');
-mysql_select_db('warehouse',$con);  //db 오픈
-$login_result = login($ID, $PW);  //앞에서 정의한 login 함수 호출 
+$con=mysql_connect('localhost', 'lcw','chaewon');
+mysql_select_db('warehouse',$con);  
+$login_result = login($ID, $PW);  
 //print_r($login_result);
 ?>
 
@@ -59,27 +59,40 @@ $login_result = login($ID, $PW);  //앞에서 정의한 login 함수 호출
 <HEAD><TITLE>로그인</TITLE><meta charset="UTF-8"></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
-<?  // 8�ڸ� �̻�, ��ҹ��� ��� 
-if($login_result == 0) {  //�н����尡 Ʋ���� 0��ȯ
+<?   
+if($login_result == 0) {  
     print $errormsg."<br>";
-   // print "<font color=blue size=4>������ ���ų� ��й�ȣ�� Ʋ���ϴ�.</font></center><br>";
+  
     print "<table align='center'><tr>
     <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ����ȭ������ ����</a></font></td></tr></table></BODY></HTML>";
+    메인화면으로 가기</a></font></td></tr></table></BODY></HTML>";
 } 
 
 else 
 {
-    if($login_result == 1) {  //���̵�� ��� ��� db�� �����ϸ� 
+    if($login_result == 1) {  
         echo "<script>location.href='../user/user.html'</script>";
     }
 
-    if($login_result == 2) {  //��Ű �̹� ������ ���� ��� 
-        print $_POST['ID']."�� �̹� �����ǽ� ���Դϴ�. 
-            <br>��ȿ�ð��� 10�� ����Ǿ����ϴ�"; 
+    if($login_result == 2) {  
+        print $_POST['ID']."님 이미 인증되신 분입니다.  
+            <br>유효시간이 10초 연장되었습니다"; 
     }
 }
 ?>
 
 
 </center>
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+    </body>
+    </html>

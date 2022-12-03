@@ -4,12 +4,12 @@
 
     $database = "warehouse";
 
-    $connect=mysql_connect('localhost', 'root', 'root')  
+    $connect=mysql_connect('localhost', 'lcw', 'chaewon')  
     or die("mySQL 서버 연결 Error!");
 
     mysql_select_db($database, $connect);
 
-    $query = "select * from outsrc";
+    $query = "select * from outsrc_tb";
 
     $result= mysql_query($query, $connect);
 
@@ -24,9 +24,15 @@
 
     ?>
 
-<html>
+<!DOCTYPE html>
+    <html lang="en">
     <head>
-    <meta charset="UTF-8">
-</head>
-</html>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
 
+    </body>
+    </html>

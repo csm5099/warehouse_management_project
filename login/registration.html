@@ -82,11 +82,10 @@ function change(){
       <div class="company">외주업체명</div>
       <input type="text" name="outsrc_nm" placeholder="외주업체명을 입력해주세요."required>
 
-      <div class="company">사업자번호</div>   <!-- id=uid 추가-->
+      <div class="company">사업자번호</div>  
       <input type="text" name="outsrc_no" id="uid" placeholder="사업자번호를 입력해주세요."required>
-      <input type="hidden" name="decide_id" id="decide_id">  <!-- decide_id-->
+      <input type="hidden" name="decide_id" id="decide_id">  
 
-      <!-- 사업자번호 중복체크 버튼-->
       
       <p><span id="decide" style='color:rgb(79, 83, 209);'>*이미 등록된 사업자번호인지 확인</span>
       <input type="button" id="check_button" value="사업자번호 중복 검사" onclick="check_id();"></p>   
@@ -103,7 +102,7 @@ function change(){
       <input type="password" name="outsrc_pw2"  id="outsrc_pw2"  onchange="check_pw()"  placeholder="비밀번호를 입력해주세요."required> 
           <span id="check"></span>
       <hr>
-      <input type="submit" id="join_button"value="등록">     <!-- join_button-->
+      <input type="submit" id="join_button"value="등록">     
      
       <hr>
       <input type="button" value="뒤로가기" onclick="location.href='./login.html'">
