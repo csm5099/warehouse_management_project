@@ -45,7 +45,7 @@
 
 
         $database = "warehouse";
-        $connect = mysql_connect('localhost','root','root')
+        $connect = mysql_connect('localhost','lcw','chaewon')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query = "select * from product_tb where product_no_pk = '$product_no_pk'";
