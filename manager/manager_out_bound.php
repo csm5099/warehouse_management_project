@@ -44,10 +44,10 @@
   
   $result = mysql_query($query, $connect);
 
-  print "<center><font color=black size=5><b>입고현황</b></font></center>";
+  print "<center><font color=black size=5><b>출고조회</b></font></center>";
   print "<table border=1 align=center>";
   
-  print "<tr><td> 일련번호</td><td>평점</td><td>수량</td><td>x
+  print "<tr><td> 일련번호</td><td>평점</td><td>수량</td><td>
   </td><td>가격</td><td>재고량</td><td>상태</td><td>입고일</td></tr>";
 
   $num=mysql_num_rows($result);
@@ -58,7 +58,7 @@
   
     print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
     print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-    print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
+    print "<td>".$ans[5]."</td></tr><br>";
     }
   
     print "</table>";
