@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>Document</title>
 </head>
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="manager_stock.html">재고</a>

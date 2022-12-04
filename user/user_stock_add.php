@@ -9,14 +9,15 @@
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
-    <a href="manager_stock.html">재고</a>
-    <a href="manager_out_bound.html">출고</a>
-    <a href="manager_in_bound.html">입고</a>
-    <a href="manager_membership.html">회원관리</a>
-    <a href=""></a>
+    <a href="user_stock.html">재고</a>
+    <a href="user_out_bound.html">출고</a>
+    <a href="user_order.html">주문</a>
+    <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
     <h1>관리자</h1>

@@ -3,12 +3,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
-  <link rel="stylesheet" href="manager.css">
 </head>
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="manager_stock.html">재고</a>

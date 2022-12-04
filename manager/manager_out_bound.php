@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
-  <link rel="stylesheet" href="manager.css">
   <title>manager</title>
 </head>
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="manager_stock.html">재고</a>
@@ -47,9 +48,8 @@
         print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
         print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
       }
-      
-        print "</table>";
-    
+
+      print "</table>";
       mysql_close($connect);
     ?>
   </main>

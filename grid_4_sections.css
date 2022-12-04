@@ -13,7 +13,7 @@ body{
 
 header{
   grid-area: header;
-  background-color: #333;
+  background-color: rgb(33, 33, 33);
   color: aliceblue;
 }
 
