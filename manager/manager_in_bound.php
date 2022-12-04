@@ -24,7 +24,7 @@
   <?php
   $product_no = $_POST['product_no'];
  
-  $database="wearhouse";
+  $database="warehouse";
   $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
   mysql_select_db($database, $connect);

@@ -36,7 +36,7 @@
   <!--<button>조회</button> -->
 
   <?php
-  $database="wearhouse";
+  $database="warehouse";
   $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
   mysql_select_db($database, $connect);

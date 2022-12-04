@@ -1,20 +1,20 @@
 <?php
 
-// ÀÔ·Â¹ÞÀº Ãâ°í·®À» ¼ö·®¿¡¼­ - ¿¬»ê
+// ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½
 
 $outbound_amount = $_POST['outbound_amount']; 
-echo "outbound $outbound_amount"; //Ãâ°í·®Àº Ãâ·ÂµÊ 
+echo "outbound $outbound_amount"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Âµï¿½ 
 
 echo("<br>");
 
 $product_no_pk=$_POST['product_no_pk']; 
-echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
+echo " number $product_no_pk";   //ï¿½Ï·Ã¹ï¿½È£ ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½
 
-//¼ö·®= product_sales
+//ï¿½ï¿½ï¿½ï¿½= product_sales
  
     
     $database="warehouse";
-    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ¼­¹ö ¿¬°á Error!");
+    $connect= mysql_connect('localhost','root','root') or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
     mysql_select_db($database, $connect);
     $query = "select * from product_tb where product_no_pk='$product_no_pk'";
@@ -25,10 +25,10 @@ echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
  
 
     echo("<br>");
-    print $product_sales;   // ±âÁ¸°ª Ãâ·Â ¾ÈµÊ  
+    print $product_sales;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Èµï¿½  
    
     echo("<br>");
-    $rest=$product_sales-$outbound_amount;  // ±âÁ¸- Ãâ°í
+    $rest=$product_sales-$outbound_amount;  // ï¿½ï¿½ï¿½ï¿½- ï¿½ï¿½ï¿½
 
     print " rest $rest";
 
@@ -36,10 +36,10 @@ echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
     $query = "update product_tb set product_sales='$rest' where product_no_pk= '$product_no_pk'";
     mysql_query($query,$connect);
 
-    print "<center><font color=red size=5><b> Ãâ°í °á°ú </b></font></center>";
+    print "<center><font color=red size=5><b> ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ </b></font></center>";
     print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£ </td><td> ÆòÁ¡ </td><td> ¼ö·® </td><td>x </td><td> °¡°Ý </td>";
-    print "<td> Àç°í·® </td><td> »óÅÂ </td><td> ÀÔ°íÀÏ </td></tr><br>";
+    print "<tr><td> ï¿½Ï·Ã¹ï¿½È£ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td>x </td><td> ï¿½ï¿½ï¿½ï¿½ </td>";
+    print "<td> ï¿½ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½Ô°ï¿½ï¿½ï¿½ </td></tr><br>";
     
     
     $query = "select * from product_tb where product_no_pk= '$product_no_pk' ";
@@ -49,7 +49,7 @@ echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
     print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
     print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
     
-    print "</table><br>"; //ÅÂ±× Ãß°¡
+    print "</table><br>"; //ï¿½Â±ï¿½ ï¿½ß°ï¿½
 
 
     mysql_close($connect);
