@@ -1,24 +1,19 @@
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
 <nav>
   <a href="manager_stock.html">재고</a>
   <a href="manager_out_bound.php">출고</a>
   <a href="manager_in_bound.php">입고</a>
   <a href="manager_membership.php">회원관리</a>
-  <a href=""></a>
+  <a href="manager_logout.php">로그아웃</a>
 </nav>
 <main>
   <h1>관리자</h1>
   <h2>회원관리</h2>
-  
-</main>
-<footer>footer</footer>
-</body>
-</html>
-
-
-
-<?php
+  <?php
 
     $database="warehouse";
     $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL 서버 연결 Error!");
@@ -47,3 +42,9 @@
 
     mysql_close($connect);
     ?>
+
+</main>
+<footer>footer</footer>
+</body>
+
+</html>

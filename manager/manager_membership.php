@@ -1,32 +1,37 @@
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="../grid_4_sections.css">
-  <link rel="stylesheet" href="manager.css"></head>
-  <body>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="../grid_4_sections.css">
+  <link rel="stylesheet" href="manager.css">
+</head>
+
+<body>
   <header>
-  <a href="../login/login.html"> header</a>
+    <a href="../login/login.html"> header</a>
   </header>
   <nav>
-  <a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.php">출고</a>
-  <a href="manager_in_bound.php">입고</a>
-  <a href="manager_membership.php">회원관리</a>
-  <a href="manager_logout.php">로그아웃</a>
-  <a href=""></a>
-</nav>
-<main>
-  <h1> &nbsp;관리자</h1>
-  <h2> &nbsp;&nbsp;회원관리</h2>
-  
-  
+    <a href="manager_stock.html">재고</a>
+    <a href="manager_out_bound.php">출고</a>
+    <a href="manager_in_bound.php">입고</a>
+    <a href="manager_membership.php">회원관리</a>
+    <a href="manager_logout.php">로그아웃</a>
+  </nav>
+  <main>
+    <h1> &nbsp;관리자</h1>
+    <h2> &nbsp;&nbsp;회원관리</h2>
 
-  <form name="form" method="post" action="./manager_modify_input.php">  <!-- 수정-->
-  &nbsp;&nbsp;
+
+
+    <form name="form" method="post" action="./manager_modify_input.php">
+      <!-- 수정-->
+      &nbsp;&nbsp;
       <select name="modify">
         <option value="title">사업자번호</option>
-       
+
       </select>
-      <input type="sumbit" name="outsrc_no" size="40" required> <button>삭제</button> <!--type확인-->
+      <input type="sumbit" name="outsrc_no" size="40" required> <button>삭제</button>
+      <!--type확인-->
     </form>
     <?php
 
@@ -59,13 +64,8 @@ mysql_close($connect);
 
 ?>
 
-</main>
-<footer>footer</footer>
+  </main>
+  <footer>footer</footer>
 </body>
+
 </html>
-
-
-
-
-
-
