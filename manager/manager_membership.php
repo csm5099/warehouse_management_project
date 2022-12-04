@@ -42,7 +42,7 @@
 <?php
 
 $database="warehouse";
-$connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL 서버 연결 Error!");
+$connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 mysql_select_db($database, $connect);
 $query= "SELECT * FROM outsrc_tb";
 $result = mysql_query($query, $connect);

@@ -48,7 +48,7 @@
   $query= "select * from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK;";
   $result = mysql_query($query, $connect);
 
-  print "<center><font color=black size=5><b>입고현황</b></font></center>";
+  print "<center><font color=black size=5><b>출고현황</b></font></center>";
   print "<table border=1 align=center>";
   
   print "<tr><td> 인덱스</td><td> 송장번호</td><td> 일련번호</td>

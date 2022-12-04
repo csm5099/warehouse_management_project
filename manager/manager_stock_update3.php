@@ -21,15 +21,6 @@
   <h1>관리자</h1>
   <h2>재고</h2>
    
-
-<form action="user_stock_update3.php"  method="post">
-<label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-상품명 : <INPUT type="text" size=5 name="product_nm" ><br>
-가격 : <INPUT type="text" size=5 name="product_price" ><br>
-
-<INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
-</form>
-
 <?php 
 $product_nm= $_POST["product_nm"];
 $product_price=$_POST["product_price"];
@@ -37,7 +28,7 @@ $product_no_pk = $_POST["product_no_pk"];
 
 
 $database = "warehouse";
-$connect = mysql_connect('localhost','lcw','chaewon')
+$connect = mysql_connect('localhost','root','root')
                     or die("mySQL 서버 연결 Error!");
 mysql_select_db($database, $connect);
 $query= "update product_tb set product_nm='$product_nm', product_price='$product_price' where product_no_pk='$product_no_pk'";
