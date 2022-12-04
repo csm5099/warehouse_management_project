@@ -34,9 +34,10 @@
 $product_nm= $_POST["product_nm"];
 $product_price=$_POST["product_price"];
 $product_no_pk = $_POST["product_no_pk"];
-print "111+$product_no_pk";
+
+
 $database = "warehouse";
-$connect = mysql_connect('localhost','root','root')
+$connect = mysql_connect('localhost','lcw','chaewon')
                     or die("mySQL 서버 연결 Error!");
 mysql_select_db($database, $connect);
 $query= "update product_tb set product_nm='$product_nm', product_price='$product_price' where product_no_pk='$product_no_pk'";
