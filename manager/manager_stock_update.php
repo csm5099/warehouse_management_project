@@ -38,15 +38,8 @@
     <select name="search">
     <option value="product_no_pk">상품 일련번호</option>
     </select>
-    <input type="sumbit" name="outsrc_no" size="40"> <button>조회</button> 
+    <input type="sumbit" name="search" size="40"> <button>조회</button> 
     </form>
-
-    <INPUT type="submit" value="수정"> 
-          </form>
-
-
-
-
 
 </main>
     

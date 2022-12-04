@@ -11,34 +11,34 @@
     <a href="../login/login.html"> header</a>
   </header>
 <nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.php">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
+<a href="manager_stock.html">재고</a>
+  <a href="manager_out_bound.php">출고</a>
+  <a href="manager_in_bound.php">입고</a>
+  <a href="manager_membership.php">회원관리</a>
   <a href="manager_logout.php">로그아웃</a>
 </nav>
 <main>
-  <h1>외주업체</h1>
+  <h1>관리자</h1>
   <h2>재고</h2>
 
-<?php  
-        $product_no_pk = $_POST["product_no_pk"];
-        $database = "warehouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
-                            or die("mySQL 서버 연결 Error!");
-        mysql_select_db($database, $connect);
+<form action="manager_stock_update3.php"  method="post">
+<label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
+상품명 : <INPUT type="text" size=5 name="product_nm" ><br>
+가격 : <INPUT type="text" size=5 name="product_price" ><br>
 
-        $query = "update product_tb set product_nm = '$product_nm', product_price = '$price'";
+<INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
+</form>
 
-        $result = mysql_query($query,$connect);
-        echo "<script>alert('수정되었습니다.');</script>";
-            mysql_close($connect);    
-?> 
+
 </main>
-    
 
+
+<?php
+  $product_no_pk= $_POST["product_no_pk"];
+  
+
+?>
+  
 <footer>footer</footer>
-
-
 </body>
 </html>
