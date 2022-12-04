@@ -31,21 +31,12 @@
 
     </div>
 
-<form name="form" method="post" action="./manager_stock_lookup3.php">  
-  &nbsp;&nbsp;
-  <select name="search">
-  <option value="outsrc_no">상품 일련번호</option>
-  </select>
-
-  <input type="sumbit" name="search" size="40"> <button>조회</button> 
-  </form>
-
 <?php
         $product_no_pk= (int)$_POST["product_no_pk"];
-        print $product_no_pk;
+
 
         $database = "warehouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
+        $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query = "select * from product_tb where product_no_pk = '$product_no_pk'";
@@ -55,13 +46,13 @@
 
         print "<center><font color=black size=5><b>재고 상세 조회</b></font></center>";
         print "<table border=1 align=center>";
-        print "<tr><td> 일련번호 </td><td> 상품명</td><td> 업체명 </td><td> 비밀번호 </td></tr><br>";
+        print "<tr><td> 사업자번호 </td><td> 일련번호</td><td> 상품명 </td><td> 판매량 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
 
         $num = mysql_num_rows($result);
         for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td></tr><br>";
+            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5]."</td></tr><br>";
         }
         mysql_close($connect);
   ?>
