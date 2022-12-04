@@ -22,19 +22,13 @@
   <h2>재고</h2>
 
 <?php  
-        $nm = $_POST["product_nm"];
-        $no = $_POST["product_no"];
-        $grade = $_POST["product_grade"];    
-        $sales = $_POST["product_sales"];
-        $price = $_POST["product_price"];
-        $amt = $_POST["product_amt"];
-        $state = $_POST["product_state"];
-        $dt = $_POST["product_dt"];
+        $product_no_pk = $_POST["product_no_pk"];
         $database = "warehouse";
         $connect = mysql_connect('localhost','lcw','chaewon')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
-        $query = "update product_tb set product_no = '$no', product_grade = '$grade', product_sales = '$sales', product_price = '$price', product_amt = '$amt', product_state = '$state', product_dt = '$dt' where product_nm = '$nm'";
+
+        $query = "update product_tb set product_nm = '$product_nm', product_price = '$price'";
 
         $result = mysql_query($query,$connect);
         echo "<script>alert('수정되었습니다.');</script>";
