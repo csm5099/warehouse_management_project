@@ -22,7 +22,7 @@
     <?php
         $no_pk = $_POST["consumerName"];
         $database = "wearhouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
+        $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query = "select * from product_tb where product_no_pk = '$no_pk'"; //manager_stock.html에서 입력받은 상품명이 포함된 데이터검색

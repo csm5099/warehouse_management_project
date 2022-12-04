@@ -26,7 +26,7 @@
         $price = $_POST["product_price"];
  
         $database = "wearhouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
+        $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query1 = "update product_tb set  product_price = '$price',  product_nm = '$nm' where product_no_pk = '$no'";
