@@ -38,7 +38,7 @@
        # $ans = mysql_fetch_row($result);
        # $no_pk = (int)$ans[0]+1;
        # print "$no_pk";
-''.'',
+
         #insert 쿼리
         $query1 = "insert into product_tb(product_no_pk, product_nm, product_price, product_amt) values($no_pk,$Name,$Price,$Amt)";
         $result1 = mysql_query($query1,$connect);

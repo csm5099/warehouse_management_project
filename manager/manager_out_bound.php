@@ -21,6 +21,21 @@
 <main>
   <h1>관리자</h1>
   <h2>상품조회</h2>  <!-- 상품 조회하는 칸-->
+
+  <div style="text-align:left;margin:0 40px 0 ;">
+    <button type="button" class="navyBtn" onClick="location.href='user_stock_add.html'">상품 등록</button>
+    <button type="button" class="navyBtn" onClick="location.href='user_stock_lookup.html'">상품 조회</button>
+    <button type="button" class="navyBtn" onClick="location.href='user_stock_update.html'">상품 수정</button>
+    <br><br>
+
+
+
+
+
+
+
+
+
   <form name="form" method="post" action="./manager_out_bound_search.php">  
   &nbsp;&nbsp;
       <select name="modify">
@@ -47,8 +62,7 @@
   print "<center><font color=black size=5><b>출고조회</b></font></center>";
   print "<table border=1 align=center>";
   
-  print "<tr><td> 일련번호</td><td>평점</td><td>수량</td><td>
-  </td><td>가격</td><td>재고량</td><td>상태</td><td>입고일</td></tr>";
+  print "<tr><td> 사업자번호</td><td>일련번호</td><td>상품명 </td><td>판매량</td><td>가격</td><td>재고량</td></tr>";
 
   $num=mysql_num_rows($result);
  
