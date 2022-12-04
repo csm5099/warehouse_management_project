@@ -16,7 +16,7 @@ function login($ID, $PW){
 
         $query="SELECT outsrc_no, outsrc_pw FROM warehouse.outsrc_tb WHERE outsrc_no='$ID'";
         $result=mysql_query($query, $con);
-        // $connect-> $con
+        // $connect-> $con 으로 변경
         $row = mysql_fetch_array($result);
 
         if($row[0] == ""){
@@ -45,7 +45,6 @@ function login($ID, $PW){
         return 2;
     }
 }
-
 
 //$table="t_cookie";
 
