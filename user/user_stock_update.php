@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
-  <link rel="stylesheet" href="manager.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
     <a href="../login/login.html"> header</a>
   </header>
-<nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.html">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
-</nav>
-<main>
-  <h1>외주업체</h1>
-  <h2>재고</h2>
+  <nav>
+    <a href="user_stock.html">재고</a>
+    <a href="user_out_bound.html">출고</a>
+    <a href="user_order.html">주문</a>
+    <a href="user_info.html">회원 정보 수정</a>
+  </nav>
+  <main>
+    <h1>외주업체</h1>
+    <h2>재고</h2>
     <?php
         $name = $_POST["consumerName"];
         $database = "warehouse";
@@ -43,27 +44,28 @@
         }
  mysql_close($connect);
 
-?> 
+?>
 
-<form action="user_stock_update2.php"  method="post">
-<label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-상품명 : <?php print"$name <br>"?>
-<INPUT type="hidden"  id="product_nm" name="product_nm" value="<?php echo $name?>" />
-일련번호 : <INPUT type="text" size=5 name="product_no" ><br>
-평점 : <INPUT type="text" size=5 name="product_grade" ><br>
-판매량 : <INPUT type="text" size=5 name="product_sales" ><br>
-가격 : <INPUT type="text" size=5 name="product_price" ><br>
-재고량  : <INPUT type="text" size=5 name="product_amt" ><br>
-상태 : <INPUT type="text" size=5 name="product_state" ><br>
-입고일 : <INPUT type="text" size=5 name="product_dt" ><br>
-<INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
-</form>
+    <form action="user_stock_update2.php" method="post">
+      <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
+      상품명 : <?php print"$name <br>"?>
+      <INPUT type="hidden" id="product_nm" name="product_nm" value="<?php echo $name?>" />
+      일련번호 : <INPUT type="text" size=5 name="product_no"><br>
+      평점 : <INPUT type="text" size=5 name="product_grade"><br>
+      판매량 : <INPUT type="text" size=5 name="product_sales"><br>
+      가격 : <INPUT type="text" size=5 name="product_price"><br>
+      재고량 : <INPUT type="text" size=5 name="product_amt"><br>
+      상태 : <INPUT type="text" size=5 name="product_state"><br>
+      입고일 : <INPUT type="text" size=5 name="product_dt"><br>
+      <INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>
+    </form>
 
-</main>
-    
+  </main>
 
-<footer>footer</footer>
+
+  <footer>footer</footer>
 
 
 </body>
+
 </html>
