@@ -34,9 +34,10 @@
 
     <form name="form" action="./manager_stock_update2.php"  method="post">
     <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-
+    
+   
     <select name="search">
-    <option value="product_no_pk">상품 일련번호</option>
+      <option value="product_no_pk">상품 일련번호</option>
     </select>
     <input type="sumbit" name="search" size="40"> <button>조회</button> 
     </form>
