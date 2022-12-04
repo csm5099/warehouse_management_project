@@ -10,13 +10,29 @@
 <body>
 <header>header</header>
 <main>
-  <form action="shipment_tracking_result.php" method="post">
-    <div class="search">배송 조회 : </div>
-    <input type="text" name="delivery_idt" placeholder="송장번호를 입력해주세요.">
-    <input type="submit" value="배송 조회하기">
-    <hr>
-    <input type="button" value="돌아가기" onclick="location.href='../index.html'">
-  </form>
+  <div>
+
+  </div>
+
+  <div class = "shipping_page">
+    <form  action="" method="post">
+      <div >
+        <div class = "page_title">배송 조회</div>
+        <hr>
+        <div class = "search_func">
+          <input class = "shipping_number" type="text" name="delivery_number" placeholder="운송장 번호를 입력해주세요.">  
+          <input class="search" type="button" value="배송 조회하기" onclick="location.href='./shipment_tracking_result.html'">
+        </div>
+        
+        <hr>
+        <input class="prepage" type="button" value="돌아가기" onclick="location.href='../index.html'">
+      </div>    
+    </form>
+  </div>
+  
+  <div>
+
+  </div>
 </main>
 <footer>footer</footer>
 </body>

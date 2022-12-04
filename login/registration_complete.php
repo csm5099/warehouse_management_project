@@ -1,6 +1,6 @@
 <?php
 
-// 회원가입(registration.html) 에서 제출하면 --님 회원가입이 완료되었습니다.  창 띄워주는 페이지
+// ȸ������(registration.html) ���� �����ϸ� --�� ȸ�������� �Ϸ�Ǿ����ϴ�.  â ����ִ� ������
 
     $database = "warehouse";
 
@@ -22,11 +22,21 @@
 
     mysql_close($connect);
 
+    echo "$outsrc_no";
+
     ?>
 
-<html>
+<!DOCTYPE html>
+    <html lang="en">
     <head>
-    <meta charset="UTF-8">
-</head>
-</html>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
 
+    </body>
+    </html>
+
+</html>

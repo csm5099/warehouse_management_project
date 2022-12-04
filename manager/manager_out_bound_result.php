@@ -2,43 +2,30 @@
 
 // �Է¹��� ������� �������� - ����
 
-$outbound_amount = $_POST['outbound_amount']; 
-echo "outbound $outbound_amount"; //������� ��µ� 
-
-echo("<br>");
-
+$outbound_amount = $_POST['outbound_amount']; //����
+echo $outbound_amount;
 $product_no_pk=$_POST['product_no_pk']; 
-echo " number $product_no_pk";   //�Ϸù�ȣ �� �Ѿ��
+echo $product_no_pk;//manger_out_bound_search.php ���� �Ϸù�ȣ�� hidden���� ���� 
 
 //����= product_sales
- 
+
+    $result=$product_sales-$outbound_amount;
     
     $database="warehouse";
     $connect= mysql_connect('localhost','root','root') or die("mySQL ���� ���� Error!");
 
     mysql_select_db($database, $connect);
-    $query = "select * from product_tb where product_no_pk='$product_no_pk'";
+
+    //select a* b from product_tb;
+    $query = "update product_tb set product_sales='$result' where product_no_pk= '$product_no_pk'";
+
     $result = mysql_query($query, $connect);
-    $ans = mysql_fetch_row($result);
 
-    $product_sales = $ans[2];
- 
 
-    echo("<br>");
-    print $product_sales;   // ������ ��� �ȵ�  
-   
-    echo("<br>");
-    $rest=$product_sales-$outbound_amount;  // ����- ���
-
-    print " rest $rest";
-
-    
-    $query = "update product_tb set product_sales='$rest' where product_no_pk= '$product_no_pk'";
-    mysql_query($query,$connect);
 
     print "<center><font color=red size=5><b> ��� ��� </b></font></center>";
     print "<table border=1 align=center>";
-    print "<tr><td> �Ϸù�ȣ </td><td> ���� </td><td> ���� </td><td>x </td><td> ���� </td>";
+    print "<tr><td> �Ϸù�ȣ </td><td> ���� </td><td> ��ǰ�� </td><td>���� </td><td> ���� </td>";
     print "<td> ����� </td><td> ���� </td><td> �԰��� </td></tr><br>";
     
     

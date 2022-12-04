@@ -21,73 +21,16 @@
 <main>
   <h1>관리자</h1>
   <h2>재고</h2>
+  
   <div style="text-align:left;margin:0 40px 0 ;">
     
-    
+    <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
+    <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 수정</button>
 
-    <form action="manager_stock_lookup.php"  method="post">
-        <!-- 입고일 입력 -->
-        <lable style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 조회<br></lable>
-        <input type="text" size="10" name="Year" style="width:110px;" placeholder="(4자)">  
-        <lable id="basicFontStyle">년</lable>
-            <SELECT name="Month"  style="width:110px;" size="1">
-                <option value="month01"> 1 </option>
-                <option value="month02"> 2 </option>
-                <option value="month03"> 3 </option>
-                <option value="month04"> 4 </option>
-                <option value="month06"> 5 </option>
-                <option value="month07"> 7 </option>
-                <option value="month08"> 8 </option>
-                <option value="month09"> 9 </option>
-                <option value="month10"> 10 </option>
-                <option value="month11"> 11 </option>
-                <option value="month12"> 12 </option>
-            </SELECT><lable id="basicFontStyle"> 월</lable>
-        
-            <SELECT name="Day"  style="width:110px;" size="1">
-                <option value="day01"> 1 </option>
-                <option value="day02"> 2 </option>
-                <option value="day03"> 3 </option>
-                <option value="day04"> 4 </option>
-                <option value="day05"> 5 </option>
-                <option value="day06"> 6 </option>
-                <option value="day07"> 7 </option>
-                <option value="day08"> 8 </option>
-                <option value="day09"> 9 </option>
-                <option value="day10"> 10 </option>
-                <option value="day11"> 11 </option>
-                <option value="day12"> 12 </option>
-                <option value="day13"> 13 </option>
-                <option value="day14"> 14 </option>
-                <option value="day16"> 15 </option>
-                <option value="day17"> 17 </option>
-                <option value="day18"> 18 </option>
-                <option value="day19"> 19 </option>
-                <option value="day20"> 20 </option>
-                <option value="day21"> 21 </option>
-                <option value="day22"> 22 </option>
-                <option value="day23"> 23 </option>
-                <option value="day24"> 24 </option>
-                <option value="day26"> 25 </option>
-                <option value="day27"> 27 </option>
-                <option value="day28"> 28 </option>
-                <option value="day29"> 29 </option>
-                <option value="day30"> 30 </option>
-            </SELECT><lable> 일 <br></lable>
-            <input type="submit" id="searchButtonStyle" value="검색">
-            <br><br>
-        
-        </form>
+   
+    <br><br>
 
-    <form action="manager_stock_update.php" method="post">
-        <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정</label>
-        <label style="border:1px black solid; "><input type="text" size=40 id="searchStyle" name="consumerName"></label><br>
-      
-        <input type="submit" id="searchButtonStyle" value="검색">
-        <input type="reset" id="searchButtonStyle" style="margin-left:260px;" value="취소">
-    </form>     
-    
-  </div>
+    </div>
 
 </main>
 <footer>footer</footer>

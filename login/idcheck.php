@@ -5,13 +5,13 @@
     mysql_select_db($database, $connect);
 
     $uid= $_GET["userid"];  
-    $query= "SELECT * FROM outsrc where outsrc_no= '$uid'";
+    $query= "SELECT * FROM outsrc_tb where outsrc_no= '$uid'";
     
     //$result = mysql_query($query, $connect); 
     $result = mysql_query($query, $connect);
     //$num= mysql_num_rows($result);
     $num=mysql_num_rows($result);
-    print $num;
+
 
     if(!$num){  
         echo "<span style='color:red;'></span> 사용가능합니다.";
@@ -28,10 +28,16 @@
     <?php
     }
 
-   // $outsrc_no = $_POST['decide_id'];   //decide_id를 outsrc_no(사업자번호)로 넘겨줌 
 ?>
-
-<html>
-    <head><meta charset="UTF-8">
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
     </head>
-</html>
+    <body>
+
+    </body>
+    </html>
