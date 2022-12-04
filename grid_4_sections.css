@@ -13,23 +13,50 @@ body{
 
 header{
   grid-area: header;
-  background-color: #333;
+  background-color: rgb(33, 33, 33);
   color: aliceblue;
 }
 
 nav{
   grid-area: nav;
-  background-color: #fff;
+  background-color: rgb(241, 238, 234);
   margin: 0;
   border-left: soild 1px black;
 }
 
 main{
   grid-area: main;
-  background: #fff;
+  background: rgba(140, 130, 134, 0.404);
+  padding-left: 50px;
 }
 
 footer{
   grid-area: footer;
   background-color: gray;
+}
+
+nav{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  font-size: 15px;
+}
+
+
+a{
+  text-decoration-line: none;
+}
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+a:hover {
+  color : skyblue;
+  text-decoration-line: underline;
+}
+a:active {
+  color : gray
 }

@@ -85,7 +85,7 @@ mysql_select_db('pass',$con);  //db 오픈
 $login_result = login($ID, $PW, $idtype);  //앞에서 정의한 login 함수 호출 
 ?>
 <HTML>
-<HEAD><TITLE>로그인</TITLE></HEAD>
+<HEAD><TITLE>�α���</TITLE></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
 <?  // 8�ڸ� �̻�, ��ҹ��� ��� 
@@ -113,15 +113,6 @@ else
 
 
 </center>
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
 
-    </body>
-    </html>
+
+

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
-  <link rel="stylesheet" href="manager.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
     <a href="../login/login.html"> header</a>
   </header>
-<nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.html">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
-</nav>
-<main>
+  <nav>
+    <a href="user_stock.html">재고</a>
+    <a href="user_out_bound.html">출고</a>
+    <a href="user_order.html">주문</a>
+    <a href="user_info.html">회원 정보 수정</a>
+  </nav>
+  <main>
   <h1>외주업체</h1>
   <h2>재고</h2>
 
@@ -50,11 +51,9 @@
             mysql_close($connect);    
 ?> 
 </main>
-    
 
-<footer>footer</footer>
-
+  <footer>footer</footer>
 
 </body>
-</html>
 
+</html>

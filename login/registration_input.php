@@ -41,10 +41,8 @@ echo $outsrc_no;
   <title>Document</title>
 </head>
 
+<body>
 
+</body>
 
-
-
-   
-
-  
+</html>

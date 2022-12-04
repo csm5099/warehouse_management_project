@@ -1,25 +1,23 @@
-<?php
-
+<?
 if(isset($_COOKIE["isOK"])) {
  SetCookie("isOK", $userid, time()-30, "/");
- $msg="<font color=black sixe=5>Goodbye!!! (·Î±×¾Æ¿ôµÇ¾ú½À´Ï´Ù)</font><br> "; 
+ $msg="<font color=blue sixe=5>Goodbye!!! (ï¿½Î±×¾Æ¿ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!!!)</font><br> "; 
 }
 else {
- $msg="<font color=black sixe=5>·Î±×¾Æ¿ô ±ÇÇÑÀÌ ¾ø½À´Ï´Ù (Goodbye!!!)</font><br>"; 
+ $msg="<font color=blue sixe=5>ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!!! (Goodbye!!!)</font><br>"; 
 }
 ?>
-
 <HTML>
-<HEAD><TITLE>·Î±×¾Æ¿ô</TITLE></HEAD>
-<BODY link='white' vlink='white' alink='black'>
+<HEAD><TITLE>ï¿½Î±×¾Æ¿ï¿½</TITLE></HEAD>
+<BODY link='white' vlink='white' alink='orange'>
 <center>
 <?=$msg?>
-<font color=black size=3>ÇÊ¿äÇÏ¸é ´Ù½Ã ·Î±×ÀÎ ÇÏ½Ê½Ã¿ä.</font><hr>
+<font color=blue size=3>ï¿½Ê¿ï¿½ï¿½Ï¸ï¿½ ï¿½Ù½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ï½Ê½Ã¿ï¿½.</font><hr>
 </center><br>
 <table align='center'>
 <tr>
 <td align=center bgcolor='#000099'><font color=white>
- <a href='../index.html'>¸ÞÀÎ È­¸éÀ¸·Î °¡±â</a></font></td>
+ <a href='../index.html'>ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a></font></td>
 </tr>
 </table>
 </BODY>

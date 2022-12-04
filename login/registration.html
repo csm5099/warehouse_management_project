@@ -7,9 +7,7 @@
   <title>Document</title>
 </head>
 
-
-
-<script>
+  <script>
   // 사업자번호(아이디) 중복체크
   function check_id() {
     var userid = document.getElementById("uid").value;   //form 에서 outsrc_no의 id를 uid로 설정했음
@@ -64,25 +62,28 @@
             }
         }
     }
-</script>
-
-
+  </script>
 
 <body>
-  <header>header</header>
+  <header>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
   <main> 
 
-    <div>
-
+    <div class="logo_area">
+      <img class="logo" src="../logo3.png" alt="">
     </div>
 
     <div class = "registration_box">
       <form name="form" method="post" onsubmit="return check_pw()"  action="./registration_input.php"required>   
         
+        
         <div class="outsrc_name_input registration_text">외주업체명</div>
         <input class="outsrc_name_input registration_input" type="text" name="outsrc_nm" placeholder="외주업체명을 입력해주세요."required>
   
-        <div class="outsrc_number_input registration_text">사업자번호</div>   <!-- id=uid 추가-->
+        <div class=" registration_text">사업자번호</div>   <!-- id=uid 추가-->
         <input class="outsrc_number_input registration_input" type="text" name="outsrc_no" id="uid" placeholder="사업자번호를 입력해주세요."required>
         <input type="hidden" name="decide_id" id="decide_id">  <!-- decide_id-->
   
@@ -100,14 +101,13 @@
         <div class="outsrc_pw_comfirm registration_text">비밀번호 확인 </div>
         <input class="outsrc_pw_comfirm registration_input" type="password" name="outsrc_pw2"  id="outsrc_pw2"  onchange="check_pw()"  placeholder="비밀번호를 입력해주세요."required> 
         <hr>
-        <input type="submit" id="join_button"value="등록">     <!-- join_button-->
+        <input class="registration_submit"type="submit" id="join_button"value="회원가입">     <!-- join_button-->
         <hr>
         <input class="prepage" type="button" value="뒤로가기" onclick="location.href='./login.html'">
       </form>
     </div>
 
     <div>
-
     </div>
 
   </main>

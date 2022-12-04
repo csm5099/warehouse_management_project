@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
-  <link rel="stylesheet" href="manager.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
-<nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.html">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
-</nav>
-<main>
-  <h1>외주업체</h1>
-  <h2>회원정보 수정</h2>
-  <?php
+  <nav>
+    <a href="user_stock.html">재고</a>
+    <a href="user_out_bound.html">출고</a>
+    <a href="user_order.html">주문</a>
+    <a href="user_info.html">회원 정보 수정</a>
+  </nav>
+  <main>
+    <h1>외주업체</h1>
+    <h2>회원정보 수정</h2>
+    <?php
     #회원정보 수정
     #변수
     $outsrc_no = $_POST["outsrc_no"];
@@ -52,7 +55,8 @@
 
     print "<center><font color=red size=5><b>$dt 회원정보가 정상적으로 수정되었습니다.</b></font></center>";
   ?>
-</main>
-<footer>footer</footer>
+  </main>
+  <footer>footer</footer>
 </body>
+
 </html>

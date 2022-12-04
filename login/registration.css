@@ -2,59 +2,79 @@ main{
   grid-area: main;
   background: #fff;
   display: grid;
-  grid-template-rows: 0.5fr 1.5fr 1fr;
+  width: 100%;
+  grid-template-rows: auto 1fr 0.2fr;
   grid-template-columns: 1fr;
   grid-template-areas: 
   "."
-  "registraion_box"
+  "content"
   "."
   ;
 }
 
 .registration_box{
-  height: 1fr;
-  width: 400px;
-  padding: 50px;
+  grid-area: content;
   border: 1px solid gray;
-  margin: auto;
   display: flex;
   flex-direction: column;
-}
-.registration_box input{
-  display: block;
-  width: 100%;
-}
-
-.prepage, .register{
-  border: 0;
-  color: gray;
-  background: white;
+  margin: auto;
+  width: 400px;
+  padding: 50px 50px 50px 50px;
+  align-items: center;
 }
 
-.prepage:hover, .register:hover{
-  color: black;
-}
-
-.registration_text {
-  font-size: 15px;
-  color: gray;
-  padding: 10px 0px 5px 5px;
-}
-
-.outsrc_number_input{
-  width: 300px;
+.registration_text{
+margin-top: 10px;
+margin-bottom: 5px;
+padding-left: 10px;
+color: gray;
 }
 
 .registration_input{
-  height: 1fr;
-  padding: 20px 0px 20px 5px;
+  width: 380px;
   border: 1px solid gray;
-  margin: auto;
+  padding: 20px 10px 20px 10px ;
 }
 
 .is_exist{
-  width:400px;
+  width: 402px;
+  border: 1px solid gray;
+  padding: 0px;
+  color: white;
+  background: black;
+  font-size: 15px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.is_exist:hover{
+  background: gray;
+}
+.is_exist:active{
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.notice{
+  text-align: center;
+}
+
+.registration_submit{
+  width:100%;
+  padding: 15px 0px 15px 0px;
   color: white;
   background: black;
   font-size: 20px;
+}
+.registration_submit:hover{
+  background: gray;
+}
+.registration_submit:active{
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.prepage{
+  border: 0;
+  color: gray;
+  background: white;
 }

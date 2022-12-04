@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
-  <link rel="stylesheet" href="manager.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
-<nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.html">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
-</nav>
-<main>
-  <h1>외주업체</h1>
-  <h2>재고</h2>
+  <nav>
+    <a href="user_stock.html">재고</a>
+    <a href="user_out_bound.html">출고</a>
+    <a href="user_order.html">주문</a>
+    <a href="user_info.html">회원 정보 수정</a>
+  </nav>
+  <main>
+    <h1>관리자</h1>
+    <h2>재고</h2>
     <?php
+<<<<<<<< HEAD:user/user_stock_update.php
         $no_pk = $_POST["consumerName"];
         $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
+========
+        $year = $_POST["Year"];
+        $month = explode("month",$_POST["Month"]);
+        $day =explode("day",$_POST["Day"]);
+        $month = strval($month[1]);
+        $day = strval($day[1]);
+        $dt = $year.$month.$day;
+        $database = "warehouse";
+        $connect = mysql_connect('localhost','lcw','chaewon')
+>>>>>>>> origin/sungmin_css_branch:manager/manager_stock_lookup.php
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query = "select * from product_tb where product_no_pk = '$no_pk'"; //manager_stock.html에서 입력받은 상품명이 포함된 데이터검색
@@ -45,6 +59,7 @@
 
 ?> 
 
+<<<<<<<< HEAD:user/user_stock_update.php
 <form action="user_stock_update2.php"  method="post">
 <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
 <INPUT type="hidden"  id="product_no_pk" name="product_no" value="<?php echo $no_pk?>" />
@@ -52,12 +67,15 @@
 가격 : <INPUT type="text" size=5 name="product_price" ><br>
 <INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
 </form>
+========
+    ?>
+>>>>>>>> origin/sungmin_css_branch:manager/manager_stock_lookup.php
 
-</main>
-    
+  </main>
 
-<footer>footer</footer>
+  <footer>footer</footer>
 
 
 </body>
+
 </html>

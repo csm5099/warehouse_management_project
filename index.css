@@ -1,12 +1,7 @@
-html{
-  background-color: rgb(12, 26, 52);
-}
-
 main{
   display: flex;
   flex-direction: column;
   margin: auto;
-  background-color: rgb(12, 26, 52);
 }
 
 .index_button{

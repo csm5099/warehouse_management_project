@@ -1,4 +1,31 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../grid_4_sections.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
+  <nav>
+    <a href="manager_stock.html">재고</a>
+    <a href="manager_out_bound.php">출고</a>
+    <a href="manager_in_bound.php">입고</a>
+    <a href="manager_membership.php">회원관리</a>
+    <a href="manager_logout.php">로그아웃</a>
+  </nav>
+  <main>
+    <h1>관리자</h1>
+    출고 조회 결과
+    <?php
 
 // �Է¹��� ������� �������� - ����
 
@@ -12,7 +39,7 @@ echo $product_no_pk;//manger_out_bound_search.php ���� �Ϸù�ȣ��
     $result=$product_sales-$outbound_amount;
     
     $database="warehouse";
-    $connect= mysql_connect('localhost','root','root') or die("mySQL ���� ���� Error!");
+    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ���� ���� Error!");
 
     mysql_select_db($database, $connect);
 
@@ -21,13 +48,10 @@ echo $product_no_pk;//manger_out_bound_search.php ���� �Ϸù�ȣ��
 
     $result = mysql_query($query, $connect);
 
-
-
     print "<center><font color=red size=5><b> ��� ��� </b></font></center>";
     print "<table border=1 align=center>";
     print "<tr><td> �Ϸù�ȣ </td><td> ���� </td><td> ��ǰ�� </td><td>���� </td><td> ���� </td>";
     print "<td> ����� </td><td> ���� </td><td> �԰��� </td></tr><br>";
-    
     
     $query = "select * from product_tb where product_no_pk= '$product_no_pk' ";
     $result = mysql_query($query,$connect);
@@ -38,9 +62,20 @@ echo $product_no_pk;//manger_out_bound_search.php ���� �Ϸù�ȣ��
     
     print "</table><br>"; //�±� �߰�
 
-
     mysql_close($connect);
 
-
-
 ?>
+
+
+    <!--  
+      print "<HTML><head><META http-equiv='refresh' content='0;
+      url=./manager_out_bound.php'></head></head>";
+    -->
+  </main>
+  <footer>
+    footer
+  </footer>
+
+</body>
+
+</html>
