@@ -40,17 +40,6 @@
   </form>
 
 
-<?php
-
-
-  ?>
-
-
-
-
-
-
-
 </main>
 <footer>footer</footer>
 </body>

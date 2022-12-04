@@ -38,54 +38,13 @@
     <select name="search">
     <option value="product_no_pk">상품 일련번호</option>
     </select>
-
     <input type="sumbit" name="outsrc_no" size="40"> <button>조회</button> 
     </form>
 
-    <INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
+    <INPUT type="submit" value="수정"> 
           </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <?php
-        $name = $_POST["consumerName"];
-        $database = "warehouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
-                            or die("mySQL 서버 연결 Error!");
-        mysql_select_db($database, $connect);
-        $query = "select * from product_tb where product_nm = '$name'"; //manager_stock.html에서 입력받은 상품명이 포함된 데이터검색
-        $result = mysql_query($query,$connect);
-
-        print "$product_dt";
-        
-        print "<center><font color=black size=5><b>재고 수정 결과</b></font></center>";
-        print "<table border=1 align=center>";
-        print "<tr><td> 일련번호 </td><td> 평점 </td><td> 상품명 </td><td> 판매량 </td><td> 가격 </td>";
-        print "<td> 재고량 </td><td> 상태 </td><td> 입고일 </td></tr><br>";
-
-
-        $num = mysql_num_rows($result);
-        for($i=0; $i<$num; $i++){
-            $ans = mysql_fetch_row($result);
-            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-            print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
-        }
- mysql_close($connect);
-
-?> 
 
 
 

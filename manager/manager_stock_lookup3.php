@@ -34,7 +34,7 @@
 <form name="form" method="post" action="./manager_stock_lookup3.php">  
   &nbsp;&nbsp;
   <select name="search">
-  <option value="outsrc_no">상품 일련번호</option>
+  <option value="product_no_pk">상품 일련번호</option>
   </select>
 
   <input type="sumbit" name="search" size="40"> <button>조회</button> 
@@ -55,7 +55,7 @@
 
         print "<center><font color=black size=5><b>재고 상세 조회</b></font></center>";
         print "<table border=1 align=center>";
-        print "<tr><td> 일련번호 </td><td> 상품명</td><td> 업체명 </td><td> 비밀번호 </td></tr><br>";
+        print "<tr><td>외주업체<tr><td> 일련번호 </td><td> 상품명</td><td> 판매량 </td><td> 가격</td><td>재고량<td></tr><br>";
 
         $num = mysql_num_rows($result);
         for($i=0; $i<$num; $i++){
