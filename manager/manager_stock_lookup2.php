@@ -31,13 +31,12 @@
 
     </div>
 
-<form name="form" method="post" action="./manager_membership_delete.php">  
+    <form name="form" method="post" action="./manager_stock_lookup3.php">  
   &nbsp;&nbsp;
-  <select name="delete">
-  <option value="outsrc_no">사업자번호</option>
+  <select name="search">
+  <option value="product_no_pk">상품 일련번호</option>
   </select>
-
-  <input type="sumbit" name="outsrc_no" size="40"> <button>삭제</button> 
+  <input type="sumbit" name="product_no_pk" size="40"> <button>조회</button> 
   </form>
 
 
