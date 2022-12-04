@@ -4,7 +4,7 @@ $modify = $_POST['outsrc_no'];
 
 $database = "warehouse";
 
-$connect=mysql_connect('localhost', 'lcw', 'chaewon')  or die("mySQL ¼­¹ö ¿¬°á Error!");
+$connect=mysql_connect('localhost', 'lcw', 'chaewon')  or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
 mysql_select_db($database, $connect);
 
@@ -12,9 +12,9 @@ $query = "SELECT * FROM outsrc WHERE outsrc_no='$modify'";
 
 $result= mysql_query($query, $connect);
 
- 	print "<center><font color=blue size=5><b>Á¶È¸µÈ È­¸é  </b></font></center>";
+ 	print "<center><font color=blue size=5><b>ï¿½ï¿½È¸ï¿½ï¿½ È­ï¿½ï¿½  </b></font></center>";
  	print "<table border=1 align=center>";
- 	print "<tr><td>¾÷Ã¼¸í</td><td>ÀüÈ­¹øÈ£</td><td>»ç¾÷ÀÚ¹øÈ£</td><td>ºñ¹Ð¹øÈ£</td></tr><br>";
+ 	print "<tr><td>ï¿½ï¿½Ã¼ï¿½ï¿½</td><td>ï¿½ï¿½È­ï¿½ï¿½È£</td><td>ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£</td><td>ï¿½ï¿½Ð¹ï¿½È£</td></tr><br>";
     
 
 
@@ -22,12 +22,12 @@ $result= mysql_query($query, $connect);
 ?>
 
 <div style="position:absolute; right:550px; top: 200x;">
-   <form name="form" method="post"  action="./manager_modify_input.php">  
-     <input type="submit" name="outsrc_no" value="»èÁ¦">
-     </form>
+  <form name="form" method="post" action="./manager_modify_input.php">
+    <input type="submit" name="outsrc_no" value="ï¿½ï¿½ï¿½ï¿½">
+  </form>
 
 </div>
-     
+
 
 <?php
     $num= mysql_num_rows($result);
@@ -43,8 +43,8 @@ $result= mysql_query($query, $connect);
  	mysql_close($connect);
     ?>
 
-  	
-    
+
+
 
 
 </HTML>

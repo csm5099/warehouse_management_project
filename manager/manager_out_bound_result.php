@@ -57,5 +57,3 @@ echo " number $product_no_pk";   //�Ϸù�ȣ �� �Ѿ��
 
 
 ?>
-
-
