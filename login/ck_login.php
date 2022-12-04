@@ -1,5 +1,5 @@
 <?php
-
+//12:42
 function login($ID, $PW){
     global $con;
     //global $table;
