@@ -39,11 +39,11 @@
     }
 
     #update 쿼리
-    $query1 = "update user set outsrc_passwd = $new_passwd where outsrc_no = $outsrc_no";
+    $query1 = "update user set outsrc_passwd = $new_passwd where outsrc_no_pk = $outsrc_no";
     $result1 = mysql_query($query1,$connect);
 
     #변경 확인
-    $query2 = "select * from user where  outsrc_no = $outsrc_no";
+    $query2 = "select * from user where  outsrc_no_pk = $outsrc_no";
     $result2 = mysql_query($query2,$connect);
     $ans = mysql_fetch_row($result2);
     print "<br>회원 수정: $ans[0], $ans[1], $ans[2], $ans[3] <br><br>";

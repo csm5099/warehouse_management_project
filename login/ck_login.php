@@ -1,88 +1,122 @@
 <?php
-//chaewon5
-function login($ID, $PW){
+    $ID=$_POST['ID']; 
+    $PW=$_POST['PW'];
+    $idtype=$_POST['idtype']; 
+
+function login($ID, $PW, $idtype){
     global $con;
     global $table;
     global $errormsg;
-    //abcd
 
-    $ID=$_POST['ID']; 
-    $PW=$_POST['PW'];
+    $database="warehouse";
+    $connect= mysql_connect('localhost','djkim','pass') or die("mySQL ì„œë²„ ì—°ê²° Error!");
 
-    echo "$ID";
-    echo"<br>";
-    echo "$PW";  
-    // µ¥ÀÌÅÍ ³Ñ¾î¿È 
+            mysql_select_db($database, $connect);
+    $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
+    $result=mysql_query($query, $connect);
+    $row = mysql_fetch_array($result);
+    
+    $dbid=$row[0];
+    $dbPW=$row[1];
 
-    if(!isset($_COOKIE["isOK"])){
-        $query="select outsrc_no, outsrc_pw from warehouse.outsrc_tb where outsrc_no='$ID'";
-
-        $result=mysql_query($query, $con);
-        $row = mysql_fetch_array($result);
-        // return $row;
-
-        echo "$row";
-
-        if($row[0] == ""){
-            $errormsg="°èÁ¤ÀÌ ¾ø½À´Ï´Ù";
-            return 0;
+    if($idtype==1 AND $ID==1){
+    
+        if(!isset($_COOKIE["manager"])){
+            
+            if($row[0] == ""){
+                $errormsg="ê´€ë¦¬ì ê³„ì •ì´ ì•„ë‹™ë‹ˆë‹¤";
+                return 0; 
+            }
+            else {
+               
+                if($dbid==$ID AND $dbPW == $PW){
+                    SetCookie("manager", $ID, time()+10, "/");
+                    return 1;
+                }
+                else {
+                    $errormsg="ê´€ë¦¬ìë‹˜ íŒ¨ìŠ¤ì›Œë“œê°€ í‹€ë ¸ìŠµë‹ˆë‹¤";
+                    return 0;
+                }
+            }
         }
-        else 
-        {
-            $dbid=$row[0];
-            $dbPW = $row[1];
+        elseif($dbid==$ID AND $dbPW == $PW ){
+                SetCookie("manager", $ID, time()+10, "/");
+                return 1;
+        }
+        
+    }
 
-            if($dbid==$ID AND $dbPW == $PW){
-                SetCookie("isOK", $ID, time()+10, "/");
+    else{   
+        if($idtype==2 AND $ID!=1){
+           
+            if(!isset($_COOKIE["user"])){
+                                
+                // return $row;
+                if($row[0] == ""){
+                    $errormsg=" ê³„ì •ì´ ì—†ìŠµë‹ˆë‹¤";
+                    return 0;
+                }
+                else 
+                {                
+                    if($dbid==$ID AND $dbPW == $PW ){
+                        SetCookie("user", $ID, time()+10, "/");
+                        return 1;
+                    }
+                    else {
+                        $errormsg= $ID."ë‹˜ íŒ¨ìŠ¤ì›Œë“œê°€ í‹€ë ¸ìŠµë‹ˆë‹¤";
+                        return 0;
+                    }
+                }
+            }
+            else if($dbid==$ID AND $dbPW == $PW ){
+                SetCookie("user", $ID, time()+10, "/");
                 return 1;
             }
-
-            else {
-                $errormsg=$ID."´Ô ÆĞ½º¿öµå°¡ Æ²·È½À´Ï´Ù";
-                return 0;
-            }
         }
-    }
-    else // if(!isset($isOK)ÀÇ else ºÎºĞ
-    {
-        SetCookie("isOK", $ID, time()+10, "/");
-        return 2;
+        else{
+            $errormsg="ì ‘ê·¼í• ìˆ˜ ì—†ëŠ” ê³„ì •ì…ë‹ˆë‹¤";
+        }
     }
 }
 
 $table="t_cookie";
-
-$con=mysql_connect('localhost', 'lcw','chaewon');
-mysql_select_db('warehouse',$con);  
-$login_result = login($ID, $PW); 
-//print_r($login_result);
+$con=mysql_connect('localhost', 'djkim','pass');
+mysql_select_db('pass',$con);  //db ì˜¤í”ˆ
+$login_result = login($ID, $PW, $idtype);  //ì•ì—ì„œ ì •ì˜í•œ login í•¨ìˆ˜ í˜¸ì¶œ 
 ?>
-
 <HTML>
-<HEAD><TITLE>·Î±×ÀÎ</TITLE></HEAD>
+<HEAD><TITLE>ë¡œê·¸ì¸</TITLE></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
-<?  // 8ÀÚ¸® ÀÌ»ó, ´ë¼Ò¹®ÀÚ Çã¿ë 
-if($login_result == 0) {  //ÆĞ½º¿öµå°¡ Æ²¸®¸é 0¹İÈ¯
-    print $errormsg."<br>";
-   // print "<font color=blue size=4>°èÁ¤ÀÌ ¾ø°Å³ª ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù.</font></center><br>";
+<?
+if($login_result == 0) {  //íŒ¨ìŠ¤ì›Œë“œê°€ í‹€ë¦¬ë©´ 0ë°˜í™˜
+    print $errormsg."<br><br>";
     print "<table align='center'><tr>
-    <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ¸ŞÀÎÈ­¸éÀ¸·Î °¡±â</a></font></td></tr></table></BODY></HTML>";
+    <td align=center bgcolor='#000099'><font color=white><a href='../login/login.html'>
+    ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ê°€ê¸°</a></font></td></tr></table></BODY></HTML>";
+   
 } 
-
-else 
-{
-    if($login_result == 1) {  //¾ÆÀÌµğ¿Í ºñ¹ø ¸ğµÎ db¿Í µ¿ÀÏÇÏ¸é 
+else {
+        print $idtype;
+        if($idtype==1){  //ì•„ì´ë””ì™€ ë¹„ë²ˆ ëª¨ë‘ dbì™€ ë™ì¼í•˜ë©´ 
+        echo "<script>location.href='../manager/manager.html'</script>";
+        }else
         echo "<script>location.href='../user/user.html'</script>";
-    }
-
-    if($login_result == 2) {  //ÄíÅ° ÀÌ¹Ì °¡Áö°í ÀÖÀ» °æ¿ì 
-        print $_POST['ID']."´Ô ÀÌ¹Ì ÀÎÁõµÇ½Å ºĞÀÔ´Ï´Ù. 
-            <br>À¯È¿½Ã°£ÀÌ 10ÃÊ ¿¬ÀåµÇ¾ú½À´Ï´Ù"; 
-    }
 }
+//print $login_result;
 ?>
 
 
 </center>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+    </body>
+    </html>

@@ -1,5 +1,7 @@
 <?php
 //외주업체 삭제 
+ 
+
     $outsrc_no = $_POST['outsrc_no'];
 
     $database = "warehouse";
