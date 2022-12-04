@@ -12,9 +12,9 @@
 </header>
 <nav>
   <a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.html">출고</a>
-  <a href="manager_in_bound.html">입고</a>
-  <a href="manager_membership.html">회원관리</a>
+  <a href="manager_out_bound.php">출고</a>
+  <a href="manager_in_bound.php">입고</a>
+  <a href="manager_membership.php">회원관리</a>
   <a href=""></a>
 </nav>
 <main>

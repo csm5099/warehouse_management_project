@@ -9,35 +9,36 @@
 <body>
 <header>header</header>
 <main>
-  <form action="./ck_login.php" method=post>   
+  <div class="empty1">
+  </div>
 
-    <div class="ID_">아이디 : </div>
-    <input class="id" type="text" name="ID" placeholder="아이디를 입력해주세요." required>
-
-    <hr>
-    <div class="PW_">비밀번호 : </div>
-    <input class="pw" type="password" name="PW" placeholder="비밀번호를 입력해주세요."required>
-    
-    <hr>
-    <!--관리자, 외주업체를 각각 value 1,2로 하여 각각의 페이지로 연결 -->
-    관리자
-    <input type="radio" name="idtype" value="1" id="admin"> 
-
-    외주업체
-    <input type="radio" name="idtype" value="2" id="outsrc">
-
-    <hr> 
-    <input type="submit" value=" 관리자 로그인" onclick="location.href='../manager/manager.html'">
-    
-    <input type="submit" value="외주업체 로그인">
-
-
-    <hr>
-    <input type="button" value="뒤로가기" onclick="location.href='../index.html'"> &nbsp;  &nbsp;
-    <input type="button" value="회원가입" onclick="location.href='./registration.html'"> <br> <br>
-
-    
-  </form>
+  <div class="login">
+    <form action="ck_login.php" method=post>
+      <div class="etc">
+        <label class="radio_button"><input type="radio" value="1" name="idtype" id="admin" checked="checked"><span>관리자</span></label>
+        <label class="radio_button"><input type="radio" value="2" name="idtype" id="outsrc"><span>외주업체</span></label>
+      </div>
+      <hr>
+      <input class="id" type="text" name="ID" placeholder="아이디" required>
+      <br>
+      <input class="pw" type="password" name="PW" placeholder="비밀번호" required>
+      <hr>
+      <input type="submit" class="login_box" value="로그인" >
+      <hr>
+      <div class="etc">
+        
+        <input class="prepage" type="button" value="뒤로가기" onclick="location.href='../index.html'">
+        <input class="register" type="button" value="회원가입" onclick="location.href='./registration.html'">
+      </div>
+    </form>
+  </div>
+   <!--         
+  <div class="empty2">
+    <form action="ck_login.php">
+      <input type="button" value="로그인" onclick="location.href='../ck_login'">
+    </form>
+  </div>
+          --> 
 </main>
 <footer>footer</footer>
 </body>

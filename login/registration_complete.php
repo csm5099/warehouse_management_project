@@ -1,15 +1,15 @@
 <?php
 
-// 회원가입(registration.html) 에서 제출하면 --님 회원가입이 완료되었습니다.  창 띄워주는 페이지
+// ȸ������(registration.html) ���� �����ϸ� --�� ȸ�������� �Ϸ�Ǿ����ϴ�.  â ����ִ� ������
 
     $database = "warehouse";
 
-    $connect=mysql_connect('localhost', 'lcw', 'chaewon')  
+    $connect=mysql_connect('localhost', 'root', 'root')  
     or die("mySQL 서버 연결 Error!");
 
     mysql_select_db($database, $connect);
 
-    $query = "select * from outsrc_tb";
+    $query = "select * from outsrc";
 
     $result= mysql_query($query, $connect);
 
@@ -21,6 +21,8 @@
    
 
     mysql_close($connect);
+
+    echo "$outsrc_no";
 
     ?>
 
@@ -36,3 +38,5 @@
 
     </body>
     </html>
+
+</html>

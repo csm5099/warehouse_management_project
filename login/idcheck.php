@@ -1,7 +1,6 @@
 <?php
     $database="warehouse";
-    $connect= mysql_connect('localhost','lcw','chaewon') 
-    or die("mySQL 서버 연결 Error!");
+    $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
     mysql_select_db($database, $connect);
 
@@ -12,7 +11,7 @@
     $result = mysql_query($query, $connect);
     //$num= mysql_num_rows($result);
     $num=mysql_num_rows($result);
-    print $num;
+
 
     if(!$num){  
         echo "<span style='color:red;'></span> 사용가능합니다.";
