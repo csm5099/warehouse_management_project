@@ -21,7 +21,7 @@
   <h2>재고</h2>
     <?php
         $no_pk = $_POST["consumerName"];
-        $database = "wearhouse";
+        $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
