@@ -20,12 +20,12 @@
   <h1>외주업체</h1>
   <h2>재고</h2>
     <?php
-        $name = $_POST["consumerName"];
-        $database = "warehouse";
+        $no_pk = $_POST["consumerName"];
+        $database = "wearhouse";
         $connect = mysql_connect('localhost','lcw','chaewon')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
-        $query = "select * from product_tb where product_nm = '$name'"; //manager_stock.html에서 입력받은 상품명이 포함된 데이터검색
+        $query = "select * from product_tb where product_no_pk = '$no_pk'"; //manager_stock.html에서 입력받은 상품명이 포함된 데이터검색
         $result = mysql_query($query,$connect);
 
         print "$product_dt";
@@ -47,15 +47,9 @@
 
 <form action="user_stock_update2.php"  method="post">
 <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-상품명 : <?php print"$name <br>"?>
-<INPUT type="hidden"  id="product_nm" name="product_nm" value="<?php echo $name?>" />
-일련번호 : <INPUT type="text" size=5 name="product_no" ><br>
-평점 : <INPUT type="text" size=5 name="product_grade" ><br>
-판매량 : <INPUT type="text" size=5 name="product_sales" ><br>
+<INPUT type="hidden"  id="product_no_pk" name="product_no" value="<?php echo $no_pk?>" />
+상품명 : <INPUT type="text" size=5 name="product_nm" ><br>
 가격 : <INPUT type="text" size=5 name="product_price" ><br>
-재고량  : <INPUT type="text" size=5 name="product_amt" ><br>
-상태 : <INPUT type="text" size=5 name="product_state" ><br>
-입고일 : <INPUT type="text" size=5 name="product_dt" ><br>
 <INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>	
 </form>
 

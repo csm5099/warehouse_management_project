@@ -22,40 +22,37 @@
   <h2>재고</h2>
     <?php
         #변수 선언
-        $Name = $_POST["name"]; //상품 명
-        $Price = (int)$_POST["price"];  //가격
-        $Price = (int)$_POST["price"];  //일련번호
-        $Amt = 0  //재고량
+        $no_pk = (int)$_POST["product_no"];
+        $Name = $_POST["product_nm"];
+        $Price = (int)$_POST["product_price"];
+        $Amt = 0;
         
         #db 연결
-        $database = "warehouse";
+        $database = "wearhouse";
         $connect = mysql_connect('localhost','lcw','chaewon')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
 
-        #NO_PK 최대값 구하기
-        $query = "select * from product_tb where product_no_pk = (select max(product_no_pk) from product_tb)";
-        $result = mysql_query($query,$connect);
-        $ans = mysql_fetch_row($result);
-        $no_pk = (int)$ans[0]+1;
-        print "$no_pk";
+       # $query = "select * from product_tb where product_no_pk = (select max(product_no_pk) from product_tb)";
+       # $result = mysql_query($query,$connect);
+       # $ans = mysql_fetch_row($result);
+       # $no_pk = (int)$ans[0]+1;
+       # print "$no_pk";
+
         #insert 쿼리
-        $query1 = "insert into product_tb values($no_pk,$Grade,$Name,$Sales,$Price,$Amt,$State,$Dt)";
-        $result1 = mysql_query($query,$connect);
+        $query1 = "insert into product_tb(product_no_pk, product_nm, product_price, product_amt) values($no_pk,$Name,$Price,$Amt)";
+        $result1 = mysql_query($query1,$connect);
 
         print "<center><font color=red size=5><b>$dt 재고 추가 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
-        print "<tr><td> 일련번호 </td><td> 평점 </td><td> 상품명 </td><td> 판매량 </td><td> 가격 </td>";
-        print "<td> 재고량 </td><td> 상태 </td><td> 입고일 </td></tr><br>";
-        ;
+        print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
         
-        $query = "select * from product_tb where product_no_pk = (select max(product_no_pk) from product_tb)";
+        $query = "select product_no_pk, product_nm, product_price, product_amt  from product_tb where product_no_pk = $no_pk";
         $result = mysql_query($query,$connect);
         for($i=0; $i<1; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-            print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
+            print "</td><td>".$ans[3]."</td></tr><br>";
         }
         print "</table><br>";  //태그추가
         mysql_close($connect);

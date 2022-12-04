@@ -1,56 +1,53 @@
 <HTML>
+<meta charset="UTF-8">
 <?php
+        $database="wearhouse";
+        $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ì„œë²„ ì—°ê²° Error!");
     
-//product_sales = ¼ö·® 
-//¼ö·®- Ãâ°í·®= ³²Àº ¼ö·® 
-// »óÇ° Á¶È¸ÇØ¼­ Ãâ°í·® ÀÔ·Â ÈÄ Ãâ°í 
-
-    $product_no_pk=$_POST['product_no_pk'];
-    echo $product_no_pk; //°ª Ãâ·ÂµÊ 
-
-    $database = "warehouse";
-    $connect = mysql_connect('localhost','lcw','chaewon')
-                        or die("mySQL ¼­¹ö ¿¬°á Error!");
-
-    mysql_select_db($database, $connect);
-
-    if($product_no_pk != "")
-    $query = "select * from product_tb where product_no_pk like '$product_no_pk'"; 
+        mysql_select_db($database, $connect);
     
-    $result= mysql_query($query, $connect);
-    
-    print "<center><font color= black size=5><b>Á¶È¸ °á°ú </b></font></center>";
-    print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£</td><td>ÆòÁ¡</td><td>¼ö·®</td><td>x
-    </td><td>°¡°İ</td><td>Àç°í·®</td><td>»óÅÂ</td><td>ÀÔ°íÀÏ</td><td><center>Ãâ°í</center></td></tr>";
-    
-    $num= mysql_num_rows($result);
-
-    for($i=0; $i<$num; $i++) {
-        $ans= mysql_fetch_row($result);
+        $no_pk=$_POST['product_no_pk'];
+        $query2 = "select delevery_adt from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK && delivery_tb.product_no_pk = $no_pk";
         
-        $outbound_button = '
-        <form action="./manager_out_bound_result.php" method="POST">
-        <input type="text" name="outbound_amount" size=20  placeholder="Ãâ°í·®À» ÀÔ·ÂÇÏ¼¼¿ä" required>
-        <input type="hidden" name="product_no_pk" value="'.$product_no_pk.'">
-        <input type="submit" value="Ãâ°í">
-        </form>
-  ';
-  
+        $present_dt = (string)date("Ymd");
+        $result2 = mysql_query($query2, $connect);
+        $ans1=mysql_fetch_row($result2);
 
-        print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-        print "<td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5];
-        print "<td>".$ans[6]."</td><td>".$ans[7]."</td><td>".$outbound_button."</td></tr><br>";
-    }
-    
-    print "</table><br>";
+        (int)$delevery_adt=$ans1[0];
+        (int)$present_dt;
 
+    if($delevery_adt<$present_dt)
+        echo "í˜„ì¬ ë°°ì†¡ì¤‘ì…ë‹ˆë‹¤.";
+    else    
+        echo "ìƒí’ˆì´ ë„ì°©í–ˆìŠµë‹ˆë‹¤.";  
 
+        $query= "select * from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK;";
+        $result = mysql_query($query, $connect);
 
-    mysql_close($connect); 
-    //  À§ÀÇ for¹®¿¡ <input type=hidden name=product_no_pk >  »ç¿ëÇÒ ÇÊ¿ä ¾øÀ½ 
+        print "<center><font color=black size=5><b>ì…ê³ í˜„í™©</b></font></center>";
+        print "<table border=1 align=center>";
+        
+        print "<tr><td> ì¸ë±ìŠ¤</td><td> ì†¡ì¥ë²ˆí˜¸</td><td> ì¼ë ¨ë²ˆí˜¸</td>
+        <td> ë°°ì†¡ì¼ì</td><td> ë„ì°©ì¼ì</td><td> ë°°ì†¡ìˆ˜ëŸ‰</td>
+        <td> ì‚¬ì—…ì</td><td> ì¼ë ¨ë²ˆí˜¸</td><td>ìƒí’ˆëª…</td><td>íŒë§¤ëŸ‰
+        </td><td>ê°€ê²©</td><td>ì¬ê³ ëŸ‰</td></tr>";
+      
+        $num=mysql_num_rows($result);
+       
+        
+        for($i=0; $i<$num; $i++) {
+          $ans=mysql_fetch_row($result);
+        
+          print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
+          print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
+          print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td><td>".$ans[8]."</td>
+          <td>".$ans[9]."</td><td>".$ans[10]."</td><td>".$ans[11]."</td></tr><br>";
+          }
+        
+          print "</table>";
+
+    mysql_close($connect);
 ?>
-
 
 <!--  
      print "<HTML><head><META http-equiv='refresh' content='0;
