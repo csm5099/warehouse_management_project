@@ -47,12 +47,12 @@
         print "<table border=1 align=center>";
         print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
         
-        $query = "select product_no_pk, product_nm, product_price, product_amt  from product_tb where product_no_pk = $no_pk";
+        $query = "select * from product_tb where product_no_pk = $no_pk";
         $result = mysql_query($query,$connect); 
         for($i=0; $i<1; $i++){
             $ans = mysql_fetch_row($result);
-            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td></tr><br>";
+            print "<tr><td>".$ans[1]."</td><td>".$ans[2]."</td><td>".$ans[4];
+            print "</td><td>".$ans[5]."</td></tr><br>";
         }
         print "</table><br>";  //태그추가
         mysql_close($connect);
