@@ -29,7 +29,7 @@
 
     #db 연결
     $database = "warehouse";
-    $connect = mysql_connect('localhost','lcw','chaewon')
+    $connect = mysql_connect('localhost','root','root')
                         or die("mySQL 서버 연결 Error!");
     mysql_select_db($database, $connect);
 
