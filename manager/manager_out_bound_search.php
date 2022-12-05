@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="../grid_4_sections.css">
+  <link rel="stylesheet" href="manager.css">
+  <title>user</title>
 </head>
+<body>
+  <header>
+    <a href="../login/login.html"> header</a>
+  </header>
+
 
 <body>
   <header>
 
   </header>
   <nav>
-
+  <a href="manager_stock.html">재고</a>
+  <a href="manager_out_bound.php">출고</a>
+  <a href="manager_in_bound.php">입고</a>
+  <a href="manager_membership.php">회원관리</a>
+  <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
     <?php
+        # DB 연결
         $database="warehouse";
         $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
         mysql_select_db($database, $connect);
-    
+        
         $no_pk=$_POST['product_no_pk'];
         $query2 = "select delevery_adt from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK && delivery_tb.product_no_pk = $no_pk";
         

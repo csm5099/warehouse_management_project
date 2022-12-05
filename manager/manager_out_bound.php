@@ -26,7 +26,8 @@
     <form name="form" method="post" action="./manager_out_bound_search.php">
       &nbsp;&nbsp;
       <select name="modify">
-        <option value="title">일련번호</option>
+        <option value="product_no_pk" name =>일련번호</option>
+        <option value="delevery_idt">송장번호</option>
 
       </select>
       <!-- 일련번호 입력-->

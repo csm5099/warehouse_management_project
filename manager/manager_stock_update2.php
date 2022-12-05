@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <link rel="stylesheet" href="manager.css">
   <title>user</title>
 </head>

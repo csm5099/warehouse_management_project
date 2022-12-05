@@ -20,7 +20,21 @@
 <main>
   <h1>관리자</h1>
   <h2>입고관리</h2>
+
+  <form name="form" method="post" action="./manager_out_bound_search.php">
+      &nbsp;&nbsp;
+      <select name="modify">
+        <option value="title">일련번호</option>
+        <option value="title">송장번호</option>
+
+      </select>
+      <!-- 일련번호 입력-->
+      <input type="sumbit" name="product_no_pk" size="40"> <button>조회</button>
+
+    </form>
   <?php
+  
+
   $product_no = $_POST['product_no'];
  
   $database="warehouse";
