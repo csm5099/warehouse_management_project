@@ -112,10 +112,12 @@ else
 
 
 </center>
-
-
-
-</center>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../grid_3_sections.css">
+  <link rel="stylesheet" href="login.css">
+  <title>login</title>
+</head>
 
