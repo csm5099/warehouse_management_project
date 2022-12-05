@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
+  <link rel="stylesheet" href="manager.css"></head>
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>manager</title>
 </head>
 
