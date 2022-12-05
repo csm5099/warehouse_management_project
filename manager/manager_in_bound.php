@@ -27,7 +27,7 @@
   $product_no = $_POST['product_no'];
  
   $database="warehouse";
-  $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL 서버 연결 Error!");
+  $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
   mysql_select_db($database, $connect);
   $query= "SELECT * FROM product_tb";
