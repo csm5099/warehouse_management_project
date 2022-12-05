@@ -28,7 +28,6 @@ function login($ID, $PW, $idtype){
                 return 0; 
             }
             else {
-               
                 if($dbid==$ID AND $dbPW == $PW){
                     SetCookie("manager", $ID, time()+10, "/");
                     return 1;
@@ -48,7 +47,6 @@ function login($ID, $PW, $idtype){
 
     else{   
         if($idtype==2 AND $ID!=1){
-           
             if(!isset($_COOKIE["user"])){
                                 
                 // return $row;
@@ -85,10 +83,14 @@ mysql_select_db('pass',$con);  //db 오픈
 $login_result = login($ID, $PW, $idtype);  //앞에서 정의한 login 함수 호출 
 ?>
 <HTML>
-<HEAD><TITLE>�α���</TITLE></HEAD>
+
+<HEAD>
+  <TITLE>�α���</TITLE>
+</HEAD>
+
 <BODY link='white' vlink='white' alink='orange'>
-<center>
-<?  // 8�ڸ� �̻�, ��ҹ��� ��� 
+  <center>
+    <?  // 8�ڸ� �̻�, ��ҹ��� ��� 
 if($login_result == 0) {  //�н����尡 Ʋ���� 0��ȯ
     print $errormsg."<br>";
    // print "<font color=blue size=4>������ ���ų� ��й�ȣ�� Ʋ���ϴ�.</font></center><br>";
@@ -112,7 +114,4 @@ else
 ?>
 
 
-</center>
-
-
-
+  </center>
