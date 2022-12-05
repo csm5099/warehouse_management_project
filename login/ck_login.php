@@ -39,7 +39,7 @@ function login($ID, $PW, $idtype){
                 }
             }
         }
-        elseif($dbid==$ID AND $dbPW == $PW ){
+        else if($dbid==$ID AND $dbPW == $PW ){
                 SetCookie("manager", $ID, time()+10, "/");
                 return 1;
         }
@@ -85,34 +85,38 @@ mysql_select_db('pass',$con);  //db 오픈
 $login_result = login($ID, $PW, $idtype);  //앞에서 정의한 login 함수 호출 
 ?>
 <HTML>
-<HEAD><TITLE>�α���</TITLE></HEAD>
+<HEAD><TITLE>로그인</TITLE>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title></HEAD>
 <BODY link='white' vlink='white' alink='orange'>
 <center>
-<?  // 8�ڸ� �̻�, ��ҹ��� ��� 
-if($login_result == 0) {  //�н����尡 Ʋ���� 0��ȯ
+<?  
+
+if($login_result == 0) {  
     print $errormsg."<br>";
-   // print "<font color=blue size=4>������ ���ų� ��й�ȣ�� Ʋ���ϴ�.</font></center><br>";
     print "<table align='center'><tr>
-    <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ����ȭ������ ����</a></font></td></tr></table></BODY></HTML>";
+    <td align=center bgcolor='#000099'><font color=white><a href='../login/login.html'>
+    로그인화면으로 가기</a></font></td></tr></table></BODY></HTML>";
 } 
 
 else 
 {
-    if($login_result == 1) {  //���̵�� ��� ��� db�� �����ϸ� 
-        echo "<script>location.href='../user/user.html'</script>";
+    if($login_result == 1) { 
+        if($idtype==1){
+            echo "<script>location.href='../manager/manager.html'</script>";
+        }
+        else{
+            echo "<script>location.href='../user/user.html'</script>";
+        }
     }
+}   
 
-    if($login_result == 2) {  //��Ű �̹� ������ ���� ��� 
-        print $_POST['ID']."�� �̹� �����ǽ� ���Դϴ�. 
-            <br>��ȿ�ð��� 10�� ����Ǿ����ϴ�"; 
-    }
-}
-//print $login_result;
 ?>
 
 
 </center>
-
-
+</BODY>
+<HTML>
 

@@ -9,7 +9,8 @@
 
     mysql_select_db($database, $connect);
 
-    $query = "select * from outsrc";
+    $query = "select * from outsrc_tb";
+    //tb 수정
 
     $result= mysql_query($query, $connect);
 
@@ -39,4 +40,3 @@
     </body>
     </html>
 
-</html>
