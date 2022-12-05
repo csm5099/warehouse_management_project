@@ -28,7 +28,6 @@ function login($ID, $PW, $idtype){
                 return 0; 
             }
             else {
-               
                 if($dbid==$ID AND $dbPW == $PW){
                     SetCookie("manager", $ID, time()+10, "/");
                     return 1;
@@ -48,7 +47,6 @@ function login($ID, $PW, $idtype){
 
     else{   
         if($idtype==2 AND $ID!=1){
-           
             if(!isset($_COOKIE["user"])){
                                 
                 // return $row;

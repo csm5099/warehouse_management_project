@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
+  <link rel="stylesheet" href="manager.css"></head>
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <title>manager</title>
 </head>
 
@@ -27,7 +29,7 @@
   $product_no = $_POST['product_no'];
  
   $database="warehouse";
-  $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL 서버 연결 Error!");
+  $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
 
   mysql_select_db($database, $connect);
   $query= "SELECT * FROM product_tb";
