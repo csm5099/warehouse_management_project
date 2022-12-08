@@ -9,7 +9,7 @@
 
     mysql_select_db($database, $connect);
 
-    $query = "select * from outsrc";
+    $query = "select * from outsrc_tb";
 
     $result= mysql_query($query, $connect);
 

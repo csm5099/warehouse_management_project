@@ -85,32 +85,31 @@ $login_result = login($ID, $PW, $idtype);  //앞에서 정의한 login 함수 �
 <HTML>
 
 <HEAD>
-  <TITLE>�α���</TITLE>
+  <TITLE>로그인</TITLE>
 </HEAD>
 
 <BODY link='white' vlink='white' alink='orange'>
   <center>
-    <?  // 8�ڸ� �̻�, ��ҹ��� ��� 
-if($login_result == 0) {  //�н����尡 Ʋ���� 0��ȯ
+    <?  
+if($login_result == 0) {  
     print $errormsg."<br>";
-   // print "<font color=blue size=4>������ ���ų� ��й�ȣ�� Ʋ���ϴ�.</font></center><br>";
     print "<table align='center'><tr>
-    <td align=center bgcolor='#000099'><font color=white><a href='../index.html'>
-    ����ȭ������ ����</a></font></td></tr></table></BODY></HTML>";
+    <td align=center bgcolor='#000099'><font color=white><a href='../login/login.html'>
+    로그인화면으로 가기</a></font></td></tr></table></BODY></HTML>";
 } 
 
 else 
 {
-    if($login_result == 1) {  //���̵�� ��� ��� db�� �����ϸ� 
-        echo "<script>location.href='../user/user.html'</script>";
+    if($login_result == 1) { 
+        if($idtype==1){
+            echo "<script>location.href='../manager/manager.html'</script>";
+        }
+        else{
+            echo "<script>location.href='../user/user.html'</script>";
+        }
     }
+}   
 
-    if($login_result == 2) {  //��Ű �̹� ������ ���� ��� 
-        print $_POST['ID']."�� �̹� �����ǽ� ���Դϴ�. 
-            <br>��ȿ�ð��� 10�� ����Ǿ����ϴ�"; 
-    }
-}
-//print $login_result;
 ?>
 
 
