@@ -20,7 +20,41 @@
 <main>
   <h1>외주업체</h1>
   <h2>출고</h2>
-</main>
+  <?php
+  $database="warehouse";
+  $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
+
+  mysql_select_db($database, $connect);
+
+
+  //전체 데이터 가져오기
+  $query= "select INOUT_INDEX,PRODUCT_NM,PRODUCT_OUTDT,INOUT_OUTAMT from inout_tb inner join product_tb on inout_tb.product_no_pk =product_tb.product_no_pk inner join outsrc_tb on product_tb.outsrc_no = outsrc_tb.outsrc_no";
+  $result = mysql_query($query, $connect);
+
+  print "<center><font color=black size=5><b>출고현황</b></font></center>";
+  print "<table border=1 align=center>";
+  
+  print "<tr><td> 인덱스</td><td> 상품명</td><td> 출고일</td>
+  <td> 출고량</td></tr>";
+
+  $num=mysql_num_rows($result);
+ 
+  
+  for($i=0; $i<$num; $i++) {
+    $ans=mysql_fetch_row($result);
+  
+    print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
+    print "</td><td>".$ans[3]."</td></tr><br>";
+    }
+  
+    print "</table>";
+
+mysql_close($connect);
+
+?>
+    <INPUT type="hidden" id="delevery_adt" name="delevery_adt" value="<?php echo $delevery_adt?>" />
+    <!--도착날짜manager_out_bound_search.php로 전송-->
+  </main>
 <footer>footer</footer>
 </body>
 </html>
