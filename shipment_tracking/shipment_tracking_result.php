@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_3_sections.css">
-  <link rel="stylesheet" href="">
   <title>delivery tracking
   </title>
 </head>
+
 <body>
-<header>header</header>
-<main>
-  <h1>배송 조회 결과 창</h1>
-  <?php
+  <header>
+    <a href="../index.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
+  <main>
+    <h1>배송 조회 결과 창</h1>
+    <?php
         $delivery_idt = $_POST["delivery_idt"];
         
         $database = "warehouse";
@@ -41,8 +46,9 @@
         mysql_close($connect)
         
 
-    ?> 
-</main>
-<footer>footer</footer>
+    ?>
+  </main>
+  <footer>footer</footer>
 </body>
+
 </html>
