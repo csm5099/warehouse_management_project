@@ -2,7 +2,7 @@
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
     $idtype=$_POST['idtype']; 
-
+    
 function login($ID, $PW, $idtype){
     global $con;
     //global $table;
