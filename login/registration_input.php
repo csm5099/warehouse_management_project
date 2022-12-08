@@ -8,7 +8,7 @@
                 
     mysql_select_db($database,$connect); 
 
-    $query = "insert into outsrc values('$outsrc_no','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
+    $query = "insert into outsrc_tb values('$outsrc_no','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
 
     echo "$query";  
     $result = mysql_query($query,$connect);
@@ -22,6 +22,7 @@
 insert_Data($_POST['outsrc_no'],$_POST['outsrc_telno'],$_POST['outsrc_nm'],$_POST['outsrc_pw']);
 echo $outsrc_no;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,15 +35,5 @@ echo $outsrc_no;
         <title>Document</title>
     </head>
     <body>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
 </body>
-
 </html>

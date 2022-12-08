@@ -38,7 +38,7 @@ function login($ID, $PW, $idtype){
                 }
             }
         }
-        elseif($dbid==$ID AND $dbPW == $PW ){
+        else if($dbid==$ID AND $dbPW == $PW ){
                 SetCookie("manager", $ID, time()+10, "/");
                 return 1;
         }
@@ -86,11 +86,16 @@ $login_result = login($ID, $PW, $idtype);  //앞에서 정의한 login 함수 �
 
 <HEAD>
   <TITLE>로그인</TITLE>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </HEAD>
 
 <BODY link='white' vlink='white' alink='orange'>
   <center>
     <?  
+
 if($login_result == 0) {  
     print $errormsg."<br>";
     print "<table align='center'><tr>
@@ -114,3 +119,5 @@ else
 
 
   </center>
+</BODY>
+<HTML>

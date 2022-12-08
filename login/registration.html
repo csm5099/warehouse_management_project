@@ -8,19 +8,18 @@
 </head>
 
   <script>
-  // 사업자번호(아이디) 중복체크
-  function check_id() {
-    var userid = document.getElementById("uid").value;   //form 에서 outsrc_no의 id를 uid로 설정했음
-    if(userid)  //userid로 받음
+  // 사업자번호 중복 여부
+    function check_id() {
+    var userid = document.getElementById("uid").value;   
+    if(userid)  
     {
-      url = "idcheck.php?userid="+userid;   //idcheck.php 
-      window.open(url,"chkid","width=400,height=200");   //여기서 chkid는 임의의 이름으로 새 창이 열리는 거여서 상관없음 
-    } else {
+      url = "idcheck.php?userid="+userid;   
+      window.open(url,"chkid","width=400,height=200");   
       alert("사업자번호를 입력하세요.");
     }
   }
 
-  //'이 사업자번호를 사용' 을 눌렀을 때 그 뒤의 수행
+  
   function decide(){
     document.getElementById("decide").innerHTML = "<meta charset='UTF-8'><span style='color:blue;'>사업자번호 중복 여부를 확인하세요.</span>"
     document.getElementById("decide_id").value = document.getElementById("uid").value
@@ -30,7 +29,7 @@
     document.getElementById("check_button").setAttribute("onclick", "change()")
   }
 
-  // '다른 사업자번호 사용'을 눌렀을 때 그 뒤의 수행 
+ 
   function change(){
     document.getElementById("decide").innerHTML = "<meta charset='UTF-8'><span style='color:red;'>사업자번호 중복 여부를 확인하세요.</span>"
     document.getElementById("uid").disabled = false
@@ -40,22 +39,22 @@
     document.getElementById("check_button").setAttribute("onclick", "check_id()")   
   }
 
-    // pw와 pw2가 일치하는지 체크
+    // 비밀번호 중복 체크
     function check_pw(){
-        var outsrc_pw = document.getElementById('outsrc_pw').value;
+        var outsrc_pw = document.getElementById("outsrc_pw").value;
     
 
-        if(document.getElementById('outsrc_pw').value !='' && document.getElementById('outsrc_pw2').value!=''){
-            if(document.getElementById('outsrc_pw').value==document.getElementById('outsrc_pw2').value){
-                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+        if(document.getElementById("outsrc_pw").value !='' && document.getElementById("outsrc_pw2").value!=''){
+            if(document.getElementById("outsrc_pw").value==document.getElementById("outsrc_pw2").value){
+                document.getElementById("check").innerHTML='비밀번호가 일치합니다.';
 
-            document.getElementById('check').style.color='red';
+            document.getElementById("check").style.color='red';
               return true; 
 
             }
             else{
-                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
-                document.getElementById('check').style.color='red';
+                document.getElementById("check").innerHTML='비밀번호가 일치하지 않습니다.';
+                document.getElementById("check").style.color='red';
 
                 alert('비밀번호를 확인하세요');
                 return false;
@@ -83,13 +82,13 @@
         <div class="outsrc_name_input registration_text">외주업체명</div>
         <input class="outsrc_name_input registration_input" type="text" name="outsrc_nm" placeholder="외주업체명을 입력해주세요."required>
   
-        <div class=" registration_text">사업자번호</div>   <!-- id=uid 추가-->
+        <div class=" registration_text">사업자번호</div>   
         <input class="outsrc_number_input registration_input" type="text" name="outsrc_no" id="uid" placeholder="사업자번호를 입력해주세요."required>
-        <input type="hidden" name="decide_id" id="decide_id">  <!-- decide_id-->
+        <input type="hidden" name="decide_id" id="decide_id"> 
   
         <!-- 사업자번호 중복체크 버튼-->
         <input class="is_exist" type="button" id="check_button" value="사업자번호 중복 검사" onclick="check_id();"> 
-        <div class="notice" id="decide" style='color:rgb(79, 83, 209);'>*이미 등록된 사업자번호인지 확인</div>
+        <div class="notice" id="decide" style='color:rgb(80, 84, 209);'>*이미 등록된 사업자번호인지 확인</div>
         
   
         <div class="outsrc_number registration_text">전화번호</div>
@@ -100,8 +99,9 @@
   
         <div class="outsrc_pw_comfirm registration_text">비밀번호 확인 </div>
         <input class="outsrc_pw_comfirm registration_input" type="password" name="outsrc_pw2"  id="outsrc_pw2"  onchange="check_pw()"  placeholder="비밀번호를 입력해주세요."required> 
+        <span id="check"></span>
         <hr>
-        <input class="registration_submit"type="submit" id="join_button"value="회원가입">     <!-- join_button-->
+        <input class="registration_submit"type="submit" id="join_button"value="회원가입">     
         <hr>
         <input class="prepage" type="button" value="뒤로가기" onclick="location.href='./login.html'">
       </form>
