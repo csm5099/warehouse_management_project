@@ -17,14 +17,14 @@
         echo "<span style='color:red;'></span> 사용가능합니다.";
        ?>
        
-       <p><input type=button value="이 사업자번호를 사용" onclick="opener.parent.decide(); window.close();"></p>
+       <p><input type=button vialue="이 사업자번호를 사용" onclick="opener.parent.decide(); window.close();"></p>
         
     <?php
     }
      else {    
 
         echo "<span style='color:blue;'></span> 사용불가합니다.";
-        ?><p><input type=button value="다른 사업자번호를 사용" onclick="opener.parent.change(); window.close()"></p>
+        ?><p><input type=button value="다른 사업자번호를 사용" onclick="opener.parent.change(); window.close();"></p>
     <?php
     }
 

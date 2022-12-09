@@ -74,7 +74,7 @@ function login($ID, $PW, $idtype){
             }
         }
         else{
-            $errormsg="접근할수 없는 계정입니다";
+            $errormsg="접근 할 수 없는 계정입니다";
         }
     }
 }
@@ -109,9 +109,6 @@ else
 }   
 
 ?>
-
-
-</center>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,4 +117,4 @@ else
   <link rel="stylesheet" href="login.css">
   <title>login</title>
 </head>
-
+</center>
