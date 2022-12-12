@@ -26,7 +26,9 @@
 
   <main>
     <?php
-        
+
+    include '../Check_Cookie.php';
+
     $outsrc_no = $_POST["outsrc_no"];
  
     $database = "warehouse";

@@ -23,6 +23,9 @@
     <a href=""></a>
   </nav>
   <main>
+  <?php
+	include '../Check_Cookie.php';
+?>
     <h1>관리자</h1>
     <h2>상품조회</h2> <!-- 상품 조회하는 칸-->
     <form name="form" method="post" action="./manager_out_bound_search.php">

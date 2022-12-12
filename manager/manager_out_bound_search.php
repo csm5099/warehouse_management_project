@@ -19,6 +19,7 @@
   </nav>
   <main>
     <?php
+        include '../Check_Cookie.php';
         $database="warehouse";
         $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
