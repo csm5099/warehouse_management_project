@@ -10,9 +10,7 @@
 
 <body>
   <header>
-    <a href="./user.html">
-      <img src="../logo4.png" alt="">
-    </a>
+    <img src="../logo4.png" alt="">
   </header>
   <main>
     <?php
