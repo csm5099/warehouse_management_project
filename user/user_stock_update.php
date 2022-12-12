@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./user.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>

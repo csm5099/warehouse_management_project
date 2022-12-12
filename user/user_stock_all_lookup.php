@@ -9,7 +9,9 @@
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./user.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="user_stock.html">재고</a>
