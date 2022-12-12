@@ -2,7 +2,7 @@
     $ID=$_POST['ID']; 
     $PW=$_POST['PW'];
     $idtype=$_POST['idtype']; 
-
+    
 function login($ID, $PW, $idtype){
     global $con;
     //global $table;
@@ -29,7 +29,7 @@ function login($ID, $PW, $idtype){
             }
             else {
                 if($dbid==$ID AND $dbPW == $PW){
-                    SetCookie("manager", $ID, time()+10, "/");
+                    SetCookie("manager", $ID, time()+300, "/");
                     return 1;
                 }
                 else {
@@ -39,7 +39,7 @@ function login($ID, $PW, $idtype){
             }
         }
         else if($dbid==$ID AND $dbPW == $PW ){
-                SetCookie("manager", $ID, time()+10, "/");
+                SetCookie("manager", $ID, time()+300, "/");
                 return 1;
         }
         
@@ -57,7 +57,7 @@ function login($ID, $PW, $idtype){
                 else 
                 {                
                     if($dbid==$ID AND $dbPW == $PW ){
-                        SetCookie("user", $ID, time()+10, "/");
+                        SetCookie("user", $ID, time()+300, "/");
                         return 1;
                     }
                     else {
@@ -67,7 +67,7 @@ function login($ID, $PW, $idtype){
                 }
             }
             else if($dbid==$ID AND $dbPW == $PW ){
-                SetCookie("user", $ID, time()+10, "/");
+                SetCookie("user", $ID, time()+300, "/");
                 return 1;
             }
         }

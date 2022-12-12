@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./user.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -20,6 +20,9 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
+    <?php
+	include '../Check_Cookie.php';
+?>
     <h1>관리자</h1>
     <h2>재고</h2>
     <?php
@@ -65,7 +68,9 @@
 
   </main>
 
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 
 </body>
 

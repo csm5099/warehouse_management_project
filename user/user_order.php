@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./user.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -20,10 +20,13 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
-  <h1>외주업체</h1>
-  <h2>주문</h2>
+    <?php
+	include '../Check_Cookie.php';
+?>
+    <h1>외주업체</h1>
+    <h2>주문</h2>
 
-  <?php
+    <?php
     #변수 선언
     $delevery_idt =  $_POST["delevery_idt"]; //송장번호
     $product_no =  (int)$_POST["product_no"];       //일련번호
@@ -63,8 +66,10 @@
 
   ?>
 
-</main>
-  <footer>footer</footer>
+  </main>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

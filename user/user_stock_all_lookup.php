@@ -9,7 +9,9 @@
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./user.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="user_stock.html">재고</a>
@@ -18,6 +20,9 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
+    <?php
+	include '../Check_Cookie.php';
+?>
     <h1>외주업체</h1>
     <h2>재고</h2>
     <?php
@@ -50,16 +55,9 @@
     ?>
 
   </main>
+  <footer>
 
-
-
-
-
-
-
-  <footer>footer</footer>
-
-
+  </footer>
 </body>
 
 </html>

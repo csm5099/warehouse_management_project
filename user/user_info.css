@@ -1,0 +1,13 @@
+.prepage{
+  border: 0;
+  color: gray;
+  background-color: transparent;
+}
+
+.prepage:hover{
+  color: black;
+}
+
+h1, h2{
+  padding-left: 50px;
+}

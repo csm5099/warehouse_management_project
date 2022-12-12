@@ -12,6 +12,9 @@
   <a href="manager_logout.php">로그아웃</a>
 </nav>
 <main>
+  <?php
+	include '../Check_Cookie_manager.php';
+?>
   <h1>관리자</h1>
   <h2>회원관리</h2>
   <?php
@@ -41,7 +44,9 @@
     ?>
 
 </main>
-<footer>footer</footer>
+<footer>
+
+</footer>
 </body>
 
 </html>

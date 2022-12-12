@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
   <link rel="stylesheet" href="manager.css">
   <title>manager</title>
 </head>
+
 <body>
-<header>
-  <a href="../login/login.html"> header</a>
-</header>
+  <header>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
 
-<nav>
-  <a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.php">출고</a>
-  <a href="manager_in_bound.php">입고</a>
-  <a href="manager_membership.php">회원관리</a>
-  <a href="manager_logout.php">로그아웃</a>
-  <a href=""></a>
-</nav>
+  <nav>
+    <a href="manager_stock.html">재고</a>
+    <a href="manager_out_bound.php">출고</a>
+    <a href="manager_in_bound.php">입고</a>
+    <a href="manager_membership.php">회원관리</a>
+    <a href="manager_logout.php">로그아웃</a>
+  </nav>
 
-<main>
-  <h1>관리자</h1>
-  <h2>회원관리</h2>
+  <main>
+    <?php
+	include '../Check_Cookie_manager.php';
+?>
+    <h1>관리자</h1>
+    <h2>회원관리</h2>
 
     <?php
         $outsrc_no = $_POST["outsrc_no"];
@@ -47,9 +53,11 @@
         mysql_close($connect);
 
         ?>
-        
-        </main>
-        <footer>footer</footer>
-        </body>
-        </html>
-        
+
+  </main>
+  <footer>
+
+  </footer>
+</body>
+
+</html>

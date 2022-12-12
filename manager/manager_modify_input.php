@@ -7,7 +7,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -19,6 +19,9 @@
     <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
+    <?php
+	include '../Check_Cookie_manager.php';
+?>
     <?php
 //���־�ü ���� 
 
@@ -48,7 +51,9 @@
     <input type="button" value="Ȩ���� ����" onclick="location.href='../index.html'">
 
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

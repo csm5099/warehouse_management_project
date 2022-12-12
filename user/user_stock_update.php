@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./user.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -20,17 +20,11 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
+    <?php
+	include '../Check_Cookie.php';
+?>
     <h1>외주업체</h1>
     <h2>재고</h2>
-
-    <form action="user_stock_update2.php" method="post">
-      <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-      <INPUT type="hidden" id="product_no_pk" name="product_no" value="<?php echo $no_pk?>" />
-      상품명 : <INPUT type="text" size=5 name="product_nm"><br>
-      가격 : <INPUT type="text" size=5 name="product_price"><br>
-      <INPUT type="submit" value="수정"> <INPUT type="reset" value="취소"><br>
-    </form>
-
     <?php
       $no_pk = $_POST["consumerName"];
       $database = "warehouse";
@@ -57,7 +51,7 @@
   </main>
 
   <footer>
-    footer
+
   </footer>
 
 </body>

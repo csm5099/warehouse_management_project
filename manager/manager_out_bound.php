@@ -10,7 +10,9 @@
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="manager_stock.html">재고</a>
@@ -18,9 +20,11 @@
     <a href="manager_in_bound.php">입고</a>
     <a href="manager_membership.php">회원관리</a>
     <a href="manager_logout.php">로그아웃</a>
-    <a href=""></a>
   </nav>
   <main>
+    <?php
+	include '../Check_Cookie_manager.php';
+?>
     <h1>관리자</h1>
     <h2>상품조회</h2> <!-- 상품 조회하는 칸-->
     <form name="form" method="post" action="./manager_out_bound_search.php">
@@ -75,7 +79,9 @@ mysql_close($connect);
     <INPUT type="hidden" id="delevery_adt" name="delevery_adt" value="<?php echo $delevery_adt?>" />
     <!--도착날짜manager_out_bound_search.php로 전송-->
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

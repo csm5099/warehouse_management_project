@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -23,6 +23,9 @@
     <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
+  <?php
+	include '../Check_Cookie_manager.php';
+?>
     <h1>관리자</h1>
     출고 조회
     <?php
