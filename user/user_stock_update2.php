@@ -18,13 +18,13 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
-  <?php
+    <?php
 	include '../Check_Cookie.php';
 ?>
-  <h1>외주업체</h1>
-  <h2>재고</h2>
+    <h1>외주업체</h1>
+    <h2>재고</h2>
 
-<?php  
+    <?php  
         $no = $_POST["product_no"];
         $nm = $_POST["product_nm"];
         $price = $_POST["product_price"];
@@ -52,10 +52,12 @@
 
 
             mysql_close($connect);    
-?> 
-</main>
+?>
+  </main>
 
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 
 </body>
 

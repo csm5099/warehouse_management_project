@@ -74,7 +74,9 @@ mysql_close($connect);
 ?>
 
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

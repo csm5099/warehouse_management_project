@@ -47,7 +47,9 @@
 
 
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

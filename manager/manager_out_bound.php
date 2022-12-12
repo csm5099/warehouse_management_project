@@ -79,7 +79,9 @@ mysql_close($connect);
     <INPUT type="hidden" id="delevery_adt" name="delevery_adt" value="<?php echo $delevery_adt?>" />
     <!--도착날짜manager_out_bound_search.php로 전송-->
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

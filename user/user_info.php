@@ -20,7 +20,7 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
-  <?php
+    <?php
 	include '../Check_Cookie.php';
 ?>
     <h1>외주업체</h1>
@@ -59,7 +59,9 @@
     print "<center><font color=red size=5><b>$dt 회원정보가 정상적으로 수정되었습니다.</b></font></center>";
   ?>
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

@@ -51,7 +51,9 @@
     <input type="button" value="Ȩ���� ����" onclick="location.href='../index.html'">
 
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

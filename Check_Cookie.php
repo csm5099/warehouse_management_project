@@ -1,4 +1,3 @@
-
 <?php
     
     $database = "warehouse";
@@ -18,4 +17,4 @@
     
     mysql_close($connect)
     
-?> 
+?>

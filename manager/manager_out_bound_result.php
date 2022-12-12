@@ -23,7 +23,7 @@
     <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
-  <?php
+    <?php
 	include '../Check_Cookie_manager.php';
 ?>
     <h1>관리자</h1>
@@ -76,7 +76,7 @@ echo $product_no_pk;//manger_out_bound_search.php ���� �Ϸù�ȣ��
     -->
   </main>
   <footer>
-    footer
+
   </footer>
 
 </body>

@@ -48,7 +48,9 @@ include '../Check_Cookie_manager.php';
     ?>
 
   </main>
-  <footer>footer</footer>
+  <footer>
+
+  </footer>
 </body>
 
 </html>
