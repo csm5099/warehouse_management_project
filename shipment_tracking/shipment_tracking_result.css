@@ -1,0 +1,9 @@
+.prepage{
+  border: 0;
+  color: gray;
+  background: white;
+}
+
+.prepage:hover{
+  color: black;
+}

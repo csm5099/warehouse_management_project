@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_3_sections.css">
+  <link rel="stylesheet" href="shipment_tracking_result.css">
   <title>delivery tracking
   </title>
 </head>
@@ -47,6 +48,11 @@
         
 
     ?>
+    <hr>
+    <center>
+      <input class="prepage" type="button" value="돌아가기" onclick="location.href='./shipment_tracking.html'">
+    </center>
+    <hr>
   </main>
   <footer>footer</footer>
 </body>
