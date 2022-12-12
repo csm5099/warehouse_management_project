@@ -1,6 +1,10 @@
 <?php
   
   function insert_Data($outsrc_no, $outsrc_telno, $outsrc_nm, $outsrc_pw){
+    //12.12 변경
+    $join_id = $_POST['decide_id'];
+
+
     $database = "warehouse"; 
     
     $connect = mysql_connect('localhost','root','root')  
@@ -8,7 +12,8 @@
                 
     mysql_select_db($database,$connect); 
 
-    $query = "insert into outsrc_tb values('$outsrc_no','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
+    $query = "insert into outsrc_tb values('$join_id','$outsrc_telno','$outsrc_nm','$outsrc_pw')"; 
+    // 12.12 변경 
 
     echo "$query";  
     $result = mysql_query($query,$connect);

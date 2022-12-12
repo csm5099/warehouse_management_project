@@ -2,6 +2,7 @@
 
 // ȸ������(registration.html) ���� �����ϸ� --�� ȸ�������� �Ϸ�Ǿ����ϴ�.  â ����ִ� ������
 
+
     $database = "warehouse";
 
     $connect=mysql_connect('localhost', 'root', 'root')  

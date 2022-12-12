@@ -4,8 +4,8 @@
 
     mysql_select_db($database, $connect);
 
-    $uid= $_GET["userid"];  
-    $query= "SELECT * FROM outsrc_tb where outsrc_no= '$uid'";
+    $userid= $_GET["userid"];  
+    $query= "SELECT * FROM outsrc_tb where outsrc_no= '$userid'";
     
     //$result = mysql_query($query, $connect); 
     $result = mysql_query($query, $connect);
