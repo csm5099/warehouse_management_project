@@ -20,8 +20,8 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
-  <h1>외주업체</h1>
-  <h2>재고</h2>
+    <h1>외주업체</h1>
+    <h2>재고</h2>
     <?php
         $year = $_POST["Year"];
         $month = explode("month",$_POST["Month"]);
@@ -56,9 +56,9 @@
         mysql_close($connect)
         
 
-    ?> 
+    ?>
 
-</main>
+  </main>
 
   <footer>footer</footer>
 

@@ -20,8 +20,8 @@
     <a href="user_info.html">회원 정보 수정</a>
   </nav>
   <main>
-  <h1>관리자</h1>
-  <h2>재고</h2>
+    <h1>관리자</h1>
+    <h2>재고</h2>
     <?php
         #변수 선언
         $no_pk = (int)$_POST["product_no"];
@@ -61,9 +61,9 @@
 
         
 
-    ?> 
+    ?>
 
-</main>
+  </main>
 
   <footer>footer</footer>
 
