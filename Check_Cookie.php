@@ -9,7 +9,7 @@
     $query = "select outsrc_no from outsrc_tb where outsrc_no = $cookie";
     $result = mysql_query ($query, $connect);
     if($result){
-      print"ok";
+
     }
     else{
       echo"<script>alert('로그인을 해주세요!');</script>";

@@ -17,6 +17,9 @@
   <a href="user_info.html">회원 정보 수정</a>
 </nav>
 <main>
+<?php
+	include '../Check_Cookie.php';
+?>
   <h1>외주업체</h1>
   <h2>재고</h2>
     <?php

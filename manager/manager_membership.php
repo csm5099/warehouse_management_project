@@ -15,7 +15,9 @@
   <a href=""></a>
   </nav>
   <main>
-    
+  <?php
+	include '../Check_Cookie.php';
+?>
   <h1> &nbsp;관리자</h1>
   <h2> &nbsp;&nbsp;회원관리</h2>
   
