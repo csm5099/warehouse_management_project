@@ -22,7 +22,7 @@
   </nav>
   <main>
   <?php
-	include '../Check_Cookie.php';
+	include '../Check_Cookie_manager.php';
 ?>
     <h1>관리자</h1>
     <h2>상품조회</h2> <!-- 상품 조회하는 칸-->

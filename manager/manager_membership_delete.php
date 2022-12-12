@@ -23,7 +23,7 @@
 <main>
 <?php
 
-    include '../Check_Cookie.php';
+include '../Check_Cookie_manager.php';
 
     $outsrc_no = $_POST["outsrc_no"];
  

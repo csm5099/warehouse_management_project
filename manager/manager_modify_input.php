@@ -20,7 +20,7 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie.php';
+	include '../Check_Cookie_manager.php';
 ?>
     <?php
 //���־�ü ���� 

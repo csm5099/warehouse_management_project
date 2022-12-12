@@ -24,7 +24,7 @@
   </nav>
   <main>
   <?php
-	include '../Check_Cookie.php';
+	include '../Check_Cookie_manager.php';
 ?>
     <h1>관리자</h1>
     출고 조회 결과
