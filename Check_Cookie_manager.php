@@ -1,4 +1,3 @@
-
 <?php
     
     $database = "warehouse";
@@ -13,9 +12,9 @@
     }
     else{
       echo"<script>alert('로그인을 해주세요!');</script>";
-    #  echo"<script> document.location.href='../login/login.html'; </script>"; 
+      echo"<script> document.location.href='../login/login.html'; </script>"; 
     }
     
     mysql_close($connect)
     
-?> 
+?>
