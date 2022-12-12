@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="main_menu.css">
   <link rel="stylesheet" href="manager.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
-<nav>
-<a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.php">출고</a>
-  <a href="manager_in_bound.php">입고</a>
-  <a href="manager_membership.php">회원관리</a>
-  <a href="manager_logout.php">로그아웃</a>
-</nav>
-<main>
-  <h1>관리자</h1>
-  <h2>재고</h2>
-   
-<?php 
+  <nav>
+    <a href="manager_stock.html">재고</a>
+    <a href="manager_out_bound.php">출고</a>
+    <a href="manager_in_bound.php">입고</a>
+    <a href="manager_membership.php">회원관리</a>
+    <a href="manager_logout.php">로그아웃</a>
+  </nav>
+  <main>
+    <h1>관리자</h1>
+    <h2>재고</h2>
+
+    <?php 
 $product_nm= $_POST["product_nm"];
 $product_price=$_POST["product_price"];
 $product_no_pk = $_POST["product_no_pk"];
@@ -49,9 +53,10 @@ for($i=0; $i<$num; $i++){
     print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5]."</td></tr><br>";
 }
 mysql_close($connect);
-?> 
-</main>
-  
-<footer>footer</footer>
+?>
+  </main>
+
+  <footer>footer</footer>
 </body>
+
 </html>

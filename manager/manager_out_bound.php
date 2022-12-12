@@ -10,7 +10,9 @@
 
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
   <nav>
     <a href="manager_stock.html">재고</a>

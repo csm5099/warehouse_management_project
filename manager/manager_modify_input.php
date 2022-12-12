@@ -7,7 +7,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>

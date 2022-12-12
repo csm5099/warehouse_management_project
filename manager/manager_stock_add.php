@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -21,8 +21,8 @@
     <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
-  <h1>관리자</h1>
-  <h2>재고</h2>
+    <h1>관리자</h1>
+    <h2>재고</h2>
     <?php
         #변수 선언
         $no_pk = (int)$_POST["product_no"];
@@ -62,9 +62,9 @@
 
         
 
-    ?> 
+    ?>
 
-</main>
+  </main>
 
 
   <footer>footer</footer>

@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
@@ -21,23 +21,23 @@
     <a href="manager_logout.php">로그아웃</a>
   </nav>
   <main>
-  <h1>관리자</h1>
-  <h2>재고</h2>
+    <h1>관리자</h1>
+    <h2>재고</h2>
 
 
-  <div style="text-align:left;margin:0 40px 0 ;">
-    <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
-    <button type="button" class="navyBtn" onClick="location.href='manager_stock_update.php'">재고 수정</button>
-    <br><br>
-    <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup2.php'">재고 상세조회</button>
+    <div style="text-align:left;margin:0 40px 0 ;">
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_update.php'">재고 수정</button>
+      <br><br>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup2.php'">재고 상세조회</button>
 
-    </update>
-    <br><br>
+      </update>
+      <br><br>
 
     </div>
 
 
-<?php
+    <?php
 
  
   $database="warehouse";
@@ -68,7 +68,7 @@
   mysql_close($connect);
 
   ?>
-</main>
+  </main>
 
 
   <footer>footer</footer>

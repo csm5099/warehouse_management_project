@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
-  <link rel="stylesheet" href="manager.css"></head>
-  <link rel="stylesheet" href="../grid_4_sections.css">
-  <title>manager</title>
+  <link rel="stylesheet" href="manager.css">
+</head>
+<link rel="stylesheet" href="../grid_4_sections.css">
+<title>manager</title>
 </head>
 
 <body>
   <header>
-    <a href="../index.html">
+    <a href="./manager.html">
       <img src="../logo4.png" alt="">
     </a>
   </header>
