@@ -31,7 +31,7 @@
     $outsrc_no = $_POST["outsrc_no"];
     $new_passwd = $_POST["new_passwd"];
     
-    print "입력값 : $outsrc_no $new_passwd";
+    // print "입력값 : $outsrc_no $new_passwd";
 
     #db 연결
     $database = "warehouse";
@@ -52,7 +52,7 @@
     $query2 = "select * from user where  outsrc_no_pk = $outsrc_no";
     $result2 = mysql_query($query2,$connect);
     $ans = mysql_fetch_row($result2);
-    print "<br>회원 수정: $ans[0], $ans[1], $ans[2], $ans[3] <br><br>";
+    // print "<br>회원 수정: $ans[0], $ans[1], $ans[2], $ans[3] <br><br>";
 
 
 
