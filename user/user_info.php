@@ -40,18 +40,27 @@
     }
 
     #update 쿼리
-    $query1 = "update user set outsrc_passwd = $new_passwd where outsrc_no_pk = $outsrc_no";
+    $query1 = "update outsrc_tb set outsrc_pw = $new_passwd where outsrc_no = $outsrc_no";
     $result1 = mysql_query($query1,$connect);
 
     #변경 확인
-    $query2 = "select * from user where  outsrc_no_pk = $outsrc_no";
+    $query2 = "select * from outsrc_tb where outsrc_no = $outsrc_no";
     $result2 = mysql_query($query2,$connect);
-    $ans = mysql_fetch_row($result2);
-    // print "<br>회원 수정: $ans[0], $ans[1], $ans[2], $ans[3] <br><br>";
-
-
 
     print "<center><font color=red size=5><b>$dt 회원정보가 정상적으로 수정되었습니다.</b></font></center>";
+    print "<table border=1 align=center>";
+        print "<tr><td> 사업자번호 </td><td> 전화번호 </td><td> 이름 </td><td> 비밀번호 </td></tr><br>";
+        $num = mysql_num_rows($result);
+        
+        for($i=0; $i<$num; $i++){
+            $ans = mysql_fetch_row($result2);
+            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
+            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td></tr><br>";
+        }
+        print "</table><br>";  //태그추가
+
+
+    
   ?>
     <hr>
     <center>
