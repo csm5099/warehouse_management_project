@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../grid_4_sections.css">
+  <link rel="stylesheet" href="../grid_3_sections.css">
+  <link rel="stylesheet" href="./user_info.css">
   <title>user</title>
 </head>
 
@@ -13,12 +14,6 @@
       <img src="../logo4.png" alt="">
     </a>
   </header>
-  <nav>
-    <a href="user_stock.html">재고</a>
-    <a href="user_out_bound.html">출고</a>
-    <a href="user_order.html">주문</a>
-    <a href="user_info.html">회원 정보 수정</a>
-  </nav>
   <main>
     <?php
 	include '../Check_Cookie.php';
@@ -58,6 +53,11 @@
 
     print "<center><font color=red size=5><b>$dt 회원정보가 정상적으로 수정되었습니다.</b></font></center>";
   ?>
+    <hr>
+    <center>
+      <input class="prepage" type="button" value="돌아가기" onclick="location.href='../login/login.html'">
+    </center>
+    <hr>
   </main>
   <footer>
 
