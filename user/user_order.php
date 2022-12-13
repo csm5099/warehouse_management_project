@@ -40,6 +40,7 @@
     $connect = mysql_connect('localhost','root','root')
                         or die("mySQL 서버 연결 Error!");
     mysql_select_db($database, $connect);
+    print "송장번호 : <br>";
     print "$delevery_idt";
     #insert 쿼리
     $query1 = "insert into delivery_tb values('','$delevery_idt','$product_no','$product_dt','$product_adt', $product_amt)";   
