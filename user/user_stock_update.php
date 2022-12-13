@@ -35,7 +35,7 @@
       $result = mysql_query($query,$connect);
       print "$product_dt";
       
-      print "<font color=red size=5><b>상품명 조회 결과 입니다.</b></font>";
+      print "<font color=red size=5><b>상품 일련번호 조회 결과 입니다.</b></font>";
       print "<table border=1>";
       print "<tr><td> 일련번호 </td><td> 평점 </td><td> 상품명 </td><td> 판매량 </td><td> 가격 </td>";
       print "<td> 재고량 </td><td> 상태 </td><td> 입고일 </td></tr><br>";
@@ -48,6 +48,17 @@
       }
       mysql_close($connect);
     ?>
+     <form action="user_stock_update2.php" method="post">
+      <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
+      <span>상품명 :</span>
+      <INPUT type="text" size=25 name="product_nm"><br>
+      <span>가격 :</span>
+      <INPUT type="text" size=25 name="product_price"><br>
+      <input type="hidden" name="product_no_pk" value="<?php  $product_no_pk= $_POST["search"]; ?>">
+      <INPUT type="submit" value="수정">
+      <INPUT type="reset" value="취소"><br>
+    </form>
+
   </main>
 
   <footer>

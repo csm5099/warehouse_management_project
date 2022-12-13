@@ -30,7 +30,7 @@
         $no = $_POST["product_no"];
         $nm = $_POST["product_nm"];
         $price = $_POST["product_price"];
- 
+        
         $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
@@ -44,7 +44,8 @@
         
         $query = "select product_no_pk, product_nm, product_price from product_tb where product_no_pk = $no";
         $result = mysql_query($query,$connect);
-        for($i=0; $i<1; $i++){
+        $num = mysql_num_rows($result);
+        for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
             print "</td></tr><br>";
