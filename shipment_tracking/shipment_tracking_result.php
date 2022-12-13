@@ -18,8 +18,7 @@
   <main>
     <h1>배송 조회 결과 창</h1>
     <?php
-        $delivery_idt = $_POST["delivery_idt"];
-        
+        $delivery_idt = $_POST["delivery_number"];
         $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");

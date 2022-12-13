@@ -28,24 +28,24 @@
     <h2>재고</h2>
 
     <?php  
-        $no = $_POST["product_no"];
+        $no = $_POST["product_no_pk"];
         $nm = $_POST["product_nm"];
         $price = $_POST["product_price"];
- 
         $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
-        $query1 = "update product_tb set  product_price = '$price',  product_nm = '$nm' where product_no_pk = '$no'";
+        $query1 = "update product_tb set product_no_pk = '$no', product_price = '$price',  product_nm = '$nm' where product_no_pk = '$no'";
         $result1 = mysql_query($query1,$connect);
 
         print "<center><font color=red size=5><b>$dt 재고 수정 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
         print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td></tr><br>";
         
-        $query = "select product_no_pk, product_nm, product_price from product_tb where product_no_pk = $no";
+        $query = "select product_no_pk, product_nm, product_price from product_tb where product_no_pk = '$no'";
         $result = mysql_query($query,$connect);
-        for($i=0; $i<1; $i++){
+        $num = mysql_num_rows($result);
+        for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
             print "</td></tr><br>";
