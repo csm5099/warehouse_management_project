@@ -54,7 +54,7 @@
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
             print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-            print "<td>".$ans[6]."</td><td>".$ans[9]."</td><td>".$ans[10]."</td><td>".$ans[11]."</td><td>".$ans[12]."</td></tr><br>";
+            print "<td>".$ans[6]."</td><td>".$ans[9]."</td><td>".$ans[10]."</td><td>".$ans[11]."</td><td>".$ans[12]."</td></tr>";
         }
         print "</table><br>";  //태그추가
         mysql_close($connect)
