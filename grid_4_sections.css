@@ -28,6 +28,7 @@ main{
   grid-area: main;
   background: rgba(140, 130, 134, 0.404);
   padding-left: 50px;
+  padding-right: 50PX;
 }
 
 footer{
