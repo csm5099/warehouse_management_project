@@ -34,7 +34,6 @@
 
         $query2 = "select delevery_adt from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK && delivery_tb.product_no_pk = $no_pk";
 
-
         $present_dt = (string)date("Ymd");
         $result2 = mysql_query($query2, $connect);
         $ans1=mysql_fetch_row($result2);
@@ -61,12 +60,22 @@
         $num=mysql_num_rows($result);       
         
         for($i=0; $i<$num; $i++) {
-        $ans=mysql_fetch_row($result);
-        
-        print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-        print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-        print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td><td>".$ans[8]."</td>
-        <td>".$ans[9]."</td><td>".$ans[10]."</td><td>".$ans[11]."</td></tr><br>";
+          $ans=mysql_fetch_row($result);
+          print
+          "<tr>
+          <td>".$ans[0]."</td>
+          <td>".$ans[1]."</td>
+          <td>".$ans[2]."</td>
+          <td>".$ans[3]."</td>
+          <td>".$ans[4]."</td>.
+          <td>".$ans[5]."</td>
+          <td>".$ans[6]."</td>
+          <td>".$ans[7]."</td>
+          <td>".$ans[8]."</td>
+          <td>".$ans[9]."</td>
+          <td>".$ans[10]."</td>
+          <td>".$ans[11]."</td>
+          </tr>";
         }
         
         print "</table>";
