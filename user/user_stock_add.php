@@ -32,6 +32,7 @@
         $Name = $_POST["product_nm"];
         $Price = (int)$_POST["product_price"];
         $Amt = 0;
+        $outsrc_no = $_COOKIE["user"];
         
         #db 연결
         $database = "warehouse";
@@ -46,7 +47,8 @@
        # print "$no_pk";
 
         #insert 쿼리
-        $query1 = "insert into product_tb(product_no_pk, product_nm, product_price, product_amt) values($no_pk,'$Name',$Price,$Amt)";
+        // $query1 = "insert into product_tb(product_no_pk, product_nm, product_price, product_amt) values($no_pk,'$Name',$Price,$Amt)";
+        $query1 = "insert into product_tb(outsrc_no, product_no_pk, product_nm, product_price, product_amt) value($outsrc_no ,$no_pk,'$Name',$Price,$Amt)";
         $result1 = mysql_query($query1,$connect);
 
         print "<center><font color=red size=5><b>$dt 재고 추가 결과 입니다.</b></font></center>";
