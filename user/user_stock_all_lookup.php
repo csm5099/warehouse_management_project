@@ -40,7 +40,7 @@
         echo "<br><br><br><br><br>";
         print "<center><font color=red size=5><b>$dt 상품 조회 결과 입니다.</b></font></center>";
         print "<table border=1 align=center>";
-        print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
+        print "<tr><td>사업자 번호</td><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
         $num = mysql_num_rows($result);
         
         for($i=0; $i<$num; $i++){
