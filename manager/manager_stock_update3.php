@@ -23,40 +23,58 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie_manager.php';
-?>
+	    include '../Check_Cookie_manager.php';
+    ?>
+
     <h1>관리자</h1>
     <h2>재고</h2>
+    <div>
+      <?php 
+      $product_nm= $_POST["product_nm"];
+      $product_price=$_POST["product_price"];
+      $product_no_pk = $_POST["product_no_pk"];
+      
+      $database = "warehouse";
+      $connect = mysql_connect('localhost','root','root')
+                          or die("mySQL 서버 연결 Error!");
+      mysql_select_db($database, $connect);
+      $query= "update product_tb set product_nm='$product_nm', product_price='$product_price' where product_no_pk='$product_no_pk'";
+      $result = mysql_query($query,$connect);
+      
+      $query = "select * from product_tb where product_nm = '$product_nm'";
+      $result = mysql_query($query,$connect);
+      
+      print "<center><h1>재고 수정 결과</h1></center>"; 
+      print "<center>좌측 탭으로 이동해 주세요.</center>"; 
+      print "<br>";
+      print "<table border=1 align=center>";
+      print
+      "<tr>
+      <td> 사업자번호 </td>
+      <td> 일련번호</td>
+      <td> 상품명 </td>
+      <td> 판매량 </td>
+      <td> 가격 </td>
+      <td> 재고량 </td>
+      </tr>";
+      
+      $num = mysql_num_rows($result);
+      for($i=0; $i<$num; $i++){
+        $ans = mysql_fetch_row($result);
+        print
+        "<tr>
+        <td>".$ans[0]."</td>
+        <td>".$ans[1]."</td>
+        <td>".$ans[2]."</td>
+        <td>".$ans[3]."</td>
+        <td>".$ans[4]."</td>
+        <td>".$ans[5]."</td>
+        </tr>";
+      }
+      mysql_close($connect);
+    
+    ?>
 
-    <?php 
-$product_nm= $_POST["product_nm"];
-$product_price=$_POST["product_price"];
-$product_no_pk = $_POST["product_no_pk"];
-
-
-$database = "warehouse";
-$connect = mysql_connect('localhost','root','root')
-                    or die("mySQL 서버 연결 Error!");
-mysql_select_db($database, $connect);
-$query= "update product_tb set product_nm='$product_nm', product_price='$product_price' where product_no_pk='$product_no_pk'";
-$result = mysql_query($query,$connect);
-
-
-$query = "select * from product_tb where product_nm = '$product_nm'";
-$result = mysql_query($query,$connect);
-
-print "<center><font color=black size=5><b>재고 상세 조회</b></font></center>";
-print "<table border=1 align=center>";
-print "<tr><td> 사업자번호 </td><td> 일련번호</td><td> 상품명 </td><td> 판매량 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
-
-$num = mysql_num_rows($result);
-for($i=0; $i<$num; $i++){
-    $ans = mysql_fetch_row($result);
-    print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-    print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5]."</td></tr><br>";
-}
-mysql_close($connect);
-?>
   </main>
 
   <footer>

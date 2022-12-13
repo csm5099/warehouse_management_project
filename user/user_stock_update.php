@@ -48,13 +48,14 @@
 }
       mysql_close($connect);
     ?>
-     <form action="user_stock_update2.php" method="post">
+    <form action="user_stock_update2.php" method="post">
       <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
       <span>상품명 :</span>
       <INPUT type="text" size=25 name="product_nm"><br>
       <span>가격 :</span>
       <INPUT type="text" size=25 name="product_price"><br>
-      <INPUT type="hidden" name="product_no_pk" value="<?php  $product_no_pk= $_POST["product_no_pk"]; print"$product_no_pk"?>">
+      <INPUT type="hidden" name="product_no_pk"
+        value="<?php  $product_no_pk= $_POST["product_no_pk"]; print"$product_no_pk"?>">
       <INPUT type="submit" value="수정">
       <INPUT type="reset" value="취소"><br>
     </form>

@@ -23,39 +23,59 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie_manager.php';
-?>
+	    include '../Check_Cookie_manager.php';
+    ?>
     <h1>관리자</h1>
     <h2>재고</h2>
-
 
     <div style="text-align:left;margin:0 40px 0 ;">
       <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
       <button type="button" class="navyBtn" onClick="location.href='manager_stock_update.php'">재고 수정</button>
-      <br><br>
       <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup2.php'">재고 상세조회</button>
-      <br><br>
-
     </div>
 
-    <form name="form" action="./manager_stock_update2.php" method="post">
-      <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
+    <center>
+      <h1>재고 수정</h1>
 
+      <form name="form" action="./manager_stock_update2.php" method="post">
+        <select name="search">
+          <option value="product_no_pk">상품 일련번호</option>
+        </select>
+        <input type="sumbit" name="search" size="40"> <button>조회</button>
+      </form>
+      <br><br>
+    </center>
 
-      <select name="search">
-        <option value="product_no_pk">상품 일련번호</option>
-      </select>
-      <input type="sumbit" name="search" size="40"> <button>조회</button>
-    </form>
+    <?php
+      $database="warehouse";
+      $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
+    
+      mysql_select_db($database, $connect);
+      $query= "SELECT * FROM product_tb";
+      $result = mysql_query($query, $connect);
+      
+      print "<table border=1 align=center>";
+      print "<tr><td> 사업자번호</td><td>일련번호</td><td> 상품명</td><td>판매량 </td><td>가격</td><td>재고량</td></tr>";
+      $num= mysql_num_rows($result);
+      for($i=0; $i<$num; $i++) {
+        $ans=mysql_fetch_row($result);
+        print
+        "<tr>
+        <td>".$ans[0]."</td>
+        <td>".$ans[1]."</td>
+        <td>".$ans[2]."</td>
+        <td>".$ans[3]."</td>
+        <td>".$ans[4]."</td>
+        <td>".$ans[5]."</td>
+        </tr>";
+      }
+      print "</table>";
+      mysql_close($connect);
+    ?>
 
   </main>
-
-
   <footer>
-
   </footer>
-
-
 </body>
 
 </html>

@@ -29,7 +29,7 @@ function login($ID, $PW, $idtype){
             }
             else {
                 if($dbid==$ID AND $dbPW == $PW){
-                    SetCookie("manager", $ID, time()+300, "/");
+                    SetCookie("manager", $ID, time()+9999, "/");
                     return 1;
                 }
                 else {
@@ -39,7 +39,7 @@ function login($ID, $PW, $idtype){
             }
         }
         else if($dbid==$ID AND $dbPW == $PW ){
-                SetCookie("manager", $ID, time()+300, "/");
+                SetCookie("manager", $ID, time()+9999, "/");
                 return 1;
         }
         
@@ -57,7 +57,7 @@ function login($ID, $PW, $idtype){
                 else 
                 {                
                     if($dbid==$ID AND $dbPW == $PW ){
-                        SetCookie("user", $ID, time()+300, "/");
+                        SetCookie("user", $ID, time()+9999, "/");
                         return 1;
                     }
                     else {
@@ -67,7 +67,7 @@ function login($ID, $PW, $idtype){
                 }
             }
             else if($dbid==$ID AND $dbPW == $PW ){
-                SetCookie("user", $ID, time()+300, "/");
+                SetCookie("user", $ID, time()+9999, "/");
                 return 1;
             }
         }

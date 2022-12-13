@@ -23,29 +23,64 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie_manager.php';
-?>
+	    include '../Check_Cookie_manager.php';
+    ?>
+
     <h1>관리자</h1>
     <h2>재고</h2>
 
-    <form action="manager_stock_update3.php" method="post">
-      <label style="border:1px black solid; width: 300px; height: auto; font-weight: bold;">재고 수정<br></label>
-      <span>상품명 :</span>
-      <INPUT type="text" size=25 name="product_nm"><br>
-      <span>가격 :</span>
-      <INPUT type="text" size=25 name="product_price"><br>
-      <input type="hidden" name="product_no_pk" value="<?php  $product_no_pk= $_POST["search"]; ?>">
-      <INPUT type="submit" value="수정">
-      <INPUT type="reset" value="취소"><br>
-    </form>
+    <center>
+      <h1>재고 수정</h1>
+      <h3>수정할 상품의 일련번호 : <?php echo $no_pk = $_POST["search"];?></h3>
 
-    <?php
-    $product_no_pk= $_POST["search"];
+      <form action="manager_stock_update3.php" method="post">
+        <span>상품명 :</span>
+        <INPUT type="text" size=25 name="product_nm"><br>
+        <span>가격 :</span>
+        <INPUT type="text" size=26 name="product_price"><br>
+        <input type="hidden" name="product_no_pk" value="<?php echo $no_pk; ?>">
+        <br>
+        <INPUT type="submit" value="수정">
+        <INPUT type="reset" value="취소"><br>
+      </form>
+    </center>
+
+    <?php      
+      $database="warehouse";
+      $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
+      mysql_select_db($database, $connect);
+      $query= "SELECT * FROM product_tb";
+      $result = mysql_query($query, $connect);
+    
+      print "<center><h1>재고 조회</h1></center>";
+      print "
+      <table border=1 align=center>
+      <tr>
+      <td>사업자번호</td>
+      <td>일련번호</td>
+      <td>상품명</td>
+      <td>판매량</td>
+      <td>가격</td>
+      <td>재고량</td>
+      </tr>";
+      
+      $num= mysql_num_rows($result);
+      for($i=0; $i<$num; $i++) {
+        $ans=mysql_fetch_row($result);    
+        print
+        "<tr>
+        <td>".$ans[0]."</td>
+        <td>".$ans[1]."</td>
+        <td>".$ans[2]."</td>
+        <td>".$ans[3]."</td>
+        <td>".$ans[4]."</td>
+        <td>".$ans[5]."</td>
+        </tr>";
+      }
+    ?>
 
-  ?>
   </main>
-
   <footer>
 
   </footer>
