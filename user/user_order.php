@@ -22,8 +22,8 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie.php';
-?>
+	    include '../Check_Cookie.php';
+    ?>
     <h1>외주업체</h1>
     <h2>주문</h2>
 
@@ -59,10 +59,7 @@
     where p.product_no_pk = d.product_no_pk and p.outsrc_no = '$outsrc_no'";
     
     $result3 = mysql_query ($query3, $connect)or die(mysql_error());
-    $outsrc_no_ = mysql_num_rows($result3);
-    echo $outsrc_no_[0];
-    echo $outsrc_no_[1];
-    echo $outsrc_no_[2];
+    $outsrc_no_ = mysql_fetch_row($result3);
 
     print "<center><font color=red size=5><b> 주문 결과입니다. </b></font></center>";
     print "<table border=1 align=center>";
@@ -74,7 +71,7 @@
     print "<td> 배송날짜 </td>";
     print "<td> 도착날짜 </td>";
     print "<td> 상품개수 </td></tr><br>";
-    
+
     for($i=0; $i<$num; $i++){
         $ans = mysql_fetch_row($result2);
         print "<tr>";
