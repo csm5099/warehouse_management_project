@@ -21,7 +21,7 @@
 
   
   function decide(){
-    document.getElementById("decide").innerHTML = "<meta charset='UTF-8'><span style='color:blue;'>사업자번호 중복 여부를 확인하세요.</span>"
+    document.getElementById("decide").innerHTML = "<span style='color:blue;'>사용가능합니다.</span>"
     document.getElementById("decide_id").value = document.getElementById("uid").value
     document.getElementById("uid").disabled = true
     document.getElementById("join_button").disabled = false
@@ -31,7 +31,7 @@
 
  
   function change(){
-    document.getElementById("decide").innerHTML = "<meta charset='UTF-8'><span style='color:red;'>사업자번호 중복 여부를 확인하세요.</span>"
+    document.getElementById("decide").innerHTML = "<span style='color:red;'>사업자번호 중복 여부를 확인하세요.</span>"
     document.getElementById("uid").disabled = false
     document.getElementById("uid").value = ""
     document.getElementById("join_button").disabled = true
@@ -46,7 +46,7 @@
 
         if(document.getElementById("outsrc_pw").value !='' && document.getElementById("outsrc_pw2").value!=''){
             if(document.getElementById("outsrc_pw").value==document.getElementById("outsrc_pw2").value){
-                document.getElementById("check").innerHTML='비밀번호가 일치합니다.';
+                document.getElementById("check").innerHTML="<span style='color:blue;'>비밀번호가 일치합니다.</span>";
 
             document.getElementById("check").style.color='red';
               return true; 
@@ -88,7 +88,7 @@
   
         <!-- 사업자번호 중복체크 버튼-->
         <input class="is_exist" type="button" id="check_button" value="사업자번호 중복 검사" onclick="check_id();"> 
-        <div class="notice" id="decide" style='color:rgb(80, 84, 209);'>*이미 등록된 사업자번호인지 확인</div>
+        <div class="notice" id="decide" style='color:red;'>*등록가능한 사업자번호인지 확인</div>
         
   
         <div class="outsrc_number registration_text">전화번호</div>
