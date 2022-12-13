@@ -30,12 +30,13 @@
     <?php
     #변수 선언
     $delevery_idt =  $_POST["delevery_idt"]; //송장번호
-    $product_no =  (int)$_POST["product_no"];       //일련번호
-    $product_amt = $_POST["product_amt"];             //수량
+    $product_no =  (int)$_POST["product_no"];//일련번호
+    $product_amt = $_POST["product_amt"];//수량
     $product_dt = (string)date("Ymd");
     $product_adt = (int)$product_dt + 3;
     $product_adt = (string)$product_adt;
     $delevery_idt = (string)$delevery_idt;
+    $outsrc_no = $_COOKIE["user"];
     #db 연결
     $database = "warehouse";
     $connect = mysql_connect('localhost','root','root')
@@ -48,21 +49,44 @@
     $result1 = mysql_query($query1,$connect);   
 
     $query2 = "select * from delivery_tb where DELIVERY_IDT = '$delevery_idt'";
-        $result2 = mysql_query ($query2, $connect)or die(mysql_error());
-        $num = mysql_num_rows($result2);
+    $result2 = mysql_query ($query2, $connect)or die(mysql_error());
+    $num = mysql_num_rows($result2);
+    // 상품명 쿼리
+    $query3 =
+    "select product_nm
+    from product_tb p
+    join delivery_tb d
+    where p.product_no_pk = d.product_no_pk and p.outsrc_no = '$outsrc_no'";
+    
+    $result3 = mysql_query ($query3, $connect)or die(mysql_error());
+    $outsrc_no_ = mysql_num_rows($result3);
+    echo $outsrc_no_[0];
+    echo $outsrc_no_[1];
+    echo $outsrc_no_[2];
 
     print "<center><font color=red size=5><b> 주문 결과입니다. </b></font></center>";
-        print "<table border=1 align=center>";
-        print "<tr><td> 배송인덱스 </td><td> 송장번호 </td><td> 상품일련번호 </td><td> 배송날짜 </td><td> 도착날짜 </td>";
-        print "<td> 상품개수 </td></tr><br>";
-      
-        for($i=0; $i<$num; $i++){
-            $ans = mysql_fetch_row($result2);
-            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
-            print "<td>".$ans[5]."</td></tr><br>";
-        }
-        
+    print "<table border=1 align=center>";
+    print "<tr>";
+    print "<td> 배송인덱스 </td>";
+    print "<td> 송장번호 </td>";
+    print "<td> 상품일련번호 </td>";
+    print "<td> 상품명 </td>";
+    print "<td> 배송날짜 </td>";
+    print "<td> 도착날짜 </td>";
+    print "<td> 상품개수 </td></tr><br>";
+    
+    for($i=0; $i<$num; $i++){
+        $ans = mysql_fetch_row($result2);
+        print "<tr>";
+        print "<td>".$ans[0]."</td>";
+        print "<td>".$ans[1]."</td>";
+        print "<td>".$ans[2]."</td>";
+        print "<td>".$outsrc_no_[0]."</td>";
+        print "<td>".$ans[3]."</td>";
+        print " <td>".$ans[4]."</td>";
+        print "<td>".$ans[5]."</td></tr><br>";
+    }
+
         print "</table><br>"; //태그 추가
     mysql_close($connect);
 
