@@ -57,7 +57,9 @@
 
       $query = "select * from product_tb where product_no_pk = '$product_no_pk'";
       $result = mysql_query($query,$connect);
-
+      
+      print "<center><h1>재고 상세 조회 결과</h1></center>";
+      print "<table border=1 align=center>";
       print
       "<tr>
       <td> 사업자번호 </td>
@@ -81,6 +83,7 @@
         <td>".$ans[5]."</td>
         </tr>";
       }
+      print "</table>";
       mysql_close($connect);
     ?>
 

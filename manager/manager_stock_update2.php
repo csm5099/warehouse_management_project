@@ -78,6 +78,8 @@
         <td>".$ans[5]."</td>
         </tr>";
       }
+      print "</table>";
+      mysql_close($connect);
     ?>
 
   </main>
