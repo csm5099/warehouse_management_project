@@ -25,14 +25,15 @@
     <?php
 	    include '../Check_Cookie_manager.php';
     ?>
+
     <h1>관리자</h1>
-    <h2>상품조회</h2> <!-- 상품 조회하는 칸-->
+    <h2>출고 조회</h2>
+
     <form name="form" method="post" action="./manager_out_bound_search.php">
       <select name="modify">
-        <option value="title">일련번호</option>
+        <option value="title">송장 번호</option>
       </select>
-      <!-- 일련번호 입력-->
-      <input type="sumbit" name="product_no_pk" size="40"> <button>조회</button>
+      <input type="sumbit" name="delivery_no" size="40"> <button>조회</button>
     </form>
 
     <?php
@@ -49,14 +50,14 @@
       print
       "<table border=1 align = center>
       <tr>
-      <td> 인덱스</td>
-      <td> 송장번호</td>
-      <td> 일련번호</td>
-      <td> 배송일자</td>
-      <td> 도착일자</td>
-      <td> 배송수량</td>
-      <td> 사업자</td>
-      <td> 일련번호</td>
+      <td>인덱스</td>
+      <td>송장번호</td>
+      <td>일련번호</td>
+      <td>배송일자</td>
+      <td>도착일자</td>
+      <td>배송수량</td>
+      <td>사업자</td>
+      <td>일련번호</td>
       <td>상품명</td>
       <td>판매량</td>
       <td>가격</td>
