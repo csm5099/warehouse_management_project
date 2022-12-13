@@ -34,7 +34,7 @@
         $outsrc_no = $_POST["outsrc_no"];
  
         $database = "warehouse";
-        $connect = mysql_connect('localhost','root','chaewon')
+        $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
         $query = "select * from outsrc_tb where outsrc_no = '$outsrc_no'";

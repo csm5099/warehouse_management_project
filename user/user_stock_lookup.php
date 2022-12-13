@@ -18,6 +18,7 @@
     <a href="user_out_bound.html">출고</a>
     <a href="user_order.html">주문</a>
     <a href="user_info.html">회원 정보 수정</a>
+    <a href="./user_logout.php">로그아웃</a>
   </nav>
   <main>
     <?php
