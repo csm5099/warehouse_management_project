@@ -53,7 +53,7 @@
         for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result2);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td></tr><br>";
+            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td></tr>";
         }
         print "</table><br>";  //태그추가
 

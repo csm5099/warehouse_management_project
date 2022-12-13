@@ -48,9 +48,9 @@
         for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td></tr><br>";
+            print "</td></tr>";
         }
-        print "</table><br>";
+        print "</table>";
 
 
 

@@ -40,18 +40,11 @@
                             or die("mySQL 서버 연결 Error!");
         mysql_select_db($database, $connect);
 
-       # $query = "select * from product_tb where product_no_pk = (select max(product_no_pk) from product_tb)";
-       # $result = mysql_query($query,$connect);
-       # $ans = mysql_fetch_row($result);
-       # $no_pk = (int)$ans[0]+1;
-       # print "$no_pk";
-
         #insert 쿼리
-        // $query1 = "insert into product_tb(product_no_pk, product_nm, product_price, product_amt) values($no_pk,'$Name',$Price,$Amt)";
         $query1 = "insert into product_tb(outsrc_no, product_no_pk, product_nm, product_price, product_amt) value($outsrc_no, $no_pk, '$Name', $Price, $Amt)";
         $result1 = mysql_query($query1,$connect);
 
-        print "<center><font color=red size=5><b>$dt 재고 추가 결과 입니다.</b></font></center>";
+        print "<center><h1>새 상품 등록</h1></center>";
         print "<table border=1 align=center>";
         print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
         
@@ -60,7 +53,7 @@
         for($i=0; $i<1; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[1]."</td><td>".$ans[2]."</td><td>".$ans[4];
-            print "</td><td>".$ans[5]."</td></tr><br>";
+            print "</td><td>".$ans[5]."</td></tr>";
         }
         print "</table><br>";  //태그추가
         mysql_close($connect);

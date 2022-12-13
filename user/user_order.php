@@ -70,7 +70,7 @@
     print "<td> 상품명 </td>";
     print "<td> 배송날짜 </td>";
     print "<td> 도착날짜 </td>";
-    print "<td> 상품개수 </td></tr><br>";
+    print "<td> 상품개수 </td></tr>";
 
     for($i=0; $i<$num; $i++){
         $ans = mysql_fetch_row($result2);
@@ -81,7 +81,7 @@
         print "<td>".$outsrc_no_[0]."</td>";
         print "<td>".$ans[3]."</td>";
         print " <td>".$ans[4]."</td>";
-        print "<td>".$ans[5]."</td></tr><br>";
+        print "<td>".$ans[5]."</td></tr>";
     }
 
         print "</table><br>"; //태그 추가

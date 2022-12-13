@@ -44,7 +44,7 @@
       for($i=0; $i<$num; $i++){
           $ans = mysql_fetch_row($result);
           print "<tr><td>".$ans[1]."</td><td>".$ans[2]."</td><td>".$ans[3];
-          print "</td><td>".$ans[4]."</td><td>".$ans[5]."</td> </tr><br>";
+          print "</td><td>".$ans[4]."</td><td>".$ans[5]."</td></tr>";
 }
       mysql_close($connect);
     ?>

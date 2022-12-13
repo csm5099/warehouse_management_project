@@ -22,37 +22,32 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie.php';
-?>
+	    include '../Check_Cookie.php';
+    ?>
     <h1>외주업체</h1>
     <h2>재고</h2>
+
     <?php
-        
-        $database = "warehouse";
-        $connect = mysql_connect('localhost','root','root')
-                            or die("mySQL 서버 연결 Error!");
-        mysql_select_db($database, $connect);
-        #$query_outsrc = "select outsrc_no from outsrc_tb where ";
+      
+      $database = "warehouse";
+      $connect = mysql_connect('localhost','root','root')
+                          or die("mySQL 서버 연결 Error!");
+      mysql_select_db($database, $connect);
+      $query = "select * from product_tb";
+      $result = mysql_query ($query, $connect) or die(mysql_error());
+      
+      print "<center><font color=red size=5><b>상품 조회 결과 입니다.</b></font></center>";
+      print "<table border=1 align=center>";
+      print "<tr><td>사업자 번호</td><td> 일련번호 </td><td> 상품명 </td><td> 판매 금액 </td><td> 재고량 </td></tr><br>";
 
-        $query = "select * from product_tb";
-        
-        $result = mysql_query ($query, $connect) or die(mysql_error());
-
-        echo "<br><br><br><br><br>";
-        print "<center><font color=red size=5><b>$dt 상품 조회 결과 입니다.</b></font></center>";
-        print "<table border=1 align=center>";
-        print "<tr><td>사업자 번호</td><td> 일련번호 </td><td> 상품명 </td><td> 판매 금액 </td><td> 재고량 </td></tr><br>";
-        $num = mysql_num_rows($result);
-        
-        for($i=0; $i<$num; $i++){
-            $ans = mysql_fetch_row($result);
-            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2]."</td>";
-            print "<td>".$ans[4]."</td><td>".$ans[5]."</td></tr><br>";
-        }
-        print "</table><br>";  //태그추가
-        mysql_close($connect)
-        
-
+      $num = mysql_num_rows($result);
+      for($i=0; $i<$num; $i++){
+          $ans = mysql_fetch_row($result);
+          print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2]."</td>";
+          print "<td>".$ans[4]."</td><td>".$ans[5]."</td></tr>";
+      }
+      print "</table><br>";
+      mysql_close($connect)
     ?>
 
   </main>
