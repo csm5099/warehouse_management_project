@@ -21,8 +21,8 @@
     <?php
     #회원정보 수정
     #변수
-    $outsrc_no = $_POST["outsrc_no"];
-    $new_passwd = $_POST["new_passwd"];
+    $new_passwd = $_POST["new_passwd1"];
+    $outsrc_no = $_COOKIE["user"];
     
     // print "입력값 : $outsrc_no $new_passwd";
 
@@ -48,12 +48,16 @@
     print "<center><font color=red size=5><b>$dt 회원정보가 정상적으로 수정되었습니다.</b></font></center>";
     print "<table border=1 align=center>";
         print "<tr><td> 사업자번호 </td><td> 전화번호 </td><td> 이름 </td><td> 비밀번호 </td></tr><br>";
-        $num = mysql_num_rows($result);
-        
+        $num = mysql_num_rows($result2);
         for($i=0; $i<$num; $i++){
-            $ans = mysql_fetch_row($result2);
-            print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td></tr>";
+          $ans = mysql_fetch_row($result2);
+          print
+          "<tr>
+          <td>".$ans[0]."</td>
+          <td>".$ans[1]."</td>
+          <td>".$ans[2]."</td>
+          <td>".$ans[3]."</td>
+          </tr>";
         }
         print "</table><br>";  //태그추가
 
