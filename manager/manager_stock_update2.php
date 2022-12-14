@@ -29,6 +29,12 @@
     <h1>관리자</h1>
     <h2>재고</h2>
 
+    <div style="text-align:left;margin:0 40px 0 ;">
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_update.php'">재고 수정</button>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup2.php'">재고 상세조회</button>
+    </div>
+
     <center>
       <h1>재고 수정</h1>
       <h3>수정할 상품의 일련번호 : <?php echo $no_pk = $_POST["search"];?></h3>
@@ -50,7 +56,7 @@
       $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
       mysql_select_db($database, $connect);
-      $query= "SELECT * FROM product_tb";
+      $query= "SELECT * FROM product_tb ORDER BY product_no_pk ASC";
       $result = mysql_query($query, $connect);
     
       print "<center><h1>재고 조회</h1></center>";

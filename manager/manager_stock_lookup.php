@@ -37,7 +37,7 @@
       $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
       mysql_select_db($database, $connect);
-      $query= "SELECT * FROM product_tb";
+      $query= "SELECT * FROM product_tb ORDER BY product_no_pk ASC";
       
       $result = mysql_query($query, $connect);
     
