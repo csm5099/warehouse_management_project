@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
-  <title>manager</title>
+  <title>user</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <?php
 	include '../Check_Cookie.php';
 ?>
-    <h1>관리자</h1>
+    <h1>외주업체</h1>
     <h2>재고</h2>
     <?php
         #변수 선언
