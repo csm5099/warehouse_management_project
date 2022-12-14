@@ -31,6 +31,13 @@
     <h1>관리자</h1>
     <h2>입고관리</h2>
 
+    <form name="form" method="post" action="./manager_in_bound2.php">
+      <select name="modify">
+        <option value="title">사업자 번호</option>
+      </select>
+      <input type="sumbit" name="outsrc_no" size="40"> <button>조회</button>
+    </form>
+
     <?php
     $database="warehouse";
     $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
