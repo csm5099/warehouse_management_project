@@ -48,7 +48,7 @@
         print "<table border=1 align=center>";
         print "<tr><td> 일련번호 </td><td> 상품명 </td><td> 가격 </td><td> 재고량 </td></tr><br>";
         
-        $query = "select * from product_tb where product_no_pk = $no_pk";
+        $query = "select * from product_tb where product_no_pk = $no_pk and outsrc_no = $outsrc_no";
         $result = mysql_query($query,$connect); 
         for($i=0; $i<1; $i++){
             $ans = mysql_fetch_row($result);

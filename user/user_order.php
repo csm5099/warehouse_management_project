@@ -37,6 +37,7 @@
     $product_adt = (string)$product_adt;
     $delevery_idt = (string)$delevery_idt;
     $outsrc_no = $_COOKIE["user"];
+    $amt_sales = 0;
     #db 연결
     $database = "warehouse";
     $connect = mysql_connect('localhost','root','root')
@@ -57,10 +58,9 @@
     from product_tb p
     join delivery_tb d
     where p.product_no_pk = d.product_no_pk and p.outsrc_no = '$outsrc_no'";
-    
     $result3 = mysql_query ($query3, $connect)or die(mysql_error());
     $outsrc_no_ = mysql_fetch_row($result3);
-
+    
     print "<center><font color=red size=5><b> 주문 결과입니다. </b></font></center>";
     print "<table border=1 align=center>";
     print "<tr>";
@@ -82,11 +82,29 @@
         print "<td>".$ans[3]."</td>";
         print " <td>".$ans[4]."</td>";
         print "<td>".$ans[5]."</td></tr>";
+        $amt_sales = $ans[5];
     }
+    print "</table><br>"; //태그 추가
 
-        print "</table><br>"; //태그 추가
+    $query4 = 
+    "SELECT product_amt
+    FROM product_tb
+    WHERE outsrc_no = '$outsrc_no'
+    AND product_no_pk = '$product_no'
+    ";
+    $result4 = mysql_query($query4, $connect);
+    $ans1 = mysql_fetch_row($result4);
+    $tmp = $ans1[0] - $amt_sales;
+    $query5 = 
+    "UPDATE product_tb
+    SET product_amt = '$tmp'
+    WHERE outsrc_no = '$outsrc_no'
+    AND product_no_pk = '$product_no'
+    ";
+    $result5 = mysql_query($query5, $connect);
+
+
     mysql_close($connect);
-
   ?>
 
   </main>

@@ -28,12 +28,13 @@
     <h2>재고</h2>
 
     <?php
+      $outsrc_no = $_COOKIE["user"];
       
       $database = "warehouse";
       $connect = mysql_connect('localhost','root','root')
                           or die("mySQL 서버 연결 Error!");
       mysql_select_db($database, $connect);
-      $query = "select * from product_tb";
+      $query = "select * from product_tb where outsrc_no = $outsrc_no";
       $result = mysql_query ($query, $connect) or die(mysql_error());
       
       print "<center><font color=red size=5><b>상품 조회 결과 입니다.</b></font></center>";
