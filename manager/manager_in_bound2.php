@@ -53,7 +53,7 @@
       ";
 
       $result = mysql_query($query, $connect);
-
+      print "<center><h4>사업자 번호 : ".$outsrc_no." 조회</h4></center>";
       print "<center><h1>입고 조회 결과</h1></center>";
       print "<table border=1 align=center>";
       print
