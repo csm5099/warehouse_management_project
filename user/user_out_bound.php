@@ -42,7 +42,7 @@
       $connect = mysql_connect('localhost','root','root')
                           or die("mySQL 서버 연결 Error!");
       mysql_select_db($database, $connect);
-      $query = "select * from product_tb";
+      $query = "select * from product_tb ORDER BY product_no_pk ASC";
       $result = mysql_query ($query, $connect) or die(mysql_error());
       
       print "<center><h1>자신의 등록된 상품 목록 입니다.</h1></center>";

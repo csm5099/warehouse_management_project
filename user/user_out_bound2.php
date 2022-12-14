@@ -59,7 +59,7 @@
 
       //입고량과 입고날 inout에 저장하기
       $query2 = 
-      "INSERT INTO inout_tb(inout_amt, product_dt) value($inbound_amt, $product_dt)
+      "INSERT INTO inout_tb(inout_amt, product_dt, product_no_pk) value($inbound_amt, $product_dt, $product_no)
       ";
       $result2 = mysql_query($query2, $connect);
 
@@ -83,7 +83,7 @@
       $result4 = mysql_query($query4, $connect);
       $ans4 =  mysql_fetch_row($result4);
 
-      $query = "select * from product_tb";
+      $query = "select * from product_tb ORDER BY product_no_pk ASC";
       $result = mysql_query ($query, $connect) or die(mysql_error());
       
       print "<center><h1>자신의 등록된 상품 목록 입니다.</h1></center>";
