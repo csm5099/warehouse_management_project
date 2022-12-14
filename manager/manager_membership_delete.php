@@ -25,28 +25,23 @@
 
   <main>
     <?php
+      include '../Check_Cookie_manager.php';
 
-include '../Check_Cookie_manager.php';
+      $outsrc_no = $_POST["outsrc_no"];
+      $database = "warehouse";
+      $connect = mysql_connect('localhost','root','root')
+                              or die("mySQL 서버 연결 Error!");
+      mysql_select_db($database, $connect);
+      $query = "DELETE FROM outsrc_tb WHERE outsrc_no = '$outsrc_no'";
+      $result = mysql_query($query,$connect);
 
-    $outsrc_no = $_POST["outsrc_no"];
- 
-    $database = "warehouse";
-    $connect = mysql_connect('localhost','root','root')
-                            or die("mySQL 서버 연결 Error!");
-    mysql_select_db($database, $connect);
+      mysql_close($connect);
+      // 사업자번호로 삭제한 뒤에 그대로 화면 출력 
 
-    $query = "DELETE FROM outsrc_tb WHERE outsrc_no = '$outsrc_no'";
-    $result = mysql_query($query,$connect);
-    
-    mysql_close($connect);
-        
-    // 사업자번호로 삭제한 뒤에 그대로 화면 출력 
-
-    print "<HTML><head><META http-equiv='refresh' content='0;
-    url=./manager_membership.php'></head></head>";
+      print "<HTML><head><META http-equiv='refresh' content='0;
+      url=./manager_membership.php'></head></head>";
 
     ?>
-
   </main>
   <footer>
 

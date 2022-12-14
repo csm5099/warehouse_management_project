@@ -32,7 +32,7 @@
 
     <?php
         $outsrc_no = $_POST["outsrc_no"];
- 
+
         $database = "warehouse";
         $connect = mysql_connect('localhost','root','root')
                             or die("mySQL 서버 연결 Error!");
@@ -42,13 +42,13 @@
 
         print "<center><font color=red size=5><b>회원 조회 결과</b></font></center>";
         print "<table border=1 align=center>";
-        print "<tr><td> 사업자번호 </td><td> 전화번호 </td><td> 업체명 </td><td> 비밀번호 </td></tr><br>";
+        print "<tr><td> 사업자번호 </td><td> 전화번호 </td><td> 업체명 </td><td> 비밀번호 </td></tr>";
 
         $num = mysql_num_rows($result);
         for($i=0; $i<$num; $i++){
             $ans = mysql_fetch_row($result);
             print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-            print "</td><td>".$ans[3]."</td></tr><br>";
+            print "</td><td>".$ans[3]."</td></tr>";
         }
         mysql_close($connect);
 

@@ -21,8 +21,8 @@
   </nav>
   <main>
     <?php
-	include '../Check_Cookie_manager.php';
-?>
+	    include '../Check_Cookie_manager.php';
+    ?>
     <h1> &nbsp;관리자</h1>
     <h2> &nbsp;&nbsp;회원관리</h2>
 
@@ -44,34 +44,26 @@
       </select>
       <input type="sumbit" name="outsrc_no" size="40"> <button>삭제</button>
     </form>
+    <?php 
+      $database="warehouse";
+      $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
+      mysql_select_db($database, $connect);
+      $query= "SELECT * FROM outsrc_tb";
+      $result = mysql_query($query, $connect);
 
+      print "<center><font color=black size=5><b>조회 결과 </b></font></center>";
+      print "<table border=1 align=center>";
+      print "<tr><td>사업자번호</td><td>전화번호 </td><td>업체명</td><td>비밀번호</td></tr>";
 
-    <?php
-
-$database="warehouse";
-$connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
-mysql_select_db($database, $connect);
-$query= "SELECT * FROM outsrc_tb";
-$result = mysql_query($query, $connect);
-
-
-
-print "<center><font color=black size=5><b>조회 결과 </b></font></center>";
-print "<table border=1 align=center>";
-print "<tr><td>사업자번호</td><td>전화번호 </td><td>업체명</td><td>비밀번호</td></tr>";
-
-
-$num=mysql_num_rows($result);
-for($i=0; $i<$num; $i++) {
-    $ans= mysql_fetch_row($result);
-    print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-    print "</td><td>".$ans[3]."</td></tr><br>";
-}
-print "</table>";
-
-mysql_close($connect);
-
-?>
+      $num=mysql_num_rows($result);
+      for($i=0; $i<$num; $i++) {
+        $ans= mysql_fetch_row($result);
+        print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
+        print "</td><td>".$ans[3]."</td></tr>";
+      }
+      print "</table>";
+      mysql_close($connect);
+    ?>
 
   </main>
   <footer>

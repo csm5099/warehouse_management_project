@@ -35,24 +35,22 @@
     $database="warehouse";
     $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     mysql_select_db($database, $connect);
-    $query= "SELECT * FROM product_tb";
-
-    $query= 
-    "SELECT *
-    FROM product_tb P, delivery_tb D
-    WHERE P.product_no_pk = D.product_no_pk
+    $query =
+    "SELECT outsrc_no, P.product_no_pk, product_nm, product_dt, inout_amt
+    FROM product_tb P, inout_tb I
+    WHERE P.product_no_pk = I.product_no_pk ORDER BY P.product_no_pk ASC
     ";
-
     $result = mysql_query($query, $connect);
 
     print "<center><h1>입고 조회 결과</h1></center>";
     print "<table border=1 align=center>";
     print
     "<tr>
-    <td> 외주 업체</td>
+    <td> 사업자 번호</td>
     <td> 상품 일련 번호</td>
     <td> 상품명</td>
-    <td> 현 재고량</td>
+    <td> 입고일</td>
+    <td> 입고량</td>
     </tr>";
 
     $num= mysql_num_rows($result);
@@ -63,7 +61,8 @@
       <td>".$ans[0]."</td>
       <td>".$ans[1]."</td>
       <td>".$ans[2]."</td>
-      <td>".$ans[5]."</td>
+      <td>".$ans[3]."</td>
+      <td>".$ans[4]."</td>
       </tr>
       ";
     }
