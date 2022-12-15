@@ -1,50 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="main_menu.css">
+  <link rel="stylesheet" href="../grid_4_sections.css">
   <link rel="stylesheet" href="manager.css">
   <title>user</title>
 </head>
+
 <body>
   <header>
-    <a href="../login/login.html"> header</a>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
   </header>
-<nav>
-  <a href="user_stock.html">재고</a>
-  <a href="user_out_bound.php">출고</a>
-  <a href="user_order.html">주문</a>
-  <a href="user_info.html">회원 정보 수정</a>
-  <a href="manager_logout.php">로그아웃</a>
-</nav>
-<main>
-  <h1>외주업체</h1>
-  <h2>재고</h2>
+  <nav>
+    <a href="manager_stock.html">재고</a>
+    <a href="manager_out_bound.php">출고</a>
+    <a href="manager_in_bound.php">입고</a>
+    <a href="manager_membership.php">회원관리</a>
+    <a href="manager_logout.php">로그아웃</a>
+  </nav>
+  <main>
+    <?php
+	    include '../Check_Cookie_manager.php';
+    ?>
 
-<?php  
-        $nm = $_POST["product_nm"];
-        $no = $_POST["product_no"];
-        $grade = $_POST["product_grade"];    
-        $sales = $_POST["product_sales"];
-        $price = $_POST["product_price"];
-        $amt = $_POST["product_amt"];
-        $state = $_POST["product_state"];
-        $dt = $_POST["product_dt"];
-        $database = "warehouse";
-        $connect = mysql_connect('localhost','lcw','chaewon')
-                            or die("mySQL 서버 연결 Error!");
-        mysql_select_db($database, $connect);
-        $query = "update product_tb set product_no = '$no', product_grade = '$grade', product_sales = '$sales', product_price = '$price', product_amt = '$amt', product_state = '$state', product_dt = '$dt' where product_nm = '$nm'";
+    <h1>관리자</h1>
+    <h2>재고</h2>
 
-        $result = mysql_query($query,$connect);
-        echo "<script>alert('수정되었습니다.');</script>";
-            mysql_close($connect);    
-?> 
-</main>
+    <div style="text-align:left;margin:0 40px 0 ;">
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup.php'">재고 조회</button>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_update.php'">재고 수정</button>
+      <button type="button" class="navyBtn" onClick="location.href='manager_stock_lookup2.php'">재고 상세조회</button>
+    </div>
+
+    <center>
+      <h1>재고 수정</h1>
+      <h3>수정할 상품의 일련번호 : <?php echo $no_pk = $_POST["search"];?></h3>
+
+      <form action="manager_stock_update3.php" method="post">
+        <span>상품명 :</span>
+        <INPUT type="text" size=25 name="product_nm"><br>
+        <span>가격 :</span>
+        <INPUT type="text" size=26 name="product_price"><br>
+        <input type="hidden" name="product_no_pk" value="<?php echo $no_pk; ?>">
+        <br>
+        <INPUT type="submit" value="수정">
+        <INPUT type="reset" value="취소"><br>
+      </form>
+    </center>
+
+    <?php      
+      $database="warehouse";
+      $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
+      mysql_select_db($database, $connect);
+      $query= "SELECT * FROM product_tb ORDER BY product_no_pk ASC";
+      $result = mysql_query($query, $connect);
+    
+      print "<center><h1>재고 조회</h1></center>";
+      print "
+      <table border=1 align=center>
+      <tr>
+      <td>사업자번호</td>
+      <td>일련번호</td>
+      <td>상품명</td>
+      <td>판매량</td>
+      <td>가격</td>
+      <td>재고량</td>
+      </tr>";
+      
+      $num= mysql_num_rows($result);
+      for($i=0; $i<$num; $i++) {
+        $ans=mysql_fetch_row($result);    
+        print
+        "<tr>
+        <td>".$ans[0]."</td>
+        <td>".$ans[1]."</td>
+        <td>".$ans[2]."</td>
+        <td>".$ans[3]."</td>
+        <td>".$ans[4]."</td>
+        <td>".$ans[5]."</td>
+        </tr>";
+      }
+      print "</table>";
+      mysql_close($connect);
+    ?>
 
-<footer>footer</footer>
+  </main>
+  <footer>
 
-
+  </footer>
 </body>
+
 </html>

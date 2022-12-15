@@ -1,11 +1,11 @@
 <?php
     $database="warehouse";
-    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ¼­¹ö ¿¬°á Error!");
+    $connect= mysql_connect('localhost','root','root') or die("mySQL ì„œë²„ ì—°ê²° Error!");
 
     mysql_select_db($database, $connect);
 
-    $uid= $_POST["userid"];  
-    $query= "SELECT * FROM outsrc_tb where outsrc_no= '$uid'";
+    $userid= $_GET["userid"];  
+    $query= "SELECT * FROM outsrc_tb where outsrc_no= '$userid'";
     
     //$result = mysql_query($query, $connect); 
     $result = mysql_query($query, $connect);
@@ -13,24 +13,34 @@
     $num=mysql_num_rows($result);
 
 
-    print $num;
-
     if(!$num){  
-        echo "<span style='color:red;'></span> »ç¿ë°¡´ÉÇÕ´Ï´Ù.";
+        echo "<span style='color:red;'></span> ì‚¬ìš©ê°€ëŠ¥í•©ë‹ˆë‹¤.";
        ?>
-       
-       <p><input type=button value="ÀÌ »ç¾÷ÀÚ¹øÈ£¸¦ »ç¿ë" onclick="opener.parent.decide(); window.close();"></p>
-        
-    <?php
+
+<p><input type=button value="ì´ ì‚¬ì—…ìžë²ˆí˜¸ë¥¼ ì‚¬ìš©" onclick="opener.parent.decide(); window.close();"></p>
+
+<?php
     }
      else {    
 
-        echo "<span style='color:blue;'></span> »ç¿ëºÒ°¡ÇÕ´Ï´Ù.";
-        ?><p><input type=button value="´Ù¸¥ »ç¾÷ÀÚ¹øÈ£¸¦ »ç¿ë" onclick="opener.parent.change(); window.close()"></p>
-    <?php
+        echo "<span style='color:blue;'></span> ì‚¬ìš©ë¶ˆê°€í•©ë‹ˆë‹¤.";
+        ?><p><input type=button value="ë‹¤ë¥¸ ì‚¬ì—…ìžë²ˆí˜¸ë¥¼ ì‚¬ìš©" onclick="opener.parent.change(); window.close()"></p>
+<?php
     }
 
-   // $outsrc_no = $_POST['decide_id'];   
-   //decide_id¸¦ outsrc_no(»ç¾÷ÀÚ¹øÈ£)·Î ³Ñ°ÜÁÜ 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

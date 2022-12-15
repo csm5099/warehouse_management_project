@@ -1,60 +1,108 @@
-<HTML>
-<?php
-    
-//product_sales = ¼ö·® 
-//¼ö·®- Ãâ°í·®= ³²Àº ¼ö·® 
-// »óÇ° Á¶È¸ÇØ¼­ Ãâ°í·® ÀÔ·Â ÈÄ Ãâ°í 
+<!DOCTYPE html>
+<html lang="en">
 
-    $product_no_pk=$_POST['product_no_pk'];
-    echo $product_no_pk; //°ª Ãâ·ÂµÊ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../grid_4_sections.css">
+  <title>Document</title>
+</head>
 
-    $database = "warehouse";
-    $connect = mysql_connect('localhost','lcw','chaewon')
-                        or die("mySQL ¼­¹ö ¿¬°á Error!");
+<body>
+  <header>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
+  <nav>
+    <a href="manager_stock.html">ì¬ê³ </a>
+    <a href="manager_out_bound.php">ì¶œê³ </a>
+    <a href="manager_in_bound.php">ì…ê³ </a>
+    <a href="manager_membership.php">íšŒì›ê´€ë¦¬</a>
+    <a href="manager_logout.php">ë¡œê·¸ì•„ì›ƒ</a>
+  </nav>
+  <main>
 
-    mysql_select_db($database, $connect);
+    <h1>ê´€ë¦¬ì</h1>
+    <h2>ì¶œê³  ì¡°íšŒ</h2>
 
-    if($product_no_pk != "")
-    $query = "select * from product_tb where product_no_pk like '$product_no_pk'"; 
-    
-    $result= mysql_query($query, $connect);
-    
-    print "<center><font color= black size=5><b>Á¶È¸ °á°ú </b></font></center>";
-    print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£</td><td>ÆòÁ¡</td><td>¼ö·®</td><td>x
-    </td><td>°¡°İ</td><td>Àç°í·®</td><td>»óÅÂ</td><td>ÀÔ°íÀÏ</td><td><center>Ãâ°í</center></td></tr>";
-    
-    $num= mysql_num_rows($result);
+    <?php
+      include '../Check_Cookie_manager.php';
 
-    for($i=0; $i<$num; $i++) {
-        $ans= mysql_fetch_row($result);
-        
-        $outbound_button = '
-        <form action="./manager_out_bound_result.php" method="POST">
-        <input type="text" name="outbound_amount" size=20  placeholder="Ãâ°í·®À» ÀÔ·ÂÇÏ¼¼¿ä" required>
-        <input type="hidden" name="product_no_pk" value="'.$product_no_pk.'">
-        <input type="submit" value="Ãâ°í">
-        </form>
-  ';
-  
+      $database="warehouse";
+      $connect= mysql_connect('localhost','root','root') or die("mySQL ì„œë²„ ì—°ê²° Error!");
+      mysql_select_db($database, $connect);
 
-        print "<tr><td>".$ans[0]."</td><td>".$ans[1]."</td><td>".$ans[2];
-        print "<td>".$ans[3]."</td><td>".$ans[4]."</td><td>".$ans[5];
-        print "<td>".$ans[6]."</td><td>".$ans[7]."</td><td>".$outbound_button."</td></tr><br>";
-    }
-    
-    print "</table><br>";
+      $delivery=$_POST['delivery_no'];
+      $present_dt = (string)date("Ymd");
+      
+      // $query2 = "select delivery_adt from delivery_tb, product_tb  where delivery_tb.product_no_pk  = product_tb.product_NO_PK && delivery_tb.product_no_pk = $no_pk";
+      // $result2 = mysql_query($query2, $connect);
+      // $ans1=mysql_fetch_row($result2);
+      
+      // (int)$delivery_adt=$ans1[0];
+      // (int)$present_dt;
 
+      // if($delivery_adt<$present_dt)
+      //     echo "í˜„ì¬ ë°°ì†¡ì¤‘ì…ë‹ˆë‹¤.";
+      // else  
+      //     echo "ìƒí’ˆì´ ë„ì°©í–ˆìŠµë‹ˆë‹¤.";  
 
+      //$query= "select * from delivery_tb, product_tb where delivery_tb.product_no_pk  = product_tb.product_NO_PK;";
 
-    mysql_close($connect); 
-    //  À§ÀÇ for¹®¿¡ <input type=hidden name=product_no_pk >  »ç¿ëÇÒ ÇÊ¿ä ¾øÀ½ 
-?>
+      $query =
+      "SELECT *
+      FROM delivery_tb D, product_tb P
+      WHERE D.product_no_pk = P.product_no_pk
+      AND D.delivery_idt = '$delivery'
+      ";
+      $result = mysql_query($query, $connect);
 
+      print "<center><h1>ì¶œê³  ì¡°íšŒ</h1></center>";
+      print "<table border=1 align=center>";
+      print
+      "<tr>
+      <td> ì¸ë±ìŠ¤</td>
+      <td> ì†¡ì¥ë²ˆí˜¸</td>
+      <td> ì¼ë ¨ë²ˆí˜¸</td>
+      <td> ë°°ì†¡ì¼ì</td>
+      <td> ë„ì°©ì¼ì</td>
+      <td> ë°°ì†¡ìˆ˜ëŸ‰</td>
+      <td> ì‚¬ì—…ì</td>
+      <td> ì¼ë ¨ë²ˆí˜¸</td>
+      <td> ìƒí’ˆëª…</td>
+      <td> íŒë§¤ëŸ‰</td>
+      <td> ê°€ê²©</td>
+      <td> ì¬ê³ ëŸ‰</td>
+      </tr>";
+      $num=mysql_num_rows($result);       
 
-<!--  
-     print "<HTML><head><META http-equiv='refresh' content='0;
-    url=./manager_out_bound.php'></head></head>";
--->
+      for($i=0; $i<$num; $i++) {
+        $ans=mysql_fetch_row($result);
+        print
+        "<tr>
+        <td>".$ans[0]."</td>
+        <td>".$ans[1]."</td>
+        <td>".$ans[2]."</td>
+        <td>".$ans[3]."</td>
+        <td>".$ans[4]."</td>
+        <td>".$ans[5]."</td>
+        <td>".$ans[6]."</td>
+        <td>".$ans[7]."</td>
+        <td>".$ans[8]."</td>
+        <td>".$ans[9]."</td>
+        <td>".$ans[10]."</td>
+        <td>".$ans[11]."</td>
+        </tr>";
+      }
+      print "</table>";
+      mysql_close($connect);
+    ?>
+  </main>
+  <footer>
 
-</HTML>
+  </footer>
+</body>
+
+</html>

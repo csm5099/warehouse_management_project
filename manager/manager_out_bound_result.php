@@ -1,46 +1,60 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-// ÀÔ·Â¹ŞÀº Ãâ°í·®À» ¼ö·®¿¡¼­ - ¿¬»ê
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../grid_4_sections.css">
+  <title>Document</title>
+</head>
 
-$outbound_amount = $_POST['outbound_amount']; 
-echo "outbound $outbound_amount"; //Ãâ°í·®Àº Ãâ·ÂµÊ 
+<body>
+  <header>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
+  <nav>
+    <a href="manager_stock.html">ì¬ê³ </a>
+    <a href="manager_out_bound.php">ì¶œê³ </a>
+    <a href="manager_in_bound.php">ì…ê³ </a>
+    <a href="manager_membership.php">íšŒì›ê´€ë¦¬</a>
+    <a href="manager_logout.php">ë¡œê·¸ì•„ì›ƒ</a>
+  </nav>
+  <main>
+    <?php
+	include '../Check_Cookie_manager.php';
+?>
+    <h1>ê´€ë¦¬ì</h1>
+    ì¶œê³  ì¡°íšŒ ê²°ê³¼
+    <?php
 
-echo("<br>");
+// ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½
 
+$outbound_amount = $_POST['outbound_amount']; //ï¿½ï¿½ï¿½ï¿½
+echo $outbound_amount;
 $product_no_pk=$_POST['product_no_pk']; 
-echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
+echo $product_no_pk;//manger_out_bound_search.php ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·Ã¹ï¿½È£ï¿½ï¿½ hiddenï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 
-//¼ö·®= product_sales
- 
+//ï¿½ï¿½ï¿½ï¿½= product_sales
+
+    $result=$product_sales-$outbound_amount;
     
     $database="warehouse";
-    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ¼­¹ö ¿¬°á Error!");
+    $connect= mysql_connect('localhost','lcw','chaewon') or die("mySQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Error!");
 
     mysql_select_db($database, $connect);
-    $query = "select * from product_tb where product_no_pk='$product_no_pk'";
+
+    //select a* b from product_tb;
+    $query = "update product_tb set product_sales='$result' where product_no_pk= '$product_no_pk'";
+
     $result = mysql_query($query, $connect);
-    $ans = mysql_fetch_row($result);
 
-    $product_sales = $ans[2];
- 
-
-    echo("<br>");
-    print $product_sales;   // ±âÁ¸°ª Ãâ·Â ¾ÈµÊ  
-   
-    echo("<br>");
-    $rest=$product_sales-$outbound_amount;  // ±âÁ¸- Ãâ°í
-
-    print " rest $rest";
-
-    
-    $query = "update product_tb set product_sales='$rest' where product_no_pk= '$product_no_pk'";
-    mysql_query($query,$connect);
-
-    print "<center><font color=red size=5><b> Ãâ°í °á°ú </b></font></center>";
+    print "<center><font color=red size=5><b> ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ </b></font></center>";
     print "<table border=1 align=center>";
-    print "<tr><td> ÀÏ·Ã¹øÈ£ </td><td> ÆòÁ¡ </td><td> ¼ö·® </td><td>x </td><td> °¡°İ </td>";
-    print "<td> Àç°í·® </td><td> »óÅÂ </td><td> ÀÔ°íÀÏ </td></tr><br>";
-    
+    print "<tr><td> ï¿½Ï·Ã¹ï¿½È£ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½Ç°ï¿½ï¿½ </td><td>ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td>";
+    print "<td> ï¿½ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½ï¿½ï¿½ï¿½ </td><td> ï¿½Ô°ï¿½ï¿½ï¿½ </td></tr><br>";
     
     $query = "select * from product_tb where product_no_pk= '$product_no_pk' ";
     $result = mysql_query($query,$connect);
@@ -49,13 +63,22 @@ echo " number $product_no_pk";   //ÀÏ·Ã¹øÈ£ ¾È ³Ñ¾î¿È
     print "</td><td>".$ans[3]."</td><td>".$ans[4]."</td>";
     print "<td>".$ans[5]."</td><td>".$ans[6]."</td><td>".$ans[7]."</td></tr><br>";
     
-    print "</table><br>"; //ÅÂ±× Ãß°¡
-
+    print "</table><br>"; //ï¿½Â±ï¿½ ï¿½ß°ï¿½
 
     mysql_close($connect);
-
-
 
 ?>
 
 
+    <!--  
+      print "<HTML><head><META http-equiv='refresh' content='0;
+      url=./manager_out_bound.php'></head></head>";
+    -->
+  </main>
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>

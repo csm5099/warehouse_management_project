@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
   <link rel="stylesheet" href="manager.css">
-  <title>user</title>
+  <title>manager</title>
 </head>
 
 <body>
@@ -23,8 +23,8 @@
   </nav>
   <main>
     <?php
-	    include '../Check_Cookie_manager.php';
-    ?>
+	include '../Check_Cookie_manager.php';
+?>
     <h1>관리자</h1>
     <h2>재고</h2>
 
@@ -35,39 +35,42 @@
     </div>
 
     <center>
-      <h1>재고 수정</h1>
-
-      <form name="form" action="./manager_stock_update2.php" method="post">
+      <h1>재고 상세 조회</h1>
+      <form name="form" method="post" action="./manager_stock_lookup3.php">
         <select name="search">
           <option value="product_no_pk">상품 일련번호</option>
         </select>
-        <input type="sumbit" name="search" size="40"> <button>조회</button>
+        <input type="sumbit" name="product_no_pk" size="40">
+        <button>조회</button>
       </form>
-      <br><br>
     </center>
-
+    <br><br>
     <?php
       $database="warehouse";
       $connect= mysql_connect('localhost','root','root') or die("mySQL 서버 연결 Error!");
     
       mysql_select_db($database, $connect);
       $query= "SELECT * FROM product_tb ORDER BY product_no_pk ASC";
+      
       $result = mysql_query($query, $connect);
       
       print "<table border=1 align=center>";
+      
       print "<tr><td> 사업자번호</td><td>일련번호</td><td> 상품명</td><td>판매량 </td><td>가격</td><td>재고량</td></tr>";
       $num= mysql_num_rows($result);
+    
       for($i=0; $i<$num; $i++) {
-        $ans=mysql_fetch_row($result);
-        print
-        "<tr>
-        <td>".$ans[0]."</td>
-        <td>".$ans[1]."</td>
-        <td>".$ans[2]."</td>
-        <td>".$ans[3]."</td>
-        <td>".$ans[4]."</td>
-        <td>".$ans[5]."</td>
-        </tr>";
+      $ans=mysql_fetch_row($result);
+      
+      print
+      "<tr>
+      <td>".$ans[0]."</td>
+      <td>".$ans[1]."</td>
+      <td>".$ans[2]."</td>
+      <td>".$ans[3]."</td>
+      <td>".$ans[4]."</td>
+      <td>".$ans[5]."</td>
+      </tr>";
       }
       print "</table>";
       mysql_close($connect);
@@ -75,6 +78,7 @@
 
   </main>
   <footer>
+
   </footer>
 </body>
 

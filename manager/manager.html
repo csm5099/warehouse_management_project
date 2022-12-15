@@ -3,25 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../grid_4_sections.css">
-  <link rel="stylesheet" href="manager.css">
   <title>manager</title>
 </head>
 <body>
-<header>
-  <a href="../login/login.html"> header</a>
-</header>
+  <header>
+    <a href="./manager.html">
+      <img src="../logo4.png" alt="">
+    </a>
+  </header>
 <nav>
   <a href="manager_stock.html">재고</a>
-  <a href="manager_out_bound.php">출고</a>  <!--출고는 html 없애고 php로 바로 이동  -->
+  <a href="manager_out_bound.php">출고</a>
   <a href="manager_in_bound.php">입고</a> 
   <a href="manager_membership.php">회원관리</a>
   <a href="manager_logout.php">로그아웃</a>
-  <a href=""></a>
 </nav>
 <main>
+  <?php
+	include '../Check_Cookie_manager.php';
+?>
   <h1>관리자</h1>
-  관리자 메인 페이지 입니다. 옆 네비게이션바에서 기능을 선택하세요.
+  <h2>반갑습니다.</h2>
 </main>
-<footer>footer</footer>
+<footer>
+  
+</footer>
 </body>
 </html>
